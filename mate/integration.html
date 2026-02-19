@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Slugbotics | MATE – Integration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="slug-icon">🦎</span>
+        <span class="nav-title">Slugbotics | MATE</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+
+        <div class="nav-item has-dropdown">
+          <a href="team.html" class="nav-link-with-dropdown active">Team</a>
+          <div class="dropdown">
+            <a href="integration.html">Integration</a>
+            <a href="software.html">Software</a>
+            <a href="arm.html">Arm</a>
+            <a href="movement.html">Movement</a>
+            <a href="frame.html">Frame</a>
+          </div>
+        </div>
+
+        <a href="sponsors.html">Sponsors</a>
+        <!-- send people back to main contact section on home page -->
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero hero-integration">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Integration</h1>
+      <p>Power, signals, and systems all working together underwater.</p>
+    </div>
+  </section>
+
+  <!-- Who we are -->
+  <section id="about" class="section section-split">
+    <div class="split-text">
+      <h2>Who We Are</h2>
+      <p>
+        The Integration subteam is responsible for making sure every subsystem
+        on the ROV works together reliably — electronics, sensors, power,
+        communications, and mechanical interfaces.
+      </p>
+      <p>
+        We handle wiring, harness design, enclosure layout, waterproofing, and
+        system-level testing so that other subteams (Software, Frame, Arm,
+        Movement) can focus on their domains while still plugging into a clean,
+        testable system.
+      </p>
+    </div>
+    <div class="split-image">
+      <!-- replace with your own image or remove this block -->
+      <img src="img/integrationdiagram.webp" alt="Integration bench setup" />
+    </div>
+  </section>
+
+  <!-- Leads -->
+  <section id="leads" class="section alt">
+    <h2>Leads</h2>
+    <div class="member-grid leads-grid">
+      <div class="member-card lead-card">
+        <img src="img/template.png" alt="Sean Gouie" class="member-avatar" />
+        <h3>Sean Gouie</h3>
+        <p class="member-major">Computer Science</p>
+        <p class="member-role">Sophomore</p>
+      </div>
+
+      <div class="member-card lead-card">
+        <img src="img/template.png" alt="Nathan Pham" class="member-avatar" />
+        <h3>Nathan Pham</h3>
+        <p class="member-major">Computer Engineering</p>
+        <p class="member-role">Junior</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Members -->
+  <section id="members" class="section">
+    <h2>Meet the Integration Team</h2>
+
+    <div class="member-grid">
+      <div class="member-card">
+        <img src="img/template.png" alt="Braden" class="member-avatar" />
+        <h3>Braden</h3>
+        <p class="member-major">Robotics Engineering</p>
+        <p class="member-role">Junior</p>
+      </div>
+
+      <div class="member-card">
+        <img src="img/template.png" alt="Ollie" class="member-avatar" />
+        <h3>Ollie</h3>
+        <p class="member-major">Computer / Electrical Engineering</p>
+        <p class="member-role">Junior</p>
+      </div>
+
+      <div class="member-card">
+        <img src="img/template.png" alt="Lucas" class="member-avatar" />
+        <h3>Lucas</h3>
+        <p class="member-major">Computer Engineering</p>
+        <p class="member-role">Sophomore</p>
+      </div>
+
+      <div class="member-card">
+        <img src="img/template.png" alt="Jiaying" class="member-avatar" />
+        <h3>Jiaying</h3>
+        <p class="member-major">Electrical Engineering</p>
+        <p class="member-role">Freshman</p>
+      </div>
+
+      <div class="member-card">
+        <img src="img/template.png" alt="Leah" class="member-avatar" />
+        <h3>Leah</h3>
+        <p class="member-major">Electrical Engineering</p>
+        <p class="member-role">Freshman</p>
+      </div>
+
+      <div class="member-card">
+        <img src="img/template.png" alt="Justin" class="member-avatar" />
+        <h3>Justin</h3>
+        <p class="member-major">Electrical Engineering</p>
+        <p class="member-role">Freshman</p>
+      </div>
+
+      <div class="member-card">
+        <img src="img/template.png" alt="Abhiram" class="member-avatar" />
+        <h3>Abhiram</h3>
+        <p class="member-major">Electrical Engineering</p>
+        <p class="member-role">Freshman</p>
+      </div>
+
+      <div class="member-card">
+        <img src="img/template.png" alt="Caitelyn" class="member-avatar" />
+        <h3>Caitelyn</h3>
+        <p class="member-major">Electrical Engineering</p>
+        <p class="member-role">Freshman</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ongoing Projects -->
+  <section id="projects" class="section alt">
+    <h2>Ongoing Projects</h2>
+    <p>
+      Integration always has a set of hands-on projects running in parallel.
+      These are some of the core builds we&apos;re working on this season:
+    </p>
+
+    <div class="card-grid project-grid">
+      <div class="info-card project-card">
+        <h3>Build a Buck Converter</h3>
+        <p>
+          Design and assemble a high-current buck converter to step 48&nbsp;V
+          down to the ROV&apos;s 12&nbsp;V/5&nbsp;V rails. You&apos;ll work on
+          layout, thermal considerations, and testing under load.
+        </p>
+      </div>
+
+      <div class="info-card project-card">
+        <h3>Build a Capacitor Bank</h3>
+        <p>
+          Develop a capacitor bank to handle transient current spikes and keep
+          our power rails stable when thrusters and manipulators switch on.
+          Includes sizing caps, safety, and mounting.
+        </p>
+      </div>
+
+      <div class="info-card project-card">
+        <h3>CAD the Enclosure Plates</h3>
+        <p>
+          CAD the internal plates and mounting hardware that live inside our
+          electronics enclosure so boards, converters, and wiring are secure and
+          serviceable.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills You Learn -->
+  <section id="skills" class="section section-split">
+    <div class="split-image">
+      <!-- replace with a good integration/bench photo -->
+      <img src="img/team-arm.webp" alt="Integration workbench" />
+    </div>
+    <div class="split-text">
+      <h2>Skills You&apos;ll Learn in Integration</h2>
+      <p>
+        Integration is a great place to build cross-discipline experience.
+        You&apos;ll touch hardware, CAD, and debugging all in the same week.
+      </p>
+
+      <ul class="skills-list">
+        <li>PCB design and layout (power + signal)</li>
+        <li>Basic electro-physics: current, transients, filtering</li>
+        <li>Harness design and connector selection</li>
+        <li>CAD for internal plates, mounts, and enclosure layouts</li>
+        <li>Debugging tools: multimeters, scopes, bench supplies</li>
+        <li>Documentation and wiring diagrams for future seasons</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Meetings -->
+  <section id="meetings" class="section alt">
+    <h2>Meeting Times</h2>
+    <div class="info-card wide">
+      <p>
+        Integration meets multiple times per week for lab work and debug
+        sessions. Adjust the schedule below to match your real times.
+      </p>
+
+      <div class="meeting-grid">
+        <div class="meeting-slot">
+          <h3>Build Session</h3>
+          <p>Tuesdays · 6:00–9:00 PM</p>
+          <p class="card-meta">Location: BE-49</p>
+        </div>
+
+        <div class="meeting-slot">
+          <h3>Testing / ROV Pool</h3>
+          <p>Saturdays · 10:00 AM–1:00 PM</p>
+          <p class="card-meta">Location: Pool / Test Tank</p>
+        </div>
+
+        <div class="meeting-slot">
+          <h3>Office Hours / Onboarding</h3>
+          <p>Thursdays · 5:00–6:00 PM</p>
+          <p class="card-meta">Location: Team Space / Discord</p>
+        </div>
+      </div>
+
+      <p class="card-meta">
+        New members are welcome to drop into any build session – just message in
+        our Discord beforehand so we can get you set up.
+      </p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

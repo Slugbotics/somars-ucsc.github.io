@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Slugbotics | MATE</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="slug-icon">🦎</span>
+        <span class="nav-title">Slugbotics | MATE</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+
+        <div class="nav-item has-dropdown">
+          <a href="team.html" class="nav-link-with-dropdown">Team</a>
+          <div class="dropdown">
+            <a href="integration.html">Integration</a>
+            <a href="software.html">Software</a>
+            <a href="arm.html">Arm</a>
+            <a href="movement.html">Movement</a>
+            <a href="frame.html">Frame</a>
+          </div>
+        </div>
+
+        <a href="sponsors.html">Sponsors</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero hero-team">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Marine Robotics at UCSC</h1>
+      <p>Designing, building, and competing with underwater ROVs.</p>
+      <div class="hero-buttons">
+        <a href="team.html#join" class="btn btn-primary">Join the Team</a>
+        <a href="#competition" class="btn btn-secondary">What is MATE ROV?</a>
+      </div>
+    </div>
+    <div class="scroll-indicator"><span>⌄</span></div>
+  </section>
+
+  <!-- About Us (now split: text + logo side-by-side) -->
+  <section id="about" class="section-split">
+    <div class="split-text">
+      <h2>About Us</h2>
+      <p>
+        MATE is UC Santa Cruz's competitive marine robotics team.
+        We design, build, and test underwater remotely operated vehicles (ROVs)
+        for the annual MATE ROV World Championship.
+      </p>
+      <p>
+        We provide students of all different majors with hands on engineering
+        experiences in software, electrical and mechanical.
+      </p>
+    </div>
+
+    <div class="split-image">
+      <img src="img/teamlogo.png" alt="MATE Logo" class="about-logo" />
+    </div>
+  </section>
+
+  <!-- What is MATE ROV -->
+  <section id="competition" class="section section-split alt">
+    <div class="split-text">
+      <h2>What is the MATE ROV Competition?</h2>
+      <p>
+        The MATE ROV Competition is an international underwater robotics
+        challenge built around real marine engineering problems. University
+        teams construct ROVs capable of operating underwater to complete
+        mission tasks that simulate real field operations.
+      </p>
+      <p>
+        Every season features a new theme — ocean research, renewable power,
+        deep-sea inspection, ice-sheet mapping, and more. Teams are judged on:
+      </p>
+      <ul>
+        <li>Pool mission performance</li>
+        <li>Technical documentation</li>
+        <li>Engineering presentation</li>
+        <li>Safety and professionalism</li>
+      </ul>
+    </div>
+    <div class="split-image">
+      <img src="img/materov.png" alt="MATE competition pool" />
+    </div>
+  </section>
+
+  <!-- 2025 Season -->
+  <section id="season2025" class="section section-split">
+    <div class="split-image">
+      <img src="img/2025season.webp" alt="2025 ROV team" />
+    </div>
+
+    <div class="split-text">
+      <h2>2025 Season</h2>
+      <p>
+        The 2025 season marked our first time competiting at the MATE ROV
+        competition after the pandemic. This event marked a major milestone
+        for the team and allowed us to build off our knowledge for the future.
+      </p>
+      <p>
+        Our ROV was designed ot tackle tasks like analysing shipwrecks (Determining
+        their class and size). Replacing broken fuses with our arm. Takine water samples
+        and testing the PH levels.
+      </p>
+      <p>
+        We hope to compete at Canada for 2026!
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section alt">
+    <h2>Contact</h2>
+    <p>If you're interested in joining or learning more, reach out!</p>
+    <p><strong>Email:</strong> slugbotics@example.com</p>
+    <p><strong>Discord:</strong> </p>
+    <p><strong>SlugWorks Canvas:</strong> </p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
