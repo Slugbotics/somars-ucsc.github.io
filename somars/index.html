@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Slugbotics | SOMARS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="slug-icon">🚁</span>
+        <span class="nav-title">Slugbotics | SOMARS</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+
+        <div class="nav-item has-dropdown">
+          <a href="team.html" class="nav-link-with-dropdown">Team</a>
+          <div class="dropdown">
+            <a href="mechanical.html">Mechanical</a>
+            <a href="embedded.html">Embedded Systems</a>
+            <a href="perception.html">Perception</a>
+            <a href="simulations.html">Simulations</a>
+          </div>
+        </div>
+
+        <a href="sponsors.html">Sponsors</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero hero-home">
+    <div class="hero-emoji-bg">🚁</div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Autonomous Drones at UCSC</h1>
+      <p>Designing, building, and flying autonomous aerial vehicles — pushing the frontier of drone technology on campus.</p>
+      <div class="hero-buttons">
+        <a href="team.html#join" class="btn btn-primary">Join the Team</a>
+        <a href="#competitions" class="btn btn-secondary">Our Competitions</a>
+      </div>
+    </div>
+    <div class="scroll-indicator"><span>⌄</span></div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="section-split">
+    <div class="split-text">
+      <h2>About Us</h2>
+      <p>
+        SOMARS (Student Organization for Marine and Aerial Robotics Systems) is UC Santa Cruz's
+        autonomous drone team under Slugbotics. We design, build, and program
+        unmanned aerial vehicles (UAVs) capable of fully autonomous flight — no
+        remote pilot required.
+      </p>
+      <p>
+        Our team brings together students from computer science, electrical engineering,
+        mechanical engineering, and beyond to tackle every layer of the drone stack,
+        from carbon fiber airframes to computer-vision-guided navigation.
+      </p>
+    </div>
+    <div class="split-image">
+      <div class="split-emoji">
+        🚁
+        <span class="emoji-label">[ Team / drone photo — TO BE FINISHED LATER ]</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competitions -->
+  <section id="competitions" class="section-alt-bleed">
+    <div class="section-inner">
+      <h2>Our Competitions</h2>
+      <p>
+        SOMARS competes in two major student UAV competitions that challenge us
+        to build fully autonomous aerial systems capable of real-world mission tasks.
+      </p>
+
+      <div class="competition-grid" style="margin-top:1.5rem;">
+
+        <div class="competition-card">
+          <div class="comp-emoji">🏆</div>
+          <h3>C-UASC</h3>
+          <p>
+            The Collegiate Unmanned Aircraft Systems Competition (C-UASC) tests
+            student teams on autonomous fixed-wing and multi-rotor flight operations,
+            including waypoint navigation, payload drop, and autonomous landing.
+            Teams are scored on mission completion, technical reports, and oral
+            presentations.
+          </p>
+          <span class="placeholder-note">TO BE FINISHED LATER — add specific mission details, dates, location</span>
+        </div>
+
+        <div class="competition-card">
+          <div class="comp-emoji">🛸</div>
+          <h3>SUAS</h3>
+          <p>
+            The Student Unmanned Aerial Systems (SUAS) Competition, hosted by
+            the Association for Unmanned Vehicle Systems International (AUVSI),
+            is one of the most prestigious student UAV competitions. Teams must
+            complete an autonomous search-and-rescue-style mission including
+            obstacle avoidance, target identification, and payload delivery.
+          </p>
+          <span class="placeholder-note">TO BE FINISHED LATER — add specific mission details, dates, location</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What makes us different -->
+  <section id="approach" class="section-split">
+    <div class="split-text">
+      <h2>Our Approach</h2>
+      <p>
+        Everything we build aims to be fully autonomous — the drone plans its own
+        path, avoids obstacles, detects targets with computer vision, and makes
+        decisions without human intervention in the loop.
+      </p>
+      <p>
+        We believe in a strong simulation-first development cycle: algorithms are
+        tested in Gazebo before ever flying on real hardware, dramatically reducing
+        the risk of crashes and accelerating iteration speed.
+      </p>
+      <ul>
+        <li>Autonomous navigation & waypoint planning</li>
+        <li>Real-time computer vision & target detection</li>
+        <li>Simulation-first development with Gazebo</li>
+        <li>Custom embedded systems and flight controllers</li>
+      </ul>
+    </div>
+    <div class="split-image">
+      <div class="split-emoji">
+        🛰️
+        <span class="emoji-label">[ Drone in flight photo — TO BE FINISHED LATER ]</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subteams snapshot -->
+  <section id="subteams-snapshot" class="section alt">
+    <h2>Our Subteams</h2>
+    <p>
+      SOMARS is organized into four specialized subteams, each owning a core
+      part of the autonomous drone system. <a href="team.html" style="color:#7ed957;">Learn more →</a>
+    </p>
+
+    <div class="card-grid" style="margin-top:1.5rem;">
+      <a href="mechanical.html" class="info-card" style="text-decoration:none; color:inherit;">
+        <h3>⚙️ Mechanical</h3>
+        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
+          Designing and manufacturing the drone airframe, chassis, and payload systems.
+        </p>
+      </a>
+
+      <a href="embedded.html" class="info-card" style="text-decoration:none; color:inherit;">
+        <h3>🔌 Embedded Systems</h3>
+        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
+          Hardware integration, firmware, flight controllers, and autonomous controls software.
+        </p>
+      </a>
+
+      <a href="perception.html" class="info-card" style="text-decoration:none; color:inherit;">
+        <h3>👁️ Perception</h3>
+        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
+          Computer vision pipelines for autonomous navigation and object detection.
+        </p>
+      </a>
+
+      <a href="simulations.html" class="info-card" style="text-decoration:none; color:inherit;">
+        <h3>🌐 Simulations</h3>
+        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
+          Gazebo-based simulation of flight paths and autonomous behaviors before real-world testing.
+        </p>
+      </a>
+    </div>
+  </section>
+
+  <!-- 2025/2026 Season -->
+  <section id="season" class="section-split alt">
+    <div class="split-image">
+      <div class="split-emoji">
+        🗓️
+        <span class="emoji-label">[ 2025–2026 season photo — TO BE FINISHED LATER ]</span>
+      </div>
+    </div>
+    <div class="split-text">
+      <h2>2025–2026 Season</h2>
+      <p>
+        This is our current active season. We are working toward our first
+        competition entries at C-UASC and SUAS, building out our autonomous
+        flight platform from the ground up.
+      </p>
+      <p>
+        Milestones include finalizing the drone airframe, integrating our
+        autonomous flight stack, and running full end-to-end simulations
+        before initial flight tests.
+      </p>
+      <span class="placeholder-note">TO BE FINISHED LATER — fill in season details, milestones, competition dates</span>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Interested in joining or learning more? Reach out!</p>
+    <p style="margin-top:0.75rem;"><strong>Email:</strong> <span class="placeholder-note">TO BE FINISHED LATER — add email</span></p>
+    <p style="margin-top:0.5rem;"><strong>Discord:</strong> <span class="placeholder-note">TO BE FINISHED LATER — add Discord link</span></p>
+    <p style="margin-top:0.5rem;"><strong>SlugWorks Canvas:</strong> <span class="placeholder-note">TO BE FINISHED LATER — add Canvas link</span></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
