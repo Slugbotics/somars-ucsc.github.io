@@ -1,8 +1,989 @@
+
+Claude finished the response
+You said: need help redoing somars website
+need help redoing somars website
+
+3:58 PM
+Claude responded: I'd love to help you redo the SOMARS website!
+I'd love to help you redo the SOMARS website! Let me ask a few quick questions to get a sense of what you're going for.
+
+You said: Q: What kind of redesign are you looking for?
+Q: What kind of redesign are you looking for?
+A: 2 and 3
+
+Q: What's the main vibe you're going for?
+A: Clean & professional / academic
+
+Q: What do you need for this?
+A: using html uploading to ucsc somars github
+
+3:58 PM
+Claude responded: Got it — a modernized landing page with a clean, professional/academic feel, delivered as HTML/CSS to push to the UCSC SOMARS GitHub.
+Got it — a modernized landing page with a clean, professional/academic feel, delivered as HTML/CSS to push to the UCSC SOMARS GitHub. Before I build, a few quick things I need from you:
+
+Current site — do you have a link to the existing site so I can see what's there to refresh?
+Content — what sections do you want on the landing page? (e.g. About, Team, Projects, Sponsors, Contact, Join Us?)
+Assets — do you have a SOMARS logo, team photos, or any brand colors I should match?
+Club info — give me a quick blurb on what SOMARS is/does so I can write placeholder copy that's actually accurate.
+You said: https://slugbotics.
+https://slugbotics.github.io/somars-ucsc.github.io/
+
+3:59 PM
+Claude responded: Good, I can see the full structure.
+
+Fetched: Autonomous Drones at UCSC
+Fetched: Autonomous Drones at UCSC
+Good, I can see the full structure. The existing site has solid bones — good sections, clear subteam breakdown — but it's clearly unfinished (lots of "TO BE FINISHED LATER" placeholders) and could use a much cleaner, more polished visual treatment.
+
+Before I start building, a few fill-in-the-blank things I need from you:
+
+Contact info — email, Discord invite link, SlugWorks Canvas link?
+Competition details — any specific dates/locations for C-UASC and SUAS this season? Any mission details you want highlighted?
+Season milestones — what has the team actually accomplished this 2025–26 season so far?
+Logo/colors — does SOMARS have an official logo file or specific brand colors? Or should I just use UCSC blue/gold?
+Do you want to keep the multi-page structure (separate pages for Mechanical, Embedded, Perception, Simulations, Team, Sponsors) or collapse everything into one long landing page?
+You said: can i first take all of my stuff from git and put it onto my own machine with vs code and then make my own branch seperate form the main one
+can i first take all of my stuff from git and put it onto my own machine with vs code and then make my own branch seperate form the main one
+
+4:01 PM
+Claude responded: Yeah, absolutely.
+Yeah, absolutely. Here's the full workflow:
+
+1. Clone the repo
+
+Open a terminal in VS Code (Ctrl+`) and run:
+
+bash
+git clone https://github.com/slugbotics/somars-ucsc.github.io.git
+cd somars-ucsc.github.io
+2. Open it in VS Code
+
+bash
+code .
+3. Create and switch to your own branch
+
+bash
+git checkout -b gene/website-redesign
+Name it whatever makes sense — gene/website-redesign, redesign, dev, etc.
+
+4. Verify you're on your branch
+
+bash
+git branch
+You should see your branch highlighted with a *.
+
+5. When you're ready to push your branch to GitHub
+
+bash
+git push -u origin gene/website-redesign
+After this, your branch lives on GitHub separately from main. You can work freely without touching anything on the live site until you're ready to open a pull request.
+
+A couple things to check first:
+
+Make sure you have push access to the slugbotics repo, otherwise you'd need to fork it instead
+If you don't have access, let me know and I'll walk you through the fork workflow instead
+Do you have collaborator access to the repo?
+
+You said: genestone@Genes-MacBook-Pro somars-ucsc.
+genestone@Genes-MacBook-Pro [somars-ucsc.github.io](http://somars-ucsc.github.io) % git branch
+* gene/website-redesign
+  main
+genestone@Genes-MacBook-Pro [somars-ucsc.github.io](http://somars-ucsc.github.io) %
+
+4:02 PM
+Claude responded: You're all set — you're on your gene/website-redesign branch and main is safely separate.
+You're all set — you're on your gene/website-redesign branch and main is safely separate. You're ready to start editing.
+
+Quick orientation for working in VS Code on this:
+
+Edit files freely — nothing affects main or the live site until you merge
+Save your progress as you go with:
+bash
+git add .
+git commit -m "describe what you changed"
+Push to GitHub whenever you want a backup or want others to see your branch:
+bash
+git push
+(first push will need git push -u origin gene/website-redesign, but you may have already done that)
+
+Whenever you're ready, go ahead and answer those content questions from earlier and I'll start building out the redesigned index.html for you. Or if you want, I can just start with a clean mockup using placeholder content and you can swap in the real details later.
+
+You said: ~~canm you explain what each of these do~~
+Screenshot 2026-04-26 at 4.03.24 PM.png
+canm you explain what each of these do
+
+4:04 PM
+Claude responded: You're good, I can see the file structure.
+You're good, I can see the file structure. Here's what each file does:
+
+index.html — the homepage / landing page (what people see first)
+team.html — the Team page, likely lists members and has the "Join Us" section
+mechanical.html — subteam page for the Mechanical team
+embedded.html — subteam page for Embedded Systems
+perception.html — subteam page for the Perception (computer vision) team
+simulations.html — subteam page for the Simulations team
+sponsors.html — sponsors page
+style.css — the stylesheet that controls how everything looks across all pages
+script.js — JavaScript for interactive stuff (likely the mobile hamburger menu, smooth scrolling, etc.)
+README.md — documentation for the repo (shows up on GitHub, not part of the website itself)
+The key files for a redesign are style.css (controls all the visuals) and index.html (the main page). The subteam pages (mechanical.html, embedded.html, etc.) all likely share the same CSS, so updating style.css will refresh the look across the whole site at once.
+
+Want to start with index.html + style.css and I'll build you a clean redesign?
+
+You said: yes
+yes
+
+4:04 PM
+Claude responded: Can you share the current style.
+Can you share the current style.css and index.html so I can see exactly what's there before I rewrite them? Just open each file in VS Code, select all, and paste the contents here.
+
+/* ================= BASIC RESET ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #ffffff;
+  background: #0d1f0d;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1a3a1a;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.slug-icon {
+  font-size: 1.1rem;
+}
+
+.nav-title {
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links > a,
+.nav-links .nav-link-with-dropdown {
+  color: #d6ead6;
+  text-decoration: none;
+  font-size: 0.95rem;
+  position: relative;
+}
+
+/* underline animation on hover */
+.nav-links > a::after,
+.nav-links .nav-link-with-dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #7ed957;
+  transition: width 0.2s ease;
+}
+
+.nav-links > a:hover::after,
+.nav-links > a.active::after,
+.nav-links .nav-link-with-dropdown:hover::after {
+  width: 100%;
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ============ DROPDOWN (DESKTOP) ============ */
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #122612;
+  padding: 0.4rem 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 4px 4px;
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  min-width: 160px;
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.35rem 0.8rem;
+  color: #d6ead6;
+  text-decoration: none;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+.dropdown a:hover {
+  color: #7ed957;
+}
+
+.has-dropdown:hover .dropdown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.has-dropdown:hover .dropdown a {
+  animation: dropdownFade 0.18s forwards;
+}
+
+.has-dropdown:hover .dropdown a:nth-child(1) { animation-delay: 0s; }
+.has-dropdown:hover .dropdown a:nth-child(2) { animation-delay: 0.05s; }
+.has-dropdown:hover .dropdown a:nth-child(3) { animation-delay: 0.1s; }
+.has-dropdown:hover .dropdown a:nth-child(4) { animation-delay: 0.15s; }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  position: relative;
+  height: 65vh;
+  min-height: 420px;
+  background: linear-gradient(135deg, #0d1f0d 0%, #1a3a1a 50%, #0d1f0d 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding: 0 1.5rem;
+}
+
+.hero.hero-home {
+  height: 85vh;
+  min-height: 520px;
+}
+
+/* Hero emoji placeholder — same visual weight as a background photo */
+.hero-emoji-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(8rem, 20vw, 16rem);
+  opacity: 0.12;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 20, 5, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 1100px;
+  width: 100%;
+  color: #ffffff;
+  padding-top: 60px;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.8rem, 4.5vw, 3.8rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #7ed957;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #1a3a1a;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #0f2510;
+}
+
+.btn-secondary {
+  background: #7ed957;
+  color: #0d1f0d;
+}
+
+.btn-secondary:hover {
+  background: #65c040;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 6px);
+  }
+}
+
+/* ================= GENERIC SECTIONS ================= */
+
+.section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  background: #0d1f0d;
+}
+
+.section.alt {
+  background: #122612;
+}
+
+/* full-bleed alt background */
+.section-alt-bleed {
+  background: #122612;
+  padding: 4rem 1.5rem;
+}
+
+.section-alt-bleed .section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section h2,
+.section-inner h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.section p,
+.section-inner p {
+  color: #c4dcc4;
+  line-height: 1.6;
+}
+
+/* page-style header */
+.page-header {
+  padding-top: 90px;
+  padding-bottom: 1.5rem;
+  background: #1a3a1a;
+}
+
+.page-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.page-header h1 {
+  font-size: 2.3rem;
+  margin-bottom: 0.25rem;
+}
+
+.page-header p {
+  color: #acd4ac;
+}
+
+/* ================= SPLIT SECTION (text + image/emoji) ================= */
+
+.section-split {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  background: inherit;
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.section-split.alt {
+  background: #122612;
+}
+
+.section-split .split-text p + p {
+  margin-top: 0.75rem;
+}
+
+.section-split ul {
+  margin-top: 0.75rem;
+  margin-left: 1.25rem;
+  color: #c4dcc4;
+}
+
+/* Emoji placeholder — same size as the images in MATE */
+.split-emoji {
+  width: 80%;
+  max-width: 420px;
+  aspect-ratio: 4 / 3;
+  margin: 0 auto;
+  border-radius: 8px;
+  background: #1e3d1e;
+  border: 2px dashed #3a6b3a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 5rem;
+}
+
+.split-emoji .emoji-label {
+  font-size: 0.8rem;
+  color: #6a9b6a;
+  text-align: center;
+  padding: 0 1rem;
+  font-family: monospace;
+}
+
+/* square/avatar emoji placeholder for member cards */
+.member-avatar-emoji {
+  width: 100%;
+  max-width: 140px;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  background: #1e3d1e;
+  border: 2px dashed #3a6b3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  margin: 0 auto 0.75rem;
+}
+
+/* ================= GENERIC CARDS / GRIDS ================= */
+
+.card-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.info-card {
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  background: #1a3a1a;
+  border: 1px solid #2a502a;
+}
+
+.info-card.wide {
+  max-width: 900px;
+  margin: 1.5rem auto 0;
+}
+
+.info-card h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1.1rem;
+}
+
+.card-meta {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  color: #7aaa7a;
+}
+
+/* ================= Q&A BLOCKS ================= */
+
+.qa-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.qa-item {
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  background: #1a3a1a;
+  border: 1px solid #2a502a;
+}
+
+.qa-item h3 {
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+}
+
+.qa-item p {
+  font-size: 0.95rem;
+  color: #c4dcc4;
+}
+
+.about-logo-emoji {
+  max-width: 280px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #1e3d1e;
+  border: 2px dashed #3a6b3a;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  margin: 0 auto;
+}
+
+/* ================= MEMBER + LEAD CARDS ================= */
+
+.member-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.member-card {
+  padding: 1.2rem 1rem 1.3rem;
+  border-radius: 10px;
+  background: #1a3a1a;
+  border: 1px solid #2a502a;
+  text-align: center;
+}
+
+.member-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.member-major {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #7ed957;
+  margin-bottom: 0.25rem;
+}
+
+.member-role {
+  font-size: 0.9rem;
+  color: #c4dcc4;
+}
+
+.leads-grid {
+  justify-items: center;
+}
+
+.leads-grid .lead-card {
+  border: 2px solid #7ed957;
+}
+
+#leads.section.alt {
+  background: #0d1f0d;
+}
+
+#leads.section {
+  padding-bottom: 2rem;
+}
+
+#members.section {
+  padding-top: 2rem;
+}
+
+/* ================= MEETING GRID ================= */
+
+.meeting-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.meeting-slot {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  background: #0d1f0d;
+  border: 1px solid #2a502a;
+}
+
+.meeting-slot h3 {
+  margin-bottom: 0.25rem;
+}
+
+/* ================= COMPETITION / SKILLS CARDS ================= */
+
+.competition-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.competition-card {
+  padding: 1.5rem;
+  border-radius: 10px;
+  background: #1a3a1a;
+  border: 1px solid #2a502a;
+}
+
+.competition-card .comp-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.competition-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #7ed957;
+}
+
+.competition-card p {
+  color: #c4dcc4;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.skills-list {
+  margin-top: 0.9rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+  color: #c4dcc4;
+}
+
+.skills-list li + li {
+  margin-top: 0.25rem;
+}
+
+/* ================= PLACEHOLDER NOTE ================= */
+
+.placeholder-note {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  background: #2a1f00;
+  border: 1px dashed #a08030;
+  color: #d4aa50;
+  font-size: 0.82rem;
+  font-family: monospace;
+}
+
+/* stack diagram placeholder */
+.stack-diagram-placeholder {
+  margin-top: 1.5rem;
+  width: 100%;
+  min-height: 220px;
+  border-radius: 8px;
+  background: #1e3d1e;
+  border: 2px dashed #3a6b3a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 3rem;
+}
+
+.stack-diagram-placeholder .emoji-label {
+  font-size: 0.8rem;
+  color: #6a9b6a;
+  font-family: monospace;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* ================= TEAM PAGE: FULL-WIDTH STRIPS ================= */
+
+.subteam-strips {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  min-height: 50vh;
+}
+
+.subteam-strip {
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.subteam-strip-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(4rem, 8vw, 7rem);
+  opacity: 0.3;
+}
+
+/* distinct colour per strip */
+.strip-mechanical  { background: #1a3a1a; }
+.strip-embedded    { background: #0f2d2a; }
+.strip-perception  { background: #1a2a3a; }
+.strip-simulations { background: #2a1a3a; }
+
+.subteam-strip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: background 0.2s ease;
+}
+
+.subteam-strip-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  min-height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-align: center;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+  padding: 2rem 1rem;
+}
+
+.subteam-strip-content .strip-icon {
+  font-size: 2.5rem;
+}
+
+.subteam-strip:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}
+
+.subteam-strip:hover::before {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* ================= SPONSORS PAGE ================= */
+
+.tier-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.tier-card {
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  background: #1a3a1a;
+  border: 1px solid #2a502a;
+}
+
+.tier-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.tier-tag {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.tier-gold .tier-tag    { background: #fdd835; color: #3a2800; }
+.tier-silver .tier-tag  { background: #cfd8e3; color: #1a2030; }
+.tier-bronze .tier-tag  { background: #ffb04c; color: #3a2002; }
+
+.metrics-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.metric-card {
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  background: #1a3a1a;
+  border: 1px solid #2a502a;
+  text-align: center;
+}
+
+.metric-number {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #7ed957;
+  margin-bottom: 0.25rem;
+}
+
+.metric-label {
+  font-size: 0.95rem;
+  color: #c4dcc4;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #1a3a1a;
+    flex-direction: column;
+    padding: 0.5rem 1.5rem 1rem;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .dropdown {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    padding-left: 0;
+    margin-top: 0.25rem;
+  }
+
+  .dropdown a {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .hero {
+    height: 65vh;
+    min-height: 420px;
+    text-align: left;
+  }
+
+  .hero.hero-home {
+    height: 75vh;
+    min-height: 480px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-buttons {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .section-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .subteam-strips {
+    grid-template-columns: 1fr 1fr;
+    min-height: 60vh;
+  }
+
+  .subteam-strip {
+    min-height: 30vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .subteam-strips {
+    grid-template-columns: 1fr;
+  }
+}
+Show more
+4:04 PM
+Claude responded: Good, I can see the full current CSS.
+
+Reading frontend design skill
+Reading frontend design skill
+Good, I can see the full current CSS. Now paste index.html too and I'll have everything I need to build the redesign.
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Slugbotics | SOMARS – Simulations</title>
+  <title>Slugbotics | SOMARS</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,10 +997,10 @@
       </div>
 
       <nav class="nav-links">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
 
         <div class="nav-item has-dropdown">
-          <a href="team.html" class="nav-link-with-dropdown active">Team</a>
+          <a href="team.html" class="nav-link-with-dropdown">Team</a>
           <div class="dropdown">
             <a href="mechanical.html">Mechanical</a>
             <a href="embedded.html">Embedded Systems</a>
@@ -29,7 +1010,7 @@
         </div>
 
         <a href="sponsors.html">Sponsors</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="#contact">Contact</a>
       </nav>
 
       <button class="nav-toggle" id="navToggle">☰</button>
@@ -37,161 +1018,715 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="hero-emoji-bg">🌐</div>
+  <section id="home" class="hero hero-home">
+    <div class="hero-emoji-bg">🚁</div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>Simulations</h1>
-      <p>Using Gazebo to visualize, validate, and simulate autonomous flight before real-world testing.</p>
+      <h1>Autonomous Drones at UCSC</h1>
+      <p>Designing, building, and flying autonomous aerial vehicles — pushing the frontier of drone technology on campus.</p>
+      <div class="hero-buttons">
+        <a href="team.html#join" class="btn btn-primary">Join the Team</a>
+        <a href="#competitions" class="btn btn-secondary">Our Competitions</a>
+      </div>
     </div>
+    <div class="scroll-indicator"><span>⌄</span></div>
   </section>
 
-  <!-- Who we are -->
+  <!-- About Us -->
   <section id="about" class="section-split">
     <div class="split-text">
-      <h2>Who We Are</h2>
+      <h2>About Us</h2>
       <p>
-        The Simulations subteam builds the virtual world where our autonomous
-        drone learns to fly. Using Gazebo, we create realistic 3D environments
-        that replicate competition arenas, terrain, and obstacles — allowing
-        the entire autonomy stack to be tested safely before any real flight.
+        SOMARS (Student Organization for Marine and Aerial Robotics Systems) is UC Santa Cruz's
+        autonomous drone team under Slugbotics. We design, build, and program
+        unmanned aerial vehicles (UAVs) capable of fully autonomous flight — no
+        remote pilot required.
       </p>
       <p>
-        Our work dramatically reduces the risk of crashes and dramatically
-        speeds up iteration: bugs in the control stack can be caught and fixed
-        in simulation at near-zero cost.
+        Our team brings together students from computer science, electrical engineering,
+        mechanical engineering, and beyond to tackle every layer of the drone stack,
+        from carbon fiber airframes to computer-vision-guided navigation.
       </p>
     </div>
     <div class="split-image">
       <div class="split-emoji">
-        🌐
-        <span class="emoji-label">[ Gazebo simulation screenshot — TO BE FINISHED LATER ]</span>
+        🚁
+        <span class="emoji-label">[ Team / drone photo — TO BE FINISHED LATER ]</span>
       </div>
     </div>
   </section>
 
-  <!-- What we work on -->
-  <section id="work" class="section alt">
-    <h2>What We Work On</h2>
-    <div class="card-grid" style="margin-top:1.25rem;">
-      <div class="info-card">
-        <h3>🏟️ Competition World Models</h3>
-        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
-          Building accurate Gazebo models of the SUAS and C-UASC competition
-          arenas — including waypoint fields, obstacle configurations, and
-          target placement zones — so the team can rehearse full mission runs.
-        </p>
-      </div>
-      <div class="info-card">
-        <h3>✈️ Drone Model &amp; Physics</h3>
-        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
-          Creating a high-fidelity URDF / SDF model of our physical drone with
-          accurate mass, inertia, motor thrust curves, and aerodynamic drag so
-          simulated behavior matches real flight.
-        </p>
-      </div>
-      <div class="info-card">
-        <h3>🔁 Hardware-in-the-Loop (HIL)</h3>
-        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
-          Setting up Software-in-the-Loop (SITL) and Hardware-in-the-Loop (HIL)
-          pipelines with ArduPilot / PX4 so the flight controller firmware runs
-          against the simulated plant in real time.
-        </p>
-        <span class="placeholder-note">TO BE FINISHED LATER — detail current SITL setup</span>
-      </div>
-      <div class="info-card">
-        <h3>📐 Flight Path Validation</h3>
-        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
-          Validating planned flight paths and waypoint sequences in simulation
-          before they are uploaded to the real vehicle, checking for obstacle
-          conflicts and mission timing.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Simulation environment -->
-  <section id="environment" class="section">
-    <h2>Simulation Environment</h2>
-    <p>Our primary simulation stack:</p>
-    <ul class="skills-list" style="margin-top:0.75rem;">
-      <li><strong>Simulator:</strong> Gazebo (Harmonic / Classic)</li>
-      <li><strong>Middleware:</strong> ROS 2</li>
-      <li><strong>Flight stack integration:</strong> ArduPilot SITL / PX4 SITL via MAVROS</li>
-      <li><strong>Visualization:</strong> RViz 2, Gazebo GUI</li>
-      <li><strong>Drone model format:</strong> SDF / URDF</li>
-      <li><strong>Operating system:</strong> Ubuntu 22.04</li>
-    </ul>
-    <span class="placeholder-note" style="margin-top:1rem; display:block;">TO BE FINISHED LATER — add links to sim repo and setup instructions</span>
-
-    <div class="stack-diagram-placeholder" style="margin-top:1.5rem;">
-      🗺️
-      <span class="emoji-label">[ Gazebo world screenshot or simulation diagram — TO BE FINISHED LATER ]</span>
-    </div>
-  </section>
-
-  <!-- Leads -->
-  <section id="leads" class="section alt">
-    <h2>Leads</h2>
-    <div class="member-grid leads-grid">
-      <div class="member-card lead-card">
-        <div class="member-avatar-emoji">🌐</div>
-        <h3 class="placeholder-note" style="display:block; margin:0 auto 0.25rem;">TO BE FINISHED LATER</h3>
-        <p class="member-major">Major</p>
-        <p class="member-role">Year · Simulations Lead</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Members -->
-  <section id="members" class="section">
-    <h2>Meet the Simulations Team</h2>
-    <p><span class="placeholder-note">TO BE FINISHED LATER — add team member cards</span></p>
-    <div class="member-grid" style="margin-top:1.25rem;">
-      <div class="member-card">
-        <div class="member-avatar-emoji">👤</div>
-        <h3>Member Name</h3>
-        <p class="member-major">Computer Science</p>
-        <p class="member-role">Focus: World modeling</p>
-      </div>
-      <div class="member-card">
-        <div class="member-avatar-emoji">👤</div>
-        <h3>Member Name</h3>
-        <p class="member-major">Computer Engineering</p>
-        <p class="member-role">Focus: SITL / HIL</p>
-      </div>
-      <div class="member-card">
-        <div class="member-avatar-emoji">👤</div>
-        <h3>Member Name</h3>
-        <p class="member-major">Any major</p>
-        <p class="member-role">Focus: Flight path testing</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Meetings -->
-  <section id="meetings" class="section alt">
-    <h2>Meeting Times</h2>
-    <div class="info-card wide">
-      <p>Simulations meets for world building, SITL testing, and integration with the autonomy stack.</p>
-      <div class="meeting-grid">
-        <div class="meeting-slot">
-          <h3>Sim Dev Session</h3>
-          <p><span class="placeholder-note">TO BE FINISHED LATER</span></p>
-          <p class="card-meta">Location: SlugWorks / Remote</p>
-        </div>
-        <div class="meeting-slot">
-          <h3>Integration Testing</h3>
-          <p><span class="placeholder-note">TO BE FINISHED LATER</span></p>
-          <p class="card-meta">Location: SlugWorks BE-49</p>
-        </div>
-      </div>
-      <p class="card-meta" style="margin-top:0.75rem;">
-        Familiarity with Linux is helpful but not required — we'll get you set up.
+  <!-- Competitions -->
+  <section id="competitions" class="section-alt-bleed">
+    <div class="section-inner">
+      <h2>Our Competitions</h2>
+      <p>
+        SOMARS competes in two major student UAV competitions that challenge us
+        to build fully autonomous aerial systems capable of real-world mission tasks.
       </p>
+
+      <div class="competition-grid" style="margin-top:1.5rem;">
+
+        <div class="competition-card">
+          <div class="comp-emoji">🏆</div>
+          <h3>C-UASC</h3>
+          <p>
+            The Collegiate Unmanned Aircraft Systems Competition (C-UASC) tests
+            student teams on autonomous fixed-wing and multi-rotor flight operations,
+            including waypoint navigation, payload drop, and autonomous landing.
+            Teams are scored on mission completion, technical reports, and oral
+            presentations.
+          </p>
+          <span class="placeholder-note">TO BE FINISHED LATER — add specific mission details, dates, location</span>
+        </div>
+
+        <div class="competition-card">
+          <div class="comp-emoji">🛸</div>
+          <h3>SUAS</h3>
+          <p>
+            The Student Unmanned Aerial Systems (SUAS) Competition, hosted by
+            the Association for Unmanned Vehicle Systems International (AUVSI),
+            is one of the most prestigious student UAV competitions. Teams must
+            complete an autonomous search-and-rescue-style mission including
+            obstacle avoidance, target identification, and payload delivery.
+          </p>
+          <span class="placeholder-note">TO BE FINISHED LATER — add specific mission details, dates, location</span>
+        </div>
+
+      </div>
     </div>
+  </section>
+
+  <!-- What makes us different -->
+  <section id="approach" class="section-split">
+    <div class="split-text">
+      <h2>Our Approach</h2>
+      <p>
+        Everything we build aims to be fully autonomous — the drone plans its own
+        path, avoids obstacles, detects targets with computer vision, and makes
+        decisions without human intervention in the loop.
+      </p>
+      <p>
+        We believe in a strong simulation-first development cycle: algorithms are
+        tested in Gazebo before ever flying on real hardware, dramatically reducing
+        the risk of crashes and accelerating iteration speed.
+      </p>
+      <ul>
+        <li>Autonomous navigation & waypoint planning</li>
+        <li>Real-time computer vision & target detection</li>
+        <li>Simulation-first development with Gazebo</li>
+        <li>Custom embedded systems and flight controllers</li>
+      </ul>
+    </div>
+    <div class="split-image">
+      <div class="split-emoji">
+        🛰️
+        <span class="emoji-label">[ Drone in flight photo — TO BE FINISHED LATER ]</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subteams snapshot -->
+  <section id="subteams-snapshot" class="section alt">
+    <h2>Our Subteams</h2>
+    <p>
+      SOMARS is organized into four specialized subteams, each owning a core
+      part of the autonomous drone system. <a href="team.html" style="color:#7ed957;">Learn more →</a>
+    </p>
+
+    <div class="card-grid" style="margin-top:1.5rem;">
+      <a href="mechanical.html" class="info-card" style="text-decoration:none; color:inherit;">
+        <h3>⚙️ Mechanical</h3>
+        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
+          Designing and manufacturing the drone airframe, chassis, and payload systems.
+        </p>
+      </a>
+
+      <a href="embedded.html" class="info-card" style="text-decoration:none; color:inherit;">
+        <h3>🔌 Embedded Systems</h3>
+        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
+          Hardware integration, firmware, flight controllers, and autonomous controls software.
+        </p>
+      </a>
+
+      <a href="perception.html" class="info-card" style="text-decoration:none; color:inherit;">
+        <h3>👁️ Perception</h3>
+        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
+          Computer vision pipelines for autonomous navigation and object detection.
+        </p>
+      </a>
+
+      <a href="simulations.html" class="info-card" style="text-decoration:none; color:inherit;">
+        <h3>🌐 Simulations</h3>
+        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
+          Gazebo-based simulation of flight paths and autonomous behaviors before real-world testing.
+        </p>
+      </a>
+    </div>
+  </section>
+
+  <!-- 2025/2026 Season -->
+  <section id="season" class="section-split alt">
+    <div class="split-image">
+      <div class="split-emoji">
+        🗓️
+        <span class="emoji-label">[ 2025–2026 season photo — TO BE FINISHED LATER ]</span>
+      </div>
+    </div>
+    <div class="split-text">
+      <h2>2025–2026 Season</h2>
+      <p>
+        This is our current active season. We are working toward our first
+        competition entries at C-UASC and SUAS, building out our autonomous
+        flight platform from the ground up.
+      </p>
+      <p>
+        Milestones include finalizing the drone airframe, integrating our
+        autonomous flight stack, and running full end-to-end simulations
+        before initial flight tests.
+      </p>
+      <span class="placeholder-note">TO BE FINISHED LATER — fill in season details, milestones, competition dates</span>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Interested in joining or learning more? Reach out!</p>
+    <p style="margin-top:0.75rem;"><strong>Email:</strong> <span class="placeholder-note">TO BE FINISHED LATER — add email</span></p>
+    <p style="margin-top:0.5rem;"><strong>Discord:</strong> <span class="placeholder-note">TO BE FINISHED LATER — add Discord link</span></p>
+    <p style="margin-top:0.5rem;"><strong>SlugWorks Canvas:</strong> <span class="placeholder-note">TO BE FINISHED LATER — add Canvas link</span></p>
   </section>
 
   <script src="script.js"></script>
 </body>
 </html>
+Show more
+4:05 PM
+Claude responded: Perfect, I have everything.
+Perfect, I have everything. Let me build the redesign now.
+
+
+Created 2 files, ran a command, read a file
+Created 2 files, ran a command, read a file
+Here's what changed in the redesign:
+
+Visual overhaul:
+
+New font pairing — Syne (bold display) + DM Mono (labels/tags) instead of system-ui
+Subtle grid overlay background for a technical/engineering feel
+Staggered fade-in animations on hero load
+Much cleaner dark theme with proper CSS token variables throughout
+Structure improvements:
+
+Numbered section labels (01 — About, 02 — Competitions, etc.) for visual hierarchy
+Hero now has a stats bar (4 subteams, 2 competitions, 100% autonomous)
+"Join Us" CTA directly in the navbar
+Competition cards with tag pills instead of raw placeholder text
+Season section has a milestone tracker with a glowing active dot
+Subteams are now a clean stacked list with hover arrows instead of plain cards
+Proper footer
+Things still placeholdered (waiting on your info): contact email/Discord/SlugWorks, competition dates/locations, season milestone status, photos.
+
+Drop these two files into your repo replacing the existing ones, then fill in the placeholder content. Want me to do the other pages (team.html, subteam pages, etc.) in the same style next?
+
+
+Index
+Code · HTML 
+
+Style
+Code · CSS 
+You said: it looks really bad
+it looks really bad
+
+4:09 PM
+Claude responded: Fair enough!
+Fair enough! Can you be more specific about what's not working? For example:
+
+The colors / overall dark theme
+The typography (fonts feel off)
+The layout / spacing feels wrong
+It looks too different from the original
+Specific sections that look bad
+Also, if you can open it in a browser and screenshot what you're seeing, that would help a lot — sometimes the Google Fonts don't load in the preview but do in a real browser.
+
+You said: stuff like this doesn't look very good
+Screenshot 2026-04-26 at 4.10.06 PM.png
+stuff like this doesn't look very good
+
+4:10 PM
+Claude responded: Yeah I see it — the CSS isn't loading at all, so it's rendering as unstyled HTML.
+Yeah I see it — the CSS isn't loading at all, so it's rendering as unstyled HTML. The fonts, layout, spacing, cards, everything is missing.
+
+This is almost certainly a path issue. The index.html is linking to style.css but when you open the downloaded file directly, it can't find it.
+
+Two questions:
+
+Did you copy both files into your repo folder, or just index.html?
+Are you viewing it by opening the file directly in a browser (file://), or through a local server?
+If you're just double-clicking the HTML file to open it, try this instead — in VS Code terminal, from your repo folder:
+
+bash
+# if you have Python installed (you almost certainly do on Mac)
+python3 -m http.server 8080
+Then open http://localhost:8080 in your browser. That'll serve it properly and the CSS will load correctly.
+
+You said: vs code has a go live feature where i can see changes
+vs code has a go live feature where i can see changes
+
+4:10 PM
+Claude responded: Perfect, use that then.
+Perfect, use that then. Go Live should serve it correctly.
+
+Make sure both index.html and style.css are in the same folder in your repo, then hit Go Live and it should look completely different from that screenshot. Let me know what it actually looks like once the CSS loads.
+
+You said: can we just redo the home page from scratch
+can we just redo the home page from scratch
+
+4:11 PM
+Claude responded: Yeah let's do it.
+Yeah let's do it. What didn't you like about the direction I took? So I don't repeat the same mistakes:
+
+Too dark / heavy feeling?
+The layout (grid, splitting sections, etc.)?
+The fonts / typography?
+Just looked too different from what you had?
+And what do you actually want it to feel like — give me a reference if you have one. Could be another club site, any website you think looks clean, or just describe it.
+
+You said: a lot of it wasn't very good just wanna start from scratch
+a lot of it wasn't very good just wanna start from scratch
+
+4:12 PM
+Claude responded: Got it, blank slate.
+Got it, blank slate. Give me a reference — what's a website you think looks clean and good? Could be anything, doesn't have to be a club site.
+
+You said: take a look at apple's homepage
+take a look at apple's homepage
+
+4:12 PM
+Claude responded: Good reference.
+
+Failed to fetch: https://www.apple.com
+Failed to fetch: https://www.apple.com
+10 Examples of the Best Website Homepages in 2025
+
+neefox.com
+The Apple Website: A Comprehensive Overview – peerdh.com
+
+peerdh.com
+Apple Store 🖥- ReDesign Website Concept | Apple web, Website design ...
+
+pinterest.com
+Results from the web
+Good reference. Apple's homepage is known for:
+
+Full-bleed hero sections — one product, centered, minimal text, massive visual
+Black or white backgrounds — very high contrast, nothing in between
+Tight, centered typography — big bold headline, short subhead, two small CTA links below
+Lots of breathing room — generous padding, nothing cluttered
+Section-per-topic — each scroll section is its own world, clean dividers
+System font (SF Pro) — we can approximate with -apple-system or use something similar
+So for SOMARS that would translate to something like:
+
+Full-viewport hero, dark background, centered headline, minimal text
+One section per topic that fills the screen as you scroll
+Big photography/placeholder blocks as the visual anchor
+Very little decorative UI — no tags, no badges, no mono labels everywhere
+Before I build — dark theme (like current) or light theme, or alternating black/white sections like Apple does?
+
+You said: a color scheme like this
+
+IMG_4835.HEIC
+HEIC
+
+a color scheme like this
+
+4:16 PM
+Claude responded: I can't read HEIC files directly — can you export it as a PNG or JPEG and re-upload?
+I can't read HEIC files directly — can you export it as a PNG or JPEG and re-upload? Or just describe the colors you're going for (background, accent, text).
+
+IMG_4835.pdf
+pdf
+
+4:16 PM
+Claude responded: That's a great reference — dark charcoal/near-black background with cyan/teal as the accent.
+That's a great reference — dark charcoal/near-black background with cyan/teal as the accent. Very fitting for a drone team too. The vibe is technical, clean, a little futuristic.
+
+So the palette I'll work with:
+
+Background: 
+#0f1412 (dark charcoal-green-black)
+Accent: 
+#4dd9c0 (cyan-teal)
+Text: 
+#e8f0ee (off-white)
+Subtle text: 
+#7a9e96
+Apple-style layout + this color scheme. Building it now.
+
+
+Ran 4 commands, created 3 files, read a file
+Ran 4 commands, created 3 files, read a file
+Here's what this version does:
+
+Colors: Dark charcoal 
+#0f1412 background, cyan-teal 
+#4dd9c0 accent — pulled straight from that shirt image
+Apple-style layout: Centered max-width content, big sparse typography, minimal decoration, generous whitespace between sections
+Hero: Large bold headline left-aligned, animated drone icon with pulsing rings on the right
+Everything else follows the same clean pattern — eyebrow label → big heading → body text → content block
+Drop both files into your repo folder (replacing the old ones), hit Go Live, and let me know what you think. Screenshot it if anything looks off.
+
+
+Index
+Code · HTML 
+
+Style
+Code · CSS 
+You said: can you do it for all of them
+
+embedded.html
+211 lines
+
+html
+
+
+index.html
+223 lines
+
+html
+
+
+mechanical.html
+201 lines
+
+html
+
+
+perception.html
+200 lines
+
+html
+
+
+README.md
+4 lines
+
+md
+
+
+script.js
+10 lines
+
+js
+
+
+simulations.html
+198 lines
+
+html
+
+
+sponsors.html
+156 lines
+
+html
+
+
+style.css
+835 lines
+
+css
+
+
+team.html
+191 lines
+
+html
+
+can you do it for all of them
+
+4:23 PM
+Claude responded: Got it — I'll rebuild all pages with the new style.
+Got it — I'll rebuild all pages with the new style. The new index.html and style.css are the foundation, and I'll update every other page's navbar, hero, and sections to match. Let me build them all.
+
+
+Ran a command, created a file
+Ran a command, created a file
+Now the shared navbar snippet I'll use across all pages:
+
+
+Created 6 files
+Created 6 files
+Now add the new CSS classes all these pages need to style.css:
+
+
+Ran a command, read a file
+Ran a command, read a file
+All 9 files are ready. Here's what to do:
+
+Drop all of these into your repo folder, replacing the old files. The only file you already had that doesn't need replacing is README.md.
+
+Your repo should now have:
+
+index.html
+style.css
+script.js
+team.html
+mechanical.html
+embedded.html
+perception.html
+simulations.html
+sponsors.html
+README.md
+Hit Go Live and everything should be consistent — same navbar, same teal/dark color scheme, same typography across every page. Let me know how it looks!
+
+
+Index
+Code · HTML 
+
+Style
+Code · CSS 
+
+Script
+JS 
+
+Team
+Code · HTML 
+
+Mechanical
+Code · HTML 
+
+Embedded
+Code · HTML 
+
+Perception
+Code · HTML 
+
+Simulations
+Code · HTML 
+
+Sponsors
+Code · HTML 
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+Simulations · HTML
+Copy
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOMARS — Simulations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">SOMARS</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <div class="nav-item has-dropdown">
+          <a href="team.html" class="nav-link-with-dropdown active">Team</a>
+          <div class="dropdown">
+            <a href="mechanical.html">Mechanical</a>
+            <a href="embedded.html">Embedded Systems</a>
+            <a href="perception.html">Perception</a>
+            <a href="simulations.html">Simulations</a>
+          </div>
+        </div>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="team.html#join" class="nav-join">Join Us</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+ 
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="hero-eyebrow">Subteam · 04</p>
+      <h1>Simulations.</h1>
+      <p class="hero-desc">Using Gazebo to visualize, validate, and simulate autonomous flight before real-world testing.</p>
+    </div>
+  </section>
+ 
+  <!-- Who we are -->
+  <section class="full-section">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">About</p>
+      <h2>The virtual world<br>before the real one.</h2>
+      <p class="section-body">The Simulations subteam builds the virtual environment where our autonomous drone learns to fly. Using Gazebo, we create realistic 3D environments that replicate competition arenas, terrain, and obstacles.</p>
+      <p class="section-body">Bugs in the control stack can be caught and fixed in simulation at near-zero cost — dramatically reducing crash risk and accelerating iteration speed across the whole team.</p>
+      <div class="image-block">
+        <div class="img-placeholder">
+          <span>🌐</span>
+          <span class="img-label">Gazebo simulation screenshot</span>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- What we work on -->
+  <section class="full-section full-section-alt">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Focus Areas</p>
+      <h2>What we work on.</h2>
+      <div class="work-grid">
+        <div class="work-card">
+          <h4>Competition World Models</h4>
+          <p>Building accurate Gazebo models of SUAS and C-UASC arenas — waypoint fields, obstacle configurations, and target zones — for full mission rehearsal.</p>
+        </div>
+        <div class="work-card">
+          <h4>Drone Model &amp; Physics</h4>
+          <p>Creating a high-fidelity URDF / SDF model of our physical drone with accurate mass, inertia, motor thrust curves, and aerodynamic drag.</p>
+        </div>
+        <div class="work-card">
+          <h4>Hardware-in-the-Loop (HIL)</h4>
+          <p>Setting up SITL and HIL pipelines with ArduPilot / PX4 so flight controller firmware runs against the simulated plant in real time.</p>
+        </div>
+        <div class="work-card">
+          <h4>Flight Path Validation</h4>
+          <p>Validating planned flight paths and waypoint sequences in simulation before upload to the real vehicle, checking for obstacle conflicts and timing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Sim environment -->
+  <section class="full-section">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Environment</p>
+      <h2>Our simulation stack.</h2>
+      <div class="stack-layers">
+        <div class="stack-layer">
+          <span class="stack-label">Simulator</span>
+          <span class="stack-desc">Gazebo (Harmonic / Classic)</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Middleware</span>
+          <span class="stack-desc">ROS 2</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Flight Stack Integration</span>
+          <span class="stack-desc">ArduPilot SITL / PX4 SITL via MAVROS</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Visualization</span>
+          <span class="stack-desc">RViz 2, Gazebo GUI</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Drone Model Format</span>
+          <span class="stack-desc">SDF / URDF</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Operating System</span>
+          <span class="stack-desc">Ubuntu 22.04</span>
+        </div>
+      </div>
+      <div class="image-block">
+        <div class="img-placeholder">
+          <span>🗺️</span>
+          <span class="img-label">Gazebo world screenshot</span>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Team -->
+  <section class="full-section full-section-alt">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">People</p>
+      <h2>Meet the team.</h2>
+      <div class="member-grid">
+        <div class="member-card">
+          <div class="member-avatar">🌐</div>
+          <h4 class="tbd-note">Lead TBD</h4>
+          <p class="member-role">Simulations Lead</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Computer Science</p>
+          <p class="member-role">World modeling</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Computer Engineering</p>
+          <p class="member-role">SITL / HIL</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Any major</p>
+          <p class="member-role">Flight path testing</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Meetings -->
+  <section class="full-section">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Meetings</p>
+      <h2>When we meet.</h2>
+      <div class="meeting-cards">
+        <div class="meeting-card">
+          <h4>Sim Dev Session</h4>
+          <p class="tbd-note">Time TBD</p>
+          <p class="meeting-loc">SlugWorks / Remote</p>
+        </div>
+        <div class="meeting-card">
+          <h4>Integration Testing</h4>
+          <p class="tbd-note">Time TBD</p>
+          <p class="meeting-loc">SlugWorks BE-49</p>
+        </div>
+      </div>
+      <p class="meeting-note">Familiarity with Linux is helpful but not required — we'll get you set up.</p>
+    </div>
+  </section>
+ 
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>SOMARS · Slugbotics · UC Santa Cruz</span>
+      <span>Student Organization for Marine and Aerial Robotics Systems</span>
+    </div>
+  </footer>
+ 
+  <script src="script.js"></script>
+</body>
+</html>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

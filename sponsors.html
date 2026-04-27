@@ -2,22 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Slugbotics | SOMARS – Sponsors</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOMARS — Sponsors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Navbar -->
   <header class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <span class="slug-icon">🚁</span>
-        <span class="nav-title">Slugbotics | SOMARS</span>
-      </div>
-
-      <nav class="nav-links">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">SOMARS</a>
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
-
         <div class="nav-item has-dropdown">
           <a href="team.html" class="nav-link-with-dropdown">Team</a>
           <div class="dropdown">
@@ -27,128 +25,123 @@
             <a href="simulations.html">Simulations</a>
           </div>
         </div>
-
         <a href="sponsors.html" class="active">Sponsors</a>
         <a href="index.html#contact">Contact</a>
+        <a href="team.html#join" class="nav-join">Join Us</a>
       </nav>
-
-      <button class="nav-toggle" id="navToggle">☰</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- Page Header -->
-  <header class="page-header">
-    <div class="page-header-inner">
-      <h1>Sponsorship</h1>
-      <p>
-        SOMARS is made possible through the generous support of our sponsors.
-        Help us build the next generation of autonomous drones at UCSC.
-      </p>
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="hero-eyebrow">UC Santa Cruz · Slugbotics</p>
+      <h1>Sponsorship.</h1>
+      <p class="hero-desc">Help us build the next generation of autonomous drones at UCSC.</p>
     </div>
-  </header>
+  </section>
 
-  <!-- Why sponsor us -->
-  <section class="section">
-    <h2>Why Sponsor SOMARS?</h2>
-    <p>
-      Your support directly funds competition entry fees, drone hardware,
-      electronics components, manufacturing materials, and travel to
-      national competitions like SUAS and C-UASC.
-    </p>
-    <p style="margin-top:0.75rem;">
-      In return, sponsors gain visibility with a technically talented student
-      audience, recognition at competitions, and the opportunity to connect
-      with students entering the workforce in aerospace, robotics, and
-      software engineering.
-    </p>
-
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <div class="metric-number">4</div>
-        <div class="metric-label">Specialized Subteams</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-number">2</div>
-        <div class="metric-label">Target Competitions</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-number">🏫</div>
-        <div class="metric-label">UC Santa Cruz</div>
+  <!-- Why sponsor -->
+  <section class="full-section">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Why Sponsor</p>
+      <h2>Invest in the<br>next generation.</h2>
+      <p class="section-body">Your support directly funds competition entry fees, drone hardware, electronics, manufacturing materials, and travel to national competitions like SUAS and C-UASC.</p>
+      <p class="section-body">In return, sponsors gain visibility with a technically talented student audience, recognition at competitions, and the opportunity to connect with students entering aerospace, robotics, and software engineering.</p>
+      <div class="stats-row">
+        <div class="stat-item">
+          <span class="stat-big">4</span>
+          <span class="stat-label">Specialized Subteams</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-big">2</span>
+          <span class="stat-label">Target Competitions</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-big">UCSC</span>
+          <span class="stat-label">UC Santa Cruz</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Sponsorship tiers -->
-  <section class="section alt">
-    <h2>Sponsorship Levels</h2>
-    <p>
-      We offer several sponsorship tiers with increasing visibility and
-      engagement opportunities. All discussions are flexible — reach out
-      to talk about what works best for your organization.
-    </p>
-
-    <div class="tier-grid">
-      <div class="tier-card tier-gold">
-        <span class="tier-tag">Gold</span>
-        <h3>Gold Sponsor</h3>
-        <p style="color:#c4dcc4;">
-          <span class="placeholder-note">TO BE FINISHED LATER — add Gold tier benefits and contribution level</span>
-        </p>
-      </div>
-
-      <div class="tier-card tier-silver">
-        <span class="tier-tag">Silver</span>
-        <h3>Silver Sponsor</h3>
-        <p style="color:#c4dcc4;">
-          <span class="placeholder-note">TO BE FINISHED LATER — add Silver tier benefits and contribution level</span>
-        </p>
-      </div>
-
-      <div class="tier-card tier-bronze">
-        <span class="tier-tag">Bronze</span>
-        <h3>Bronze Sponsor</h3>
-        <p style="color:#c4dcc4;">
-          <span class="placeholder-note">TO BE FINISHED LATER — add Bronze tier benefits and contribution level</span>
-        </p>
+  <!-- Tiers -->
+  <section class="full-section full-section-alt">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Sponsorship Tiers</p>
+      <h2>Find your level.</h2>
+      <p class="section-body">We offer several tiers with increasing visibility and engagement. All discussions are flexible — reach out to find what works best for your organization.</p>
+      <div class="tier-cards">
+        <div class="tier-card tier-gold">
+          <span class="tier-badge">Gold</span>
+          <h4>Gold Sponsor</h4>
+          <p class="tbd-note">Benefits and contribution level TBD</p>
+        </div>
+        <div class="tier-card tier-silver">
+          <span class="tier-badge">Silver</span>
+          <h4>Silver Sponsor</h4>
+          <p class="tbd-note">Benefits and contribution level TBD</p>
+        </div>
+        <div class="tier-card tier-bronze">
+          <span class="tier-badge">Bronze</span>
+          <h4>Bronze Sponsor</h4>
+          <p class="tbd-note">Benefits and contribution level TBD</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- In-kind donations -->
-  <section class="section">
-    <h2>In-Kind Donations</h2>
-    <p>
-      We also welcome in-kind donations of hardware, components, software
-      licenses, or services. If your company produces electronics, sensors,
-      carbon fiber materials, machining services, or engineering software,
-      we'd love to hear from you.
-    </p>
-    <span class="placeholder-note" style="margin-top:1rem; display:block;">TO BE FINISHED LATER — list specific in-kind needs for the current season</span>
+  <!-- In-kind -->
+  <section class="full-section">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">In-Kind</p>
+      <h2>Hardware &amp; services.</h2>
+      <p class="section-body">We also welcome in-kind donations of hardware, components, software licenses, or services. If your company produces electronics, sensors, carbon fiber materials, machining services, or engineering software, we'd love to hear from you.</p>
+      <p class="tbd-note" style="margin-top: 1.5rem; display: block;">Specific in-kind needs for this season coming soon.</p>
+    </div>
   </section>
 
   <!-- Current sponsors -->
-  <section class="section alt">
-    <h2>Current Sponsors</h2>
-    <p>
-      Thank you to everyone who has supported SOMARS so far.
-    </p>
-    <div class="card-grid" style="margin-top:1.25rem;">
-      <div class="info-card" style="text-align:center; min-height:100px; display:flex; align-items:center; justify-content:center;">
-        <span class="placeholder-note">TO BE FINISHED LATER — add sponsor logos / names</span>
+  <section class="full-section full-section-alt">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Current Sponsors</p>
+      <h2>Our supporters.</h2>
+      <p class="section-body">Thank you to everyone who has supported SOMARS so far.</p>
+      <div class="sponsor-logo-grid">
+        <div class="sponsor-logo-placeholder">
+          <span class="tbd-note">Sponsor logos coming soon</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact for sponsorship -->
-  <section class="section">
-    <h2>Get in Touch</h2>
-    <p>
-      Interested in sponsoring SOMARS? We'd love to connect. Reach out via
-      the contact information below and we'll get back to you quickly.
-    </p>
-    <p style="margin-top:0.75rem;"><strong>Email:</strong> <span class="placeholder-note">TO BE FINISHED LATER — add email</span></p>
-    <p style="margin-top:0.5rem;"><strong>Sponsorship Deck:</strong> <span class="placeholder-note">TO BE FINISHED LATER — add link to PDF</span></p>
+  <!-- Contact -->
+  <section class="full-section">
+    <div class="full-section-inner contact-inner">
+      <p class="section-eyebrow">Get in Touch</p>
+      <h2>Let's talk.</h2>
+      <p class="section-body">Interested in sponsoring SOMARS? Reach out and we'll get back to you quickly.</p>
+      <div class="contact-links" style="margin-top: 2rem;">
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-val tbd-note">Coming soon</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Sponsorship Deck</span>
+          <span class="contact-val tbd-note">Coming soon</span>
+        </div>
+      </div>
+    </div>
   </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>SOMARS · Slugbotics · UC Santa Cruz</span>
+      <span>Student Organization for Marine and Aerial Robotics Systems</span>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

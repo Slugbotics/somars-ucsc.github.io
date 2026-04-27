@@ -2,22 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Slugbotics | SOMARS – Embedded Systems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOMARS — Embedded Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Navbar -->
   <header class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <span class="slug-icon">🚁</span>
-        <span class="nav-title">Slugbotics | SOMARS</span>
-      </div>
-
-      <nav class="nav-links">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">SOMARS</a>
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
-
         <div class="nav-item has-dropdown">
           <a href="team.html" class="nav-link-with-dropdown active">Team</a>
           <div class="dropdown">
@@ -27,183 +25,165 @@
             <a href="simulations.html">Simulations</a>
           </div>
         </div>
-
         <a href="sponsors.html">Sponsors</a>
         <a href="index.html#contact">Contact</a>
+        <a href="team.html#join" class="nav-join">Join Us</a>
       </nav>
-
-      <button class="nav-toggle" id="navToggle">☰</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-emoji-bg">🔌</div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Embedded Systems</h1>
-      <p>Hardware, firmware, and autonomous control — the brain and nervous system of the drone.</p>
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="hero-eyebrow">Subteam · 02</p>
+      <h1>Embedded Systems.</h1>
+      <p class="hero-desc">Hardware, firmware, and autonomous control — the brain and nervous system of the drone.</p>
     </div>
   </section>
 
   <!-- Who we are -->
-  <section id="about" class="section-split">
-    <div class="split-text">
-      <h2>Who We Are</h2>
-      <p>
-        The Embedded Systems subteam sits at the intersection of hardware and
-        software. We design and integrate the electronics that make the drone
-        tick — flight controllers, companion computers, sensors, power systems,
-        and communication links.
-      </p>
-      <p>
-        We also develop the autonomous control algorithms that allow the drone
-        to navigate, stabilize, and execute competition missions without a
-        human pilot in the loop.
-      </p>
-    </div>
-    <div class="split-image">
-      <div class="split-emoji">
-        🖥️
-        <span class="emoji-label">[ Electronics / hardware bench photo — TO BE FINISHED LATER ]</span>
+  <section class="full-section">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">About</p>
+      <h2>Where hardware<br>meets software.</h2>
+      <p class="section-body">The Embedded Systems subteam sits at the intersection of hardware and software. We design and integrate the electronics that make the drone tick — flight controllers, companion computers, sensors, power systems, and communication links.</p>
+      <p class="section-body">We also develop the autonomous control algorithms that allow the drone to navigate, stabilize, and execute competition missions without a human pilot in the loop.</p>
+      <div class="image-block">
+        <div class="img-placeholder">
+          <span>🖥️</span>
+          <span class="img-label">Electronics / hardware bench photo</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- What we work on -->
-  <section id="work" class="section alt">
-    <h2>What We Work On</h2>
-    <div class="card-grid" style="margin-top:1.25rem;">
-      <div class="info-card">
-        <h3>🎛️ Flight Controller Integration</h3>
-        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
-          Configuring and tuning the flight controller (e.g., Pixhawk / ArduPilot / PX4)
-          that handles low-level stabilization, motor mixing, and attitude control.
-        </p>
-      </div>
-      <div class="info-card">
-        <h3>🧠 Companion Computer</h3>
-        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
-          Integrating an onboard companion computer (e.g., Raspberry Pi / Jetson) that
-          runs high-level autonomy, communicates with the flight controller via MAVLink,
-          and interfaces with perception outputs.
-        </p>
-      </div>
-      <div class="info-card">
-        <h3>📡 Sensors &amp; Communication</h3>
-        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
-          Integrating GPS, IMU, rangefinders, telemetry radios, and camera interfaces
-          to give the drone a rich picture of its environment and enable ground-station
-          communication.
-        </p>
-      </div>
-      <div class="info-card">
-        <h3>🔋 Power Systems</h3>
-        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
-          Designing battery selection, power distribution boards, and ESC wiring to
-          ensure safe, efficient power delivery to motors and electronics under
-          competition loads.
-        </p>
-      </div>
-      <div class="info-card">
-        <h3>🤖 Autonomous Controls</h3>
-        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
-          Developing the control loops, state machines, and mission planners that
-          allow the drone to autonomously navigate waypoints, avoid obstacles,
-          and execute mission tasks.
-        </p>
-      </div>
-    </div>
-    <span class="placeholder-note" style="margin-top:1rem; display:block;">TO BE FINISHED LATER — add specific hardware components and versions used</span>
-  </section>
-
-  <!-- Software Stack -->
-  <section id="stack" class="section">
-    <h2>Software Stack</h2>
-    <p>
-      Our autonomy software stack is built on ROS 2 and interfaces with the
-      flight controller via MAVLink / MAVROS. Below is a high-level diagram
-      of the stack architecture.
-    </p>
-
-    <div class="stack-diagram-placeholder">
-      📊
-      <span class="emoji-label">[ Software stack architecture drawing — TO BE FINISHED LATER ]</span>
-    </div>
-
-    <p style="margin-top:1.25rem; color:#c4dcc4;">Key layers of the stack include:</p>
-    <ul class="skills-list" style="margin-top:0.5rem;">
-      <li><strong>Hardware Abstraction:</strong> MAVLink / MAVROS bridge between companion computer and flight controller</li>
-      <li><strong>State Estimation:</strong> EKF-based pose estimation fusing GPS, IMU, and barometer</li>
-      <li><strong>Mission Planning:</strong> Waypoint sequencing and dynamic replanning</li>
-      <li><strong>Obstacle Avoidance:</strong> <span class="placeholder-note">TO BE FINISHED LATER</span></li>
-      <li><strong>Perception Interface:</strong> Subscribes to target detections from the Perception subteam</li>
-      <li><strong>Ground Control:</strong> MAVProxy / QGroundControl for telemetry and monitoring</li>
-    </ul>
-    <span class="placeholder-note" style="margin-top:1rem; display:block;">TO BE FINISHED LATER — fill in full stack details and component versions</span>
-  </section>
-
-  <!-- Leads -->
-  <section id="leads" class="section alt">
-    <h2>Leads</h2>
-    <div class="member-grid leads-grid">
-      <div class="member-card lead-card">
-        <div class="member-avatar-emoji">🔌</div>
-        <h3 class="placeholder-note" style="display:block; margin:0 auto 0.25rem;">TO BE FINISHED LATER</h3>
-        <p class="member-major">Major</p>
-        <p class="member-role">Year · Embedded Systems Lead</p>
+  <section class="full-section full-section-alt">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Focus Areas</p>
+      <h2>What we work on.</h2>
+      <div class="work-grid">
+        <div class="work-card">
+          <h4>Flight Controller Integration</h4>
+          <p>Configuring and tuning the flight controller (Pixhawk / ArduPilot / PX4) for low-level stabilization, motor mixing, and attitude control.</p>
+        </div>
+        <div class="work-card">
+          <h4>Companion Computer</h4>
+          <p>Integrating an onboard companion computer (Raspberry Pi / Jetson) running high-level autonomy, communicating via MAVLink, and interfacing with perception outputs.</p>
+        </div>
+        <div class="work-card">
+          <h4>Sensors &amp; Communication</h4>
+          <p>Integrating GPS, IMU, rangefinders, telemetry radios, and camera interfaces to give the drone a rich picture of its environment.</p>
+        </div>
+        <div class="work-card">
+          <h4>Power Systems</h4>
+          <p>Battery selection, power distribution boards, and ESC wiring to ensure safe, efficient power delivery under competition loads.</p>
+        </div>
+        <div class="work-card">
+          <h4>Autonomous Controls</h4>
+          <p>Control loops, state machines, and mission planners for autonomous waypoint navigation, obstacle avoidance, and mission task execution.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Members -->
-  <section id="members" class="section">
-    <h2>Meet the Embedded Systems Team</h2>
-    <p><span class="placeholder-note">TO BE FINISHED LATER — add team member cards</span></p>
-    <div class="member-grid" style="margin-top:1.25rem;">
-      <div class="member-card">
-        <div class="member-avatar-emoji">👤</div>
-        <h3>Member Name</h3>
-        <p class="member-major">Computer Engineering</p>
-        <p class="member-role">Focus: Flight controller &amp; firmware</p>
+  <!-- Software stack -->
+  <section class="full-section">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Software Stack</p>
+      <h2>How it's built.</h2>
+      <p class="section-body">Our autonomy software stack is built on ROS 2 and interfaces with the flight controller via MAVLink / MAVROS.</p>
+      <div class="stack-layers">
+        <div class="stack-layer">
+          <span class="stack-label">Hardware Abstraction</span>
+          <span class="stack-desc">MAVLink / MAVROS bridge between companion computer and flight controller</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">State Estimation</span>
+          <span class="stack-desc">EKF-based pose estimation fusing GPS, IMU, and barometer</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Mission Planning</span>
+          <span class="stack-desc">Waypoint sequencing and dynamic replanning</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Obstacle Avoidance</span>
+          <span class="stack-desc tbd-note">TBD</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Perception Interface</span>
+          <span class="stack-desc">Subscribes to target detections from the Perception subteam</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Ground Control</span>
+          <span class="stack-desc">MAVProxy / QGroundControl for telemetry and monitoring</span>
+        </div>
       </div>
-      <div class="member-card">
-        <div class="member-avatar-emoji">👤</div>
-        <h3>Member Name</h3>
-        <p class="member-major">Electrical Engineering</p>
-        <p class="member-role">Focus: Power &amp; sensors</p>
-      </div>
-      <div class="member-card">
-        <div class="member-avatar-emoji">👤</div>
-        <h3>Member Name</h3>
-        <p class="member-major">Computer Science</p>
-        <p class="member-role">Focus: Autonomous controls</p>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="full-section full-section-alt">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">People</p>
+      <h2>Meet the team.</h2>
+      <div class="member-grid">
+        <div class="member-card">
+          <div class="member-avatar">🔌</div>
+          <h4 class="tbd-note">Lead TBD</h4>
+          <p class="member-role">Embedded Systems Lead</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Computer Engineering</p>
+          <p class="member-role">Flight controller &amp; firmware</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Electrical Engineering</p>
+          <p class="member-role">Power &amp; sensors</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Computer Science</p>
+          <p class="member-role">Autonomous controls</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Meetings -->
-  <section id="meetings" class="section alt">
-    <h2>Meeting Times</h2>
-    <div class="info-card wide">
-      <p>Embedded Systems meets for hardware integration, firmware development, and controls testing.</p>
-      <div class="meeting-grid">
-        <div class="meeting-slot">
-          <h3>Hardware Session</h3>
-          <p><span class="placeholder-note">TO BE FINISHED LATER</span></p>
-          <p class="card-meta">Location: SlugWorks BE-49</p>
+  <section class="full-section">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Meetings</p>
+      <h2>When we meet.</h2>
+      <div class="meeting-cards">
+        <div class="meeting-card">
+          <h4>Hardware Session</h4>
+          <p class="tbd-note">Time TBD</p>
+          <p class="meeting-loc">SlugWorks BE-49</p>
         </div>
-        <div class="meeting-slot">
-          <h3>Controls &amp; Software</h3>
-          <p><span class="placeholder-note">TO BE FINISHED LATER</span></p>
-          <p class="card-meta">Location: SlugWorks / Remote</p>
+        <div class="meeting-card">
+          <h4>Controls &amp; Software</h4>
+          <p class="tbd-note">Time TBD</p>
+          <p class="meeting-loc">SlugWorks / Remote</p>
         </div>
       </div>
-      <p class="card-meta" style="margin-top:0.75rem;">
-        Message on Discord to join — we'll help you set up the dev environment.
-      </p>
+      <p class="meeting-note">Message on Discord to join — we'll help you set up the dev environment.</p>
     </div>
   </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>SOMARS · Slugbotics · UC Santa Cruz</span>
+      <span>Student Organization for Marine and Aerial Robotics Systems</span>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

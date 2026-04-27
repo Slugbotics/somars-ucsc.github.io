@@ -2,22 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Slugbotics | SOMARS – Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOMARS — Team</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Navbar -->
   <header class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <span class="slug-icon">🚁</span>
-        <span class="nav-title">Slugbotics | SOMARS</span>
-      </div>
-
-      <nav class="nav-links">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">SOMARS</a>
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
-
         <div class="nav-item has-dropdown">
           <a href="team.html" class="nav-link-with-dropdown active">Team</a>
           <div class="dropdown">
@@ -27,163 +25,141 @@
             <a href="simulations.html">Simulations</a>
           </div>
         </div>
-
         <a href="sponsors.html">Sponsors</a>
         <a href="index.html#contact">Contact</a>
+        <a href="team.html#join" class="nav-join">Join Us</a>
       </nav>
-
-      <button class="nav-toggle" id="navToggle">☰</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- Page Header -->
-  <header class="page-header">
-    <div class="page-header-inner">
-      <h1>Team</h1>
-      <p>Meet the people building SOMARS — one subteam at a time.</p>
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="hero-eyebrow">UC Santa Cruz · Slugbotics</p>
+      <h1>The Team.</h1>
+      <p class="hero-desc">Meet the people building SOMARS — one subteam at a time.</p>
     </div>
-  </header>
+  </section>
 
   <!-- Why subteams -->
-  <section id="why-subteams" class="section">
-    <h2>Why Subteams?</h2>
-    <p>
-      Autonomous drones are complex systems that span mechanical engineering,
-      electronics, real-time software, computer vision, and simulation.
-      No single person can master all of it — subteams let members specialize
-      while still collaborating toward a single flying vehicle.
-    </p>
-    <p>
-      Each subteam owns a core area of the drone, working in parallel so
-      progress can happen quickly across the whole stack. Members get focused
-      experience in the domain they care about most.
-    </p>
+  <section class="full-section">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Structure</p>
+      <h2>Why subteams?</h2>
+      <p class="section-body">Autonomous drones span mechanical engineering, electronics, real-time software, computer vision, and simulation. Subteams let members specialize deeply while collaborating toward a single flying vehicle.</p>
+      <p class="section-body">Each subteam owns a core layer of the drone stack, working in parallel so progress moves fast across the entire system.</p>
+    </div>
   </section>
 
-  <!-- Subteam strips -->
-  <section id="subteams" class="subteam-strips">
-
-    <a href="mechanical.html" class="subteam-strip strip-mechanical">
-      <div class="subteam-strip-bg">⚙️</div>
-      <div class="subteam-strip-content">
-        <span class="strip-icon">⚙️</span>
-        <span>Mechanical</span>
+  <!-- Subteam cards -->
+  <section class="full-section full-section-alt">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Subteams</p>
+      <h2>Pick your stack.</h2>
+      <div class="subteams">
+        <a href="mechanical.html" class="subteam">
+          <span class="subteam-num">01</span>
+          <div class="subteam-info">
+            <h4>Mechanical</h4>
+            <p>Airframe design, carbon fiber fabrication, payload systems, and structural testing.</p>
+          </div>
+          <span class="subteam-arrow">→</span>
+        </a>
+        <a href="embedded.html" class="subteam">
+          <span class="subteam-num">02</span>
+          <div class="subteam-info">
+            <h4>Embedded Systems</h4>
+            <p>Flight controllers, firmware, companion computers, and autonomous controls.</p>
+          </div>
+          <span class="subteam-arrow">→</span>
+        </a>
+        <a href="perception.html" class="subteam">
+          <span class="subteam-num">03</span>
+          <div class="subteam-info">
+            <h4>Perception</h4>
+            <p>Computer vision pipelines for target detection and autonomous navigation.</p>
+          </div>
+          <span class="subteam-arrow">→</span>
+        </a>
+        <a href="simulations.html" class="subteam">
+          <span class="subteam-num">04</span>
+          <div class="subteam-info">
+            <h4>Simulations</h4>
+            <p>Gazebo-based simulation of flight behaviors before real-world testing.</p>
+          </div>
+          <span class="subteam-arrow">→</span>
+        </a>
       </div>
-    </a>
-
-    <a href="embedded.html" class="subteam-strip strip-embedded">
-      <div class="subteam-strip-bg">🔌</div>
-      <div class="subteam-strip-content">
-        <span class="strip-icon">🔌</span>
-        <span>Embedded Systems</span>
-      </div>
-    </a>
-
-    <a href="perception.html" class="subteam-strip strip-perception">
-      <div class="subteam-strip-bg">👁️</div>
-      <div class="subteam-strip-content">
-        <span class="strip-icon">👁️</span>
-        <span>Perception</span>
-      </div>
-    </a>
-
-    <a href="simulations.html" class="subteam-strip strip-simulations">
-      <div class="subteam-strip-bg">🌐</div>
-      <div class="subteam-strip-content">
-        <span class="strip-icon">🌐</span>
-        <span>Simulations</span>
-      </div>
-    </a>
-
+    </div>
   </section>
 
-  <!-- Q & A -->
-  <section id="qa" class="section">
-    <h2>Q &amp; A</h2>
-    <div class="qa-list">
-
-      <div class="qa-item">
-        <h3>Do I have to pick just one subteam?</h3>
-        <p>
-          Not necessarily. Many members focus on one subteam at first to build
-          depth, then branch into other areas once they're comfortable. We
-          encourage specialization early and cross-pollination later.
-        </p>
+  <!-- FAQ -->
+  <section class="full-section">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">FAQ</p>
+      <h2>Common questions.</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h4>Do I have to pick just one subteam?</h4>
+          <p>Not necessarily. Most members focus on one subteam first to build depth, then branch out once they're comfortable.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can I switch subteams?</h4>
+          <p>Yes — talk with the subteam leads and we'll help you transition. People switch when their interests evolve or they want a new challenge.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How experienced do I need to be?</h4>
+          <p>No prior drone or robotics experience required. Curiosity and consistency matter far more than what you already know.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What majors are welcome?</h4>
+          <p>All majors. We need mechanical engineers, computer scientists, electrical engineers, and anyone excited about autonomous systems.</p>
+        </div>
       </div>
-
-      <div class="qa-item">
-        <h3>Can I switch subteams?</h3>
-        <p>
-          Yes — talk with the subteam leads and we'll help you transition
-          without disrupting ongoing work. People switch when their interests
-          evolve or they want a new challenge.
-        </p>
-      </div>
-
-      <div class="qa-item">
-        <h3>How experienced do I need to be?</h3>
-        <p>
-          No prior drone or robotics experience is required. We'll point you
-          toward learning resources and pair you with more experienced members.
-          Curiosity and consistency matter far more than what you already know.
-        </p>
-      </div>
-
-      <div class="qa-item">
-        <h3>What majors are welcome?</h3>
-        <p>
-          All majors! We need mechanical engineers, computer scientists,
-          electrical engineers, and anyone who's excited about autonomous
-          systems. If you're not sure where you fit, come to a meeting and
-          we'll figure it out together.
-        </p>
-      </div>
-
     </div>
   </section>
 
   <!-- How to join -->
-  <section id="join" class="section alt">
-    <h2>How Do I Join?</h2>
-    <p>Getting involved is straightforward — here's the usual flow:</p>
-
-    <div class="qa-list" style="margin-top:1.25rem;">
-
-      <div class="qa-item">
-        <h3>1. Complete the SlugWorks Canvas &amp; join our Discord</h3>
-        <p>
-          Most of our work happens in SlugWorks (BE-49). Complete the safety
-          training Canvas module and do a walkthrough to gain workspace access.
-          Join our Discord to stay up to date on meetings and announcements.
-        </p>
-        <span class="placeholder-note">TO BE FINISHED LATER — add Canvas and Discord links</span>
+  <section class="full-section full-section-alt" id="join">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Join Us</p>
+      <h2>How to get involved.</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <div>
+            <h4>Complete SlugWorks Canvas &amp; join Discord</h4>
+            <p>Most of our work happens in SlugWorks (BE-49). Complete the safety training Canvas module and join our Discord to stay in the loop on meetings and announcements.</p>
+            <span class="tbd-note">Discord and Canvas links coming soon</span>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <div>
+            <h4>Visit a few subteam meetings</h4>
+            <p>Check meeting times on each subteam page. If times don't work, reach out — we reschedule at the start of every quarter to fit everyone.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <div>
+            <h4>Commit to a subteam</h4>
+            <p>Once you've explored, pick a primary subteam and start taking on tasks — CAD, firmware, vision code, simulation scripts, whatever the group needs.</p>
+          </div>
+        </div>
       </div>
-
-      <div class="qa-item">
-        <h3>2. Visit a few subteam meetings</h3>
-        <p>
-          Check out subteam meeting times listed on each subteam page. If the
-          times don't work for your schedule, reach out to the leads — we
-          reschedule at the start of every quarter to fit everyone.
-        </p>
-      </div>
-
-      <div class="qa-item">
-        <h3>3. Commit to a subteam</h3>
-        <p>
-          Once you've explored, pick a primary subteam and start taking on
-          tasks — CAD modeling, firmware, vision code, simulation scripts,
-          whatever fits that group's current needs.
-        </p>
-      </div>
-
     </div>
-
-    <p class="card-meta" style="margin-top:1rem;">
-      Not sure where to start? Ask any subteam lead or message us through the
-      contact info on the <a href="index.html#contact" style="color:#7ed957;">home page</a>.
-    </p>
   </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>SOMARS · Slugbotics · UC Santa Cruz</span>
+      <span>Student Organization for Marine and Aerial Robotics Systems</span>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

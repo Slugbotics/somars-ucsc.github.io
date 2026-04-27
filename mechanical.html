@@ -2,22 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Slugbotics | SOMARS – Mechanical</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOMARS — Mechanical</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Navbar -->
   <header class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <span class="slug-icon">🚁</span>
-        <span class="nav-title">Slugbotics | SOMARS</span>
-      </div>
-
-      <nav class="nav-links">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">SOMARS</a>
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
-
         <div class="nav-item has-dropdown">
           <a href="team.html" class="nav-link-with-dropdown active">Team</a>
           <div class="dropdown">
@@ -27,173 +25,159 @@
             <a href="simulations.html">Simulations</a>
           </div>
         </div>
-
         <a href="sponsors.html">Sponsors</a>
         <a href="index.html#contact">Contact</a>
+        <a href="team.html#join" class="nav-join">Join Us</a>
       </nav>
-
-      <button class="nav-toggle" id="navToggle">☰</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-emoji-bg">⚙️</div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Mechanical</h1>
-      <p>Designing, manufacturing, and assembling the drone and its payload systems.</p>
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="hero-eyebrow">Subteam · 01</p>
+      <h1>Mechanical.</h1>
+      <p class="hero-desc">Designing, manufacturing, and assembling the drone and its payload systems.</p>
     </div>
   </section>
 
   <!-- Who we are -->
-  <section id="about" class="section-split">
-    <div class="split-text">
-      <h2>Who We Are</h2>
-      <p>
-        The Mechanical subteam is responsible for everything physical on the
-        drone — from the structural airframe that keeps it airborne, to the
-        payload bay that carries mission equipment.
-      </p>
-      <p>
-        We work in CAD, use fabrication tools in SlugWorks, and iterate
-        rapidly through design, prototyping, and testing cycles to produce
-        a drone that is light, strong, and competition-ready.
-      </p>
-    </div>
-    <div class="split-image">
-      <div class="split-emoji">
-        🔩
-        <span class="emoji-label">[ Mechanical team / CAD render photo — TO BE FINISHED LATER ]</span>
+  <section class="full-section">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">About</p>
+      <h2>The physical drone,<br>start to finish.</h2>
+      <p class="section-body">The Mechanical subteam owns everything physical on the drone — from the structural airframe that keeps it airborne to the payload bay that carries mission equipment.</p>
+      <p class="section-body">We work in CAD, use fabrication tools in SlugWorks, and iterate rapidly through design, prototyping, and testing cycles to produce a drone that is light, strong, and competition-ready.</p>
+      <div class="image-block">
+        <div class="img-placeholder">
+          <span>🔩</span>
+          <span class="img-label">CAD render / mechanical team photo</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- What we work on -->
-  <section id="work" class="section alt">
-    <h2>What We Work On</h2>
-    <p>Our work spans the entire physical system of the drone:</p>
-
-    <div class="card-grid" style="margin-top:1.25rem;">
-      <div class="info-card">
-        <h3>✈️ Airframe Design</h3>
-        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
-          Designing the primary drone structure — arm geometry, motor mounts,
-          center body, and landing gear — optimized for weight, stiffness, and
-          crash survivability.
-        </p>
-      </div>
-      <div class="info-card">
-        <h3>📦 Payload Systems</h3>
-        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
-          Designing the payload bay and drop mechanisms used in competition
-          missions, including actuation systems for releasing payloads at
-          precise GPS coordinates.
-        </p>
-      </div>
-      <div class="info-card">
-        <h3>🏭 Manufacturing</h3>
-        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
-          Fabricating parts using 3D printing, laser cutting, carbon fiber
-          composite work, and CNC machining in the SlugWorks makerspace.
-        </p>
-      </div>
-      <div class="info-card">
-        <h3>🔧 Assembly &amp; Integration</h3>
-        <p style="font-size:0.95rem; color:#c4dcc4; margin-top:0.35rem;">
-          Assembling the physical drone and working closely with the Embedded
-          Systems team to ensure electronics, wiring, and sensors mount cleanly
-          and securely.
-        </p>
-      </div>
-    </div>
-    <span class="placeholder-note" style="margin-top:1rem; display:block;">TO BE FINISHED LATER — add current design details, materials, specs</span>
-  </section>
-
-  <!-- Current Design -->
-  <section id="design" class="section-split alt">
-    <div class="split-image">
-      <div class="split-emoji">
-        🖥️
-        <span class="emoji-label">[ CAD model screenshot — TO BE FINISHED LATER ]</span>
-      </div>
-    </div>
-    <div class="split-text">
-      <h2>Current Design</h2>
-      <p>
-        Our current drone design is a custom quadrotor platform sized for
-        the payload and sensor requirements of the SUAS and C-UASC competitions.
-      </p>
-      <ul>
-        <li>Frame class: <span class="placeholder-note">TO BE FINISHED LATER</span></li>
-        <li>Material: <span class="placeholder-note">TO BE FINISHED LATER</span></li>
-        <li>Takeoff weight: <span class="placeholder-note">TO BE FINISHED LATER</span></li>
-        <li>Payload capacity: <span class="placeholder-note">TO BE FINISHED LATER</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Leads -->
-  <section id="leads" class="section alt">
-    <h2>Leads</h2>
-    <div class="member-grid leads-grid">
-      <div class="member-card lead-card">
-        <div class="member-avatar-emoji">⚙️</div>
-        <h3 class="placeholder-note" style="display:block; margin:0 auto 0.25rem;">TO BE FINISHED LATER</h3>
-        <p class="member-major">Major</p>
-        <p class="member-role">Year · Mechanical Lead</p>
+  <section class="full-section full-section-alt">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Focus Areas</p>
+      <h2>What we work on.</h2>
+      <div class="work-grid">
+        <div class="work-card">
+          <h4>Airframe Design</h4>
+          <p>Arm geometry, motor mounts, center body, and landing gear — optimized for weight, stiffness, and crash survivability.</p>
+        </div>
+        <div class="work-card">
+          <h4>Payload Systems</h4>
+          <p>Payload bay and drop mechanisms for competition missions, including actuation systems for releasing payloads at precise GPS coordinates.</p>
+        </div>
+        <div class="work-card">
+          <h4>Manufacturing</h4>
+          <p>Fabricating parts using 3D printing, laser cutting, carbon fiber composite work, and CNC machining in the SlugWorks makerspace.</p>
+        </div>
+        <div class="work-card">
+          <h4>Assembly &amp; Integration</h4>
+          <p>Assembling the physical drone and working closely with Embedded Systems to ensure electronics, wiring, and sensors mount cleanly.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Members -->
-  <section id="members" class="section">
-    <h2>Meet the Mechanical Team</h2>
-    <p><span class="placeholder-note">TO BE FINISHED LATER — add team member cards</span></p>
-    <div class="member-grid" style="margin-top:1.25rem;">
-      <div class="member-card">
-        <div class="member-avatar-emoji">👤</div>
-        <h3>Member Name</h3>
-        <p class="member-major">Mechanical Engineering</p>
-        <p class="member-role">Focus: Airframe design</p>
+  <!-- Current design -->
+  <section class="full-section">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Current Design</p>
+      <h2>This season's platform.</h2>
+      <p class="section-body">Our current drone is a custom quadrotor platform sized for the payload and sensor requirements of SUAS and C-UASC.</p>
+      <div class="specs-list">
+        <div class="spec-row">
+          <span class="spec-key">Frame class</span>
+          <span class="spec-val tbd-note">TBD</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Primary material</span>
+          <span class="spec-val tbd-note">TBD</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Takeoff weight</span>
+          <span class="spec-val tbd-note">TBD</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Payload capacity</span>
+          <span class="spec-val tbd-note">TBD</span>
+        </div>
       </div>
-      <div class="member-card">
-        <div class="member-avatar-emoji">👤</div>
-        <h3>Member Name</h3>
-        <p class="member-major">Mechanical Engineering</p>
-        <p class="member-role">Focus: Payload systems</p>
+      <div class="image-block">
+        <div class="img-placeholder">
+          <span>🖥️</span>
+          <span class="img-label">CAD model screenshot</span>
+        </div>
       </div>
-      <div class="member-card">
-        <div class="member-avatar-emoji">👤</div>
-        <h3>Member Name</h3>
-        <p class="member-major">Any major</p>
-        <p class="member-role">Focus: Manufacturing</p>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="full-section full-section-alt">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">People</p>
+      <h2>Meet the team.</h2>
+      <div class="member-grid">
+        <div class="member-card">
+          <div class="member-avatar">⚙️</div>
+          <h4 class="tbd-note">Lead TBD</h4>
+          <p class="member-role">Mechanical Lead</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Mechanical Engineering</p>
+          <p class="member-role">Airframe design</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Mechanical Engineering</p>
+          <p class="member-role">Payload systems</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Any major</p>
+          <p class="member-role">Manufacturing</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Meetings -->
-  <section id="meetings" class="section alt">
-    <h2>Meeting Times</h2>
-    <div class="info-card wide">
-      <p>Mechanical meets for design reviews, fabrication sessions, and assembly work.</p>
-      <div class="meeting-grid">
-        <div class="meeting-slot">
-          <h3>Design Session</h3>
-          <p><span class="placeholder-note">TO BE FINISHED LATER</span></p>
-          <p class="card-meta">Location: SlugWorks BE-49</p>
+  <section class="full-section">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Meetings</p>
+      <h2>When we meet.</h2>
+      <div class="meeting-cards">
+        <div class="meeting-card">
+          <h4>Design Session</h4>
+          <p class="tbd-note">Time TBD</p>
+          <p class="meeting-loc">SlugWorks BE-49</p>
         </div>
-        <div class="meeting-slot">
-          <h3>Build / Fab Session</h3>
-          <p><span class="placeholder-note">TO BE FINISHED LATER</span></p>
-          <p class="card-meta">Location: SlugWorks Makerspace</p>
+        <div class="meeting-card">
+          <h4>Build / Fab Session</h4>
+          <p class="tbd-note">Time TBD</p>
+          <p class="meeting-loc">SlugWorks Makerspace</p>
         </div>
       </div>
-      <p class="card-meta" style="margin-top:0.75rem;">
-        Message on Discord to join — we'll get you set up with SlugWorks access.
-      </p>
+      <p class="meeting-note">Message on Discord to join — we'll get you set up with SlugWorks access.</p>
     </div>
   </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>SOMARS · Slugbotics · UC Santa Cruz</span>
+      <span>Student Organization for Marine and Aerial Robotics Systems</span>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
