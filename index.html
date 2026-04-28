@@ -92,10 +92,55 @@
   <!-- About -->
   <section class="full-section" id="about">
     <div class="full-section-inner">
-      <p class="section-eyebrow">About us</p>
-      <h2>Building the full<br>autonomous stack.</h2>
-      <p class="section-body">SOMARS — Student Organization for Marine and Aerial Robotics Systems — is UC Santa Cruz's competitive drone team under Slugbotics. We design, fabricate, and fly UAVs capable of fully autonomous missions, competing against top engineering programs nationwide.</p>
-      <p class="section-body">Our members span computer science, electrical engineering, mechanical engineering, and more — collaborating across every layer of the stack, from carbon fiber airframes to computer-vision-guided navigation.</p>
+      <div class="about-layout">
+        <div class="about-text">
+          <p class="section-eyebrow">About us</p>
+          <h2>Building the full<br>autonomous stack.</h2>
+          <p class="section-body">SOMARS — Student Organization for Marine and Aerial Robotics Systems — is UC Santa Cruz's competitive drone team under Slugbotics. We design, fabricate, and fly UAVs capable of fully autonomous missions, competing against top engineering programs nationwide.</p>
+          <p class="section-body">Our members span computer science, electrical engineering, mechanical engineering, and more — collaborating across every layer of the stack, from carbon fiber airframes to computer-vision-guided navigation.</p>
+        </div>
+        <div class="about-drone-wrap">
+          <svg class="about-drone-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- Flight path trace (figure-8) -->
+            <path d="M 190,110 C 190,60 130,60 110,110 C 90,160 30,160 30,110 C 30,60 90,60 110,110 C 130,160 190,160 190,110"
+              fill="none" stroke="#4dd9c0" stroke-width="0.8" stroke-dasharray="5 8" opacity="0.15"/>
+            <!-- Drone -->
+            <g>
+              <animateMotion dur="7s" repeatCount="indefinite" rotate="0"
+                path="M 190,110 C 190,60 130,60 110,110 C 90,160 30,160 30,110 C 30,60 90,60 110,110 C 130,160 190,160 190,110"/>
+              <!-- Arms -->
+              <line x1="-16" y1="-12" x2="16" y2="12" stroke="#4dd9c0" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+              <line x1="16" y1="-12" x2="-16" y2="12" stroke="#4dd9c0" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+              <!-- Motor mounts -->
+              <circle cx="-16" cy="-12" r="5" fill="#0f1412" stroke="#4dd9c0" stroke-width="1"/>
+              <circle cx="16" cy="-12" r="5" fill="#0f1412" stroke="#4dd9c0" stroke-width="1"/>
+              <circle cx="-16" cy="12" r="5" fill="#0f1412" stroke="#4dd9c0" stroke-width="1"/>
+              <circle cx="16" cy="12" r="5" fill="#0f1412" stroke="#4dd9c0" stroke-width="1"/>
+              <!-- Props -->
+              <g class="prop-spin">
+                <rect x="-22" y="-14.5" width="12" height="5" rx="2.5" fill="#4dd9c0" opacity="0.65"/>
+                <rect x="-18.5" y="-18" width="5" height="12" rx="2.5" fill="#4dd9c0" opacity="0.65"/>
+              </g>
+              <g class="prop-spin prop-spin-rev">
+                <rect x="10" y="-14.5" width="12" height="5" rx="2.5" fill="#4dd9c0" opacity="0.65"/>
+                <rect x="13.5" y="-18" width="5" height="12" rx="2.5" fill="#4dd9c0" opacity="0.65"/>
+              </g>
+              <g class="prop-spin prop-spin-rev">
+                <rect x="-22" y="9.5" width="12" height="5" rx="2.5" fill="#4dd9c0" opacity="0.65"/>
+                <rect x="-18.5" y="6" width="5" height="12" rx="2.5" fill="#4dd9c0" opacity="0.65"/>
+              </g>
+              <g class="prop-spin">
+                <rect x="10" y="9.5" width="12" height="5" rx="2.5" fill="#4dd9c0" opacity="0.65"/>
+                <rect x="13.5" y="6" width="5" height="12" rx="2.5" fill="#4dd9c0" opacity="0.65"/>
+              </g>
+              <!-- Body -->
+              <rect x="-6" y="-5" width="12" height="10" rx="2" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1"/>
+              <!-- LED -->
+              <circle cx="0" cy="-8" r="2" fill="#4dd9c0" class="drone-led"/>
+            </g>
+          </svg>
+        </div>
+      </div>
       <div class="image-block">
         <div class="img-placeholder">
           <span>🚁</span>
@@ -224,6 +269,89 @@
         <div class="img-placeholder">
           <span>🗓️</span>
           <span class="img-label">Season photo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet the Team -->
+  <section class="full-section full-section-alt" id="meet-the-team">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">People</p>
+      <h2>Meet the team.</h2>
+      <p class="section-body">Students from across UC Santa Cruz — engineering, CS, and beyond — building SOMARS from the ground up.</p>
+      <div class="member-grid">
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Major · Year</p>
+          <p class="member-role">Role</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Major · Year</p>
+          <p class="member-role">Role</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Major · Year</p>
+          <p class="member-role">Role</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Major · Year</p>
+          <p class="member-role">Role</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Major · Year</p>
+          <p class="member-role">Role</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Major · Year</p>
+          <p class="member-role">Role</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Major · Year</p>
+          <p class="member-role">Role</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Major · Year</p>
+          <p class="member-role">Role</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Major · Year</p>
+          <p class="member-role">Role</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Major · Year</p>
+          <p class="member-role">Role</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Major · Year</p>
+          <p class="member-role">Role</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">👤</div>
+          <h4>Member Name</h4>
+          <p class="member-major">Major · Year</p>
+          <p class="member-role">Role</p>
         </div>
       </div>
     </div>
