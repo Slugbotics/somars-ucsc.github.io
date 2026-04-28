@@ -48,11 +48,43 @@
       </div>
     </div>
     <div class="hero-visual">
-      <div class="drone-placeholder">
-        <div class="drone-ring drone-ring-1"></div>
-        <div class="drone-ring drone-ring-2"></div>
-        <div class="drone-ring drone-ring-3"></div>
-        <span class="drone-icon">🚁</span>
+      <div class="drone-svg-wrap">
+        <svg class="drone-svg" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="140" cy="140" r="48"  fill="none" stroke="#4dd9c0" stroke-width="1" class="drone-pulse drone-pulse-1"/>
+          <circle cx="140" cy="140" r="76"  fill="none" stroke="#4dd9c0" stroke-width="1" class="drone-pulse drone-pulse-2"/>
+          <circle cx="140" cy="140" r="104" fill="none" stroke="#4dd9c0" stroke-width="1" class="drone-pulse drone-pulse-3"/>
+          <circle cx="140" cy="140" r="132" fill="none" stroke="#4dd9c0" stroke-width="1" class="drone-pulse drone-pulse-4"/>
+          <line x1="140" y1="140" x2="75"  y2="75"  stroke="#4dd9c0" stroke-width="2" opacity="0.45" stroke-linecap="round"/>
+          <line x1="140" y1="140" x2="205" y2="75"  stroke="#4dd9c0" stroke-width="2" opacity="0.45" stroke-linecap="round"/>
+          <line x1="140" y1="140" x2="75"  y2="205" stroke="#4dd9c0" stroke-width="2" opacity="0.45" stroke-linecap="round"/>
+          <line x1="140" y1="140" x2="205" y2="205" stroke="#4dd9c0" stroke-width="2" opacity="0.45" stroke-linecap="round"/>
+          <circle cx="75"  cy="75"  r="9" fill="#0f1412" stroke="#4dd9c0" stroke-width="1.5"/>
+          <circle cx="205" cy="75"  r="9" fill="#0f1412" stroke="#4dd9c0" stroke-width="1.5"/>
+          <circle cx="75"  cy="205" r="9" fill="#0f1412" stroke="#4dd9c0" stroke-width="1.5"/>
+          <circle cx="205" cy="205" r="9" fill="#0f1412" stroke="#4dd9c0" stroke-width="1.5"/>
+          <g class="prop-spin">
+            <rect x="49"    y="71.5"  width="52" height="7" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
+            <rect x="71.5"  y="49"    width="7" height="52" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
+          </g>
+          <g class="prop-spin prop-spin-rev">
+            <rect x="179"   y="71.5"  width="52" height="7" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
+            <rect x="201.5" y="49"    width="7" height="52" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
+          </g>
+          <g class="prop-spin prop-spin-rev">
+            <rect x="49"    y="201.5" width="52" height="7" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
+            <rect x="71.5"  y="179"   width="7" height="52" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
+          </g>
+          <g class="prop-spin">
+            <rect x="179"   y="201.5" width="52" height="7" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
+            <rect x="201.5" y="179"   width="7" height="52" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
+          </g>
+          <rect x="117" y="117" width="46" height="46" rx="9" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1.5"/>
+          <line x1="117" y1="140" x2="163" y2="140" stroke="#4dd9c0" stroke-width="0.5" opacity="0.3"/>
+          <line x1="140" y1="117" x2="140" y2="163" stroke="#4dd9c0" stroke-width="0.5" opacity="0.3"/>
+          <circle cx="140" cy="150" r="7" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1" opacity="0.85"/>
+          <circle cx="140" cy="150" r="3" fill="#4dd9c0" opacity="0.6"/>
+          <circle cx="140" cy="127" r="2.5" fill="#4dd9c0" class="drone-led"/>
+        </svg>
       </div>
     </div>
   </section>
@@ -211,7 +243,7 @@
         </div>
         <div class="contact-item">
           <span class="contact-label">Discord</span>
-          <span class="contact-val contact-tbd">Coming soon</span>
+          <a href="https://discord.gg/4UtbMp9UD7" class="contact-val" target="_blank" rel="noopener">Join our server</a>
         </div>
         <div class="contact-item">
           <span class="contact-label">SlugWorks</span>

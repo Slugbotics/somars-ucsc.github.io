@@ -50,11 +50,8 @@
       <h2>The physical drone,<br>start to finish.</h2>
       <p class="section-body">The Mechanical subteam owns everything physical on the drone — from the structural airframe that keeps it airborne to the payload bay that carries mission equipment.</p>
       <p class="section-body">We work in CAD, use fabrication tools in SlugWorks, and iterate rapidly through design, prototyping, and testing cycles to produce a drone that is light, strong, and competition-ready.</p>
-      <div class="image-block">
-        <div class="img-placeholder">
-          <span>🔩</span>
-          <span class="img-label">CAD render / mechanical team photo</span>
-        </div>
+      <div class="image-block" style="margin-top:0;">
+        <img src="Main assembly.png" alt="CAD render of drone main assembly" class="section-img" />
       </div>
     </div>
   </section>
@@ -64,89 +61,81 @@
     <div class="full-section-inner">
       <p class="section-eyebrow">Focus Areas</p>
       <h2>What we work on.</h2>
-      <div class="work-grid">
-        <div class="work-card">
+      <div class="work-grid work-grid-mech">
+
+        <!-- Left column -->
+        <div class="work-card" style="grid-column:1; grid-row:1;">
           <h4>Airframe Design</h4>
           <p>Arm geometry, motor mounts, center body, and landing gear — optimized for weight, stiffness, and crash survivability.</p>
         </div>
-        <div class="work-card">
-          <h4>Payload Systems</h4>
-          <p>Payload bay and drop mechanisms for competition missions, including actuation systems for releasing payloads at precise GPS coordinates.</p>
-        </div>
-        <div class="work-card">
-          <h4>Manufacturing</h4>
-          <p>Fabricating parts using 3D printing, laser cutting, carbon fiber composite work, and CNC machining in the SlugWorks makerspace.</p>
-        </div>
-        <div class="work-card">
+        <div class="work-card" style="grid-column:1; grid-row:2;">
           <h4>Assembly &amp; Integration</h4>
           <p>Assembling the physical drone and working closely with Embedded Systems to ensure electronics, wiring, and sensors mount cleanly.</p>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Current design -->
-  <section class="full-section">
-    <div class="full-section-inner">
-      <p class="section-eyebrow">Current Design</p>
-      <h2>This season's platform.</h2>
-      <p class="section-body">Our current drone is a custom quadrotor platform sized for the payload and sensor requirements of SUAS and C-UASC.</p>
-      <div class="specs-list">
-        <div class="spec-row">
-          <span class="spec-key">Frame class</span>
-          <span class="spec-val tbd-note">TBD</span>
+        <!-- Right column: Payload Systems + Manufacturing + Animation -->
+        <div class="work-card" style="grid-column:2; grid-row:1;">
+          <h4>Payload Systems</h4>
+          <p>Payload bay and drop mechanisms for competition missions, including actuation systems for releasing payloads at precise GPS coordinates.</p>
         </div>
-        <div class="spec-row">
-          <span class="spec-key">Primary material</span>
-          <span class="spec-val tbd-note">TBD</span>
+        <div class="work-card" style="grid-column:2; grid-row:2;">
+          <h4>Manufacturing</h4>
+          <p>Fabricating parts using 3D printing, carbon fiber composite work, and CNC machining in the SlugWorks makerspace.</p>
         </div>
-        <div class="spec-row">
-          <span class="spec-key">Takeoff weight</span>
-          <span class="spec-val tbd-note">TBD</span>
-        </div>
-        <div class="spec-row">
-          <span class="spec-key">Payload capacity</span>
-          <span class="spec-val tbd-note">TBD</span>
-        </div>
-      </div>
-      <div class="image-block">
-        <div class="img-placeholder">
-          <span>🖥️</span>
-          <span class="img-label">CAD model screenshot</span>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div class="payload-scene-wrap" style="grid-column:1 / 3; grid-row:3; margin:0;">
+          <svg class="payload-scene" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
 
-  <!-- Team -->
-  <section class="full-section full-section-alt">
-    <div class="full-section-inner">
-      <p class="section-eyebrow">People</p>
-      <h2>Meet the team.</h2>
-      <div class="member-grid">
-        <div class="member-card">
-          <div class="member-avatar">⚙️</div>
-          <h4 class="tbd-note">Lead TBD</h4>
-          <p class="member-role">Mechanical Lead</p>
+            <!-- Ground -->
+            <line x1="0" y1="178" x2="500" y2="178" stroke="#4dd9c0" stroke-width="1" opacity="0.15"/>
+
+            <!-- Left platform (empty) -->
+            <rect x="58" y="144" width="92" height="34" rx="2" fill="none" stroke="#4dd9c0" stroke-width="1.2" opacity="0.3"/>
+            <text x="104" y="166" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#4dd9c0" opacity="0.3" letter-spacing="2">EMPTY</text>
+
+            <!-- Right platform (target) -->
+            <rect x="348" y="144" width="100" height="34" rx="2" fill="none" stroke="#4dd9c0" stroke-width="1.2" class="pay-target-glow"/>
+            <circle cx="398" cy="161" r="13" fill="none" stroke="#4dd9c0" stroke-width="1" class="pay-target-glow"/>
+            <circle cx="398" cy="161" r="5"  fill="none" stroke="#4dd9c0" stroke-width="1" class="pay-target-glow"/>
+            <line x1="385" y1="161" x2="411" y2="161" stroke="#4dd9c0" stroke-width="0.8" class="pay-target-glow"/>
+            <line x1="398" y1="148" x2="398" y2="174" stroke="#4dd9c0" stroke-width="0.8" class="pay-target-glow"/>
+
+            <!-- Drone -->
+            <g>
+              <animateTransform attributeName="transform" type="translate"
+                values="-60,55; 398,55; 398,55; 398,43; 580,30; -60,55; -60,55"
+                keyTimes="0; 0.35; 0.56; 0.65; 0.82; 0.821; 1"
+                calcMode="linear" dur="5s" repeatCount="indefinite"/>
+              <line x1="-14" y1="-11" x2="14" y2="11" stroke="#4dd9c0" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+              <line x1="14" y1="-11" x2="-14" y2="11" stroke="#4dd9c0" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+              <circle cx="-14" cy="-11" r="7" fill="none" stroke="#4dd9c0" stroke-width="0.8" opacity="0.3"/>
+              <circle cx="14"  cy="-11" r="7" fill="none" stroke="#4dd9c0" stroke-width="0.8" opacity="0.3"/>
+              <circle cx="-14" cy="11"  r="7" fill="none" stroke="#4dd9c0" stroke-width="0.8" opacity="0.3"/>
+              <circle cx="14"  cy="11"  r="7" fill="none" stroke="#4dd9c0" stroke-width="0.8" opacity="0.3"/>
+              <circle cx="-14" cy="-11" r="3" fill="#0f1412" stroke="#4dd9c0" stroke-width="1"/>
+              <circle cx="14"  cy="-11" r="3" fill="#0f1412" stroke="#4dd9c0" stroke-width="1"/>
+              <circle cx="-14" cy="11"  r="3" fill="#0f1412" stroke="#4dd9c0" stroke-width="1"/>
+              <circle cx="14"  cy="11"  r="3" fill="#0f1412" stroke="#4dd9c0" stroke-width="1"/>
+              <rect x="-7" y="-5" width="14" height="10" rx="2" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1"/>
+            </g>
+
+            <!-- Package -->
+            <g>
+              <animateTransform attributeName="transform" type="translate"
+                values="-60,70; -60,70; 398,70; 398,70; 398,161; 398,161; -60,70"
+                keyTimes="0; 0.03; 0.35; 0.56; 0.70; 0.88; 1"
+                calcMode="linear" dur="5s" repeatCount="indefinite"/>
+              <animate attributeName="opacity"
+                values="0; 0; 1; 1; 1; 0; 0"
+                keyTimes="0; 0.03; 0.04; 0.85; 0.88; 0.91; 1"
+                dur="5s" repeatCount="indefinite"/>
+              <rect x="-7" y="-7" width="14" height="14" rx="1" fill="#1a3a30" stroke="#4dd9c0" stroke-width="1.2"/>
+              <line x1="-3" y1="-3" x2="3" y2="3" stroke="#4dd9c0" stroke-width="0.8" opacity="0.7"/>
+              <line x1="3" y1="-3" x2="-3" y2="3" stroke="#4dd9c0" stroke-width="0.8" opacity="0.7"/>
+            </g>
+
+          </svg>
         </div>
-        <div class="member-card">
-          <div class="member-avatar">👤</div>
-          <h4>Member Name</h4>
-          <p class="member-major">Mechanical Engineering</p>
-          <p class="member-role">Airframe design</p>
-        </div>
-        <div class="member-card">
-          <div class="member-avatar">👤</div>
-          <h4>Member Name</h4>
-          <p class="member-major">Mechanical Engineering</p>
-          <p class="member-role">Payload systems</p>
-        </div>
-        <div class="member-card">
-          <div class="member-avatar">👤</div>
-          <h4>Member Name</h4>
-          <p class="member-major">Any major</p>
-          <p class="member-role">Manufacturing</p>
-        </div>
+
       </div>
     </div>
   </section>
@@ -159,13 +148,8 @@
       <div class="meeting-cards">
         <div class="meeting-card">
           <h4>Design Session</h4>
-          <p class="tbd-note">Time TBD</p>
+          <p>Wednesdays 5:30 PM</p>
           <p class="meeting-loc">SlugWorks BE-49</p>
-        </div>
-        <div class="meeting-card">
-          <h4>Build / Fab Session</h4>
-          <p class="tbd-note">Time TBD</p>
-          <p class="meeting-loc">SlugWorks Makerspace</p>
         </div>
       </div>
       <p class="meeting-note">Message on Discord to join — we'll get you set up with SlugWorks access.</p>

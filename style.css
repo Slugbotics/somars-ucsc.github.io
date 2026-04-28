@@ -203,53 +203,57 @@ body {
   justify-content: center;
 }
 
-.drone-placeholder {
-  position: relative;
-  width: 280px;
-  height: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.drone-svg-wrap {
+  animation: drone-float 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 28px rgba(77, 217, 192, 0.2));
 }
 
-.drone-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid var(--accent);
+.drone-svg {
+  width: 420px;
+  height: 420px;
 }
 
-.drone-ring-1 {
-  width: 280px; height: 280px;
-  opacity: 0.08;
-  animation: pulse 3s ease-in-out infinite;
-}
-.drone-ring-2 {
-  width: 200px; height: 200px;
-  opacity: 0.12;
-  animation: pulse 3s ease-in-out 0.5s infinite;
-}
-.drone-ring-3 {
-  width: 130px; height: 130px;
-  opacity: 0.2;
-  animation: pulse 3s ease-in-out 1s infinite;
+.prop-spin {
+  animation: prop-rotate 0.88s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: inherit; }
-  50% { transform: scale(1.04); }
+.prop-spin-rev {
+  animation-direction: reverse;
 }
 
-.drone-icon {
-  font-size: 4rem;
-  position: relative;
-  z-index: 1;
-  animation: hover 4s ease-in-out infinite;
-  filter: drop-shadow(0 0 24px rgba(77, 217, 192, 0.4));
+@keyframes prop-rotate {
+  to { transform: rotate(360deg); }
 }
 
-@keyframes hover {
+.drone-pulse {
+  opacity: 0.1;
+  animation: drone-ring-pulse 4s linear infinite;
+}
+
+.drone-pulse-1 { animation-delay: 0s; }
+.drone-pulse-2 { animation-delay: 0.5s; }
+.drone-pulse-3 { animation-delay: 1.0s; }
+.drone-pulse-4 { animation-delay: 1.5s; }
+
+@keyframes drone-ring-pulse {
+  0%, 18%, 100% { opacity: 0.1; }
+  8% { opacity: 0.85; }
+}
+
+.drone-led {
+  animation: led-blink 2.5s ease-in-out infinite;
+}
+
+@keyframes led-blink {
+  0%, 80%, 100% { opacity: 1; }
+  88% { opacity: 0.1; }
+}
+
+@keyframes drone-float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-14px); }
 }
 
 /* ============ SECTIONS ============ */
@@ -303,6 +307,13 @@ h2 {
 
 /* Image placeholder */
 .image-block { margin-top: 3.5rem; }
+
+.section-img {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  display: block;
+}
 
 .img-placeholder {
   width: 100%;
@@ -668,6 +679,156 @@ h2 {
   color: var(--text-2);
   line-height: 1.65;
   font-weight: 300;
+}
+
+/* ============ MECHANICAL FOCUS LAYOUT ============ */
+.work-grid-mech {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ============ PAYLOAD DROP ANIMATION ============ */
+.payload-scene-wrap {
+  margin-top: 2.5rem;
+  border-radius: 8px;
+  background: rgba(10, 26, 24, 0.5);
+  border: 1px solid rgba(77, 217, 192, 0.08);
+}
+
+.payload-scene {
+  width: 100%;
+  display: block;
+}
+
+.pay-target-glow {
+  animation: pay-target-flash 5s linear infinite;
+}
+
+@keyframes pay-target-flash {
+  0%, 60%   { opacity: 0.3; }
+  68%, 80%  { opacity: 1; }
+  86%, 100% { opacity: 0.3; }
+}
+
+/* ============ EMBEDDED ANIMATION ============ */
+.emb-spin-cw {
+  animation: prop-rotate 0.7s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.emb-spin-ccw {
+  animation: prop-rotate 0.7s linear infinite reverse;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* ============ PERCEPTION ANIMATION ============ */
+.perc-bbox-1, .perc-bbox-2 {
+  fill: none;
+  stroke: #4dd9c0;
+  stroke-width: 1.5;
+  stroke-dasharray: 184;
+}
+.perc-bbox-1   { animation: perc-box-1  6s linear infinite; }
+.perc-bbox-2   { animation: perc-box-2  6s linear infinite; }
+.perc-label-1  { animation: perc-lbl-1  6s linear infinite; }
+.perc-label-2  { animation: perc-lbl-2  6s linear infinite; }
+.perc-confirmed{ animation: perc-confirm 6s linear infinite; }
+
+@keyframes perc-box-1 {
+  0%,  19% { stroke-dashoffset: 184; opacity: 0; }
+  20%      { stroke-dashoffset: 184; opacity: 1; }
+  30%, 83% { stroke-dashoffset: 0;   opacity: 1; }
+  84%      { stroke-dashoffset: 0;   opacity: 0; }
+  100%     { stroke-dashoffset: 184; opacity: 0; }
+}
+@keyframes perc-box-2 {
+  0%,  52% { stroke-dashoffset: 184; opacity: 0; }
+  53%      { stroke-dashoffset: 184; opacity: 1; }
+  63%, 83% { stroke-dashoffset: 0;   opacity: 1; }
+  84%      { stroke-dashoffset: 0;   opacity: 0; }
+  100%     { stroke-dashoffset: 184; opacity: 0; }
+}
+@keyframes perc-lbl-1 {
+  0%,  30% { opacity: 0; }
+  35%, 83% { opacity: 1; }
+  84%      { opacity: 0; }
+  100%     { opacity: 0; }
+}
+@keyframes perc-lbl-2 {
+  0%,  63% { opacity: 0; }
+  67%, 83% { opacity: 1; }
+  84%      { opacity: 0; }
+  100%     { opacity: 0; }
+}
+@keyframes perc-confirm {
+  0%,  67% { opacity: 0; }
+  70%, 83% { opacity: 1; }
+  84%      { opacity: 0; }
+  100%     { opacity: 0; }
+}
+
+/* ============ SIMULATIONS WAYPOINT FLASH ============ */
+.sim-wp1 { animation: sim-wp1-flash 8s linear infinite; }
+.sim-wp2 { animation: sim-wp2-flash 8s linear infinite; }
+.sim-wp3 { animation: sim-wp3-flash 8s linear infinite; }
+.sim-wp4 { animation: sim-wp4-flash 8s linear infinite; }
+.sim-wp5 { animation: sim-wp5-flash 8s linear infinite; }
+.sim-wp1-txt { animation: sim-wp1-txt-flash 8s linear infinite; }
+.sim-wp2-txt { animation: sim-wp2-txt-flash 8s linear infinite; }
+.sim-wp3-txt { animation: sim-wp3-txt-flash 8s linear infinite; }
+.sim-wp4-txt { animation: sim-wp4-txt-flash 8s linear infinite; }
+.sim-wp5-txt { animation: sim-wp5-txt-flash 8s linear infinite; }
+
+@keyframes sim-wp1-flash {
+  0%,  2% { fill: #4dd9c0; }
+  4%,  96% { fill: #0a1a18; }
+  98%, 100% { fill: #4dd9c0; }
+}
+@keyframes sim-wp2-flash {
+  0%,  20% { fill: #0a1a18; }
+  23%, 27% { fill: #4dd9c0; }
+  30%, 100% { fill: #0a1a18; }
+}
+@keyframes sim-wp3-flash {
+  0%,  41% { fill: #0a1a18; }
+  44%, 48% { fill: #4dd9c0; }
+  51%, 100% { fill: #0a1a18; }
+}
+@keyframes sim-wp4-flash {
+  0%,  52% { fill: #0a1a18; }
+  55%, 59% { fill: #4dd9c0; }
+  62%, 100% { fill: #0a1a18; }
+}
+@keyframes sim-wp5-flash {
+  0%,  79% { fill: #0a1a18; }
+  82%, 86% { fill: #4dd9c0; }
+  89%, 100% { fill: #0a1a18; }
+}
+
+@keyframes sim-wp1-txt-flash {
+  0%,  2% { fill: #0a1a18; }
+  4%,  96% { fill: #4dd9c0; }
+  98%, 100% { fill: #0a1a18; }
+}
+@keyframes sim-wp2-txt-flash {
+  0%,  20% { fill: #4dd9c0; }
+  23%, 27% { fill: #0a1a18; }
+  30%, 100% { fill: #4dd9c0; }
+}
+@keyframes sim-wp3-txt-flash {
+  0%,  41% { fill: #4dd9c0; }
+  44%, 48% { fill: #0a1a18; }
+  51%, 100% { fill: #4dd9c0; }
+}
+@keyframes sim-wp4-txt-flash {
+  0%,  52% { fill: #4dd9c0; }
+  55%, 59% { fill: #0a1a18; }
+  62%, 100% { fill: #4dd9c0; }
+}
+@keyframes sim-wp5-txt-flash {
+  0%,  79% { fill: #4dd9c0; }
+  82%, 86% { fill: #0a1a18; }
+  89%, 100% { fill: #4dd9c0; }
 }
 
 /* ============ SPEC / STACK LAYERS ============ */
