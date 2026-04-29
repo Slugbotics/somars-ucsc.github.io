@@ -741,50 +741,7 @@ h2 {
 }
 
 /* ============ PERCEPTION ANIMATION ============ */
-.perc-bbox-1, .perc-bbox-2 {
-  fill: none;
-  stroke: #4dd9c0;
-  stroke-width: 1.5;
-  stroke-dasharray: 184;
-}
-.perc-bbox-1   { animation: perc-box-1  6s linear infinite; }
-.perc-bbox-2   { animation: perc-box-2  6s linear infinite; }
-.perc-label-1  { animation: perc-lbl-1  6s linear infinite; }
-.perc-label-2  { animation: perc-lbl-2  6s linear infinite; }
-.perc-confirmed{ animation: perc-confirm 6s linear infinite; }
-
-@keyframes perc-box-1 {
-  0%,  19% { stroke-dashoffset: 184; opacity: 0; }
-  20%      { stroke-dashoffset: 184; opacity: 1; }
-  30%, 83% { stroke-dashoffset: 0;   opacity: 1; }
-  84%      { stroke-dashoffset: 0;   opacity: 0; }
-  100%     { stroke-dashoffset: 184; opacity: 0; }
-}
-@keyframes perc-box-2 {
-  0%,  52% { stroke-dashoffset: 184; opacity: 0; }
-  53%      { stroke-dashoffset: 184; opacity: 1; }
-  63%, 83% { stroke-dashoffset: 0;   opacity: 1; }
-  84%      { stroke-dashoffset: 0;   opacity: 0; }
-  100%     { stroke-dashoffset: 184; opacity: 0; }
-}
-@keyframes perc-lbl-1 {
-  0%,  30% { opacity: 0; }
-  35%, 83% { opacity: 1; }
-  84%      { opacity: 0; }
-  100%     { opacity: 0; }
-}
-@keyframes perc-lbl-2 {
-  0%,  63% { opacity: 0; }
-  67%, 83% { opacity: 1; }
-  84%      { opacity: 0; }
-  100%     { opacity: 0; }
-}
-@keyframes perc-confirm {
-  0%,  67% { opacity: 0; }
-  70%, 83% { opacity: 1; }
-  84%      { opacity: 0; }
-  100%     { opacity: 0; }
-}
+/* All bbox/label timing handled via inline SVG SMIL <animate> elements */
 
 /* ============ SIMULATIONS WAYPOINT FLASH ============ */
 .sim-wp1 { animation: sim-wp1-flash 8s linear infinite; }

@@ -51,10 +51,7 @@
       <p class="section-body">The Simulations subteam builds the virtual environment where our autonomous drone learns to fly. Using Gazebo, we create realistic 3D environments that replicate competition arenas, terrain, and obstacles.</p>
       <p class="section-body">Bugs in the control stack can be caught and fixed in simulation at near-zero cost — dramatically reducing crash risk and accelerating iteration speed across the whole team.</p>
       <div class="image-block">
-        <div class="img-placeholder">
-          <span>🌐</span>
-          <span class="img-label">Gazebo simulation screenshot</span>
-        </div>
+        <img src="gazebo.png" alt="Gazebo simulation screenshot" class="section-img" />
       </div>
     </div>
   </section>
@@ -175,11 +172,11 @@
         </div>
         <div class="stack-layer">
           <span class="stack-label">Flight Stack Integration</span>
-          <span class="stack-desc">ArduPilot SITL / PX4 SITL via MAVROS</span>
+          <span class="stack-desc">PX4 SITL via Micro XRCE-DDS</span>
         </div>
         <div class="stack-layer">
           <span class="stack-label">Visualization</span>
-          <span class="stack-desc">RViz 2, Gazebo GUI</span>
+          <span class="stack-desc">Gazebo</span>
         </div>
         <div class="stack-layer">
           <span class="stack-label">Drone Model Format</span>
@@ -187,7 +184,7 @@
         </div>
         <div class="stack-layer">
           <span class="stack-label">Operating System</span>
-          <span class="stack-desc">Ubuntu 22.04</span>
+          <span class="stack-desc">NVIDIA JetPack 6.2.2</span>
         </div>
       </div>
       <div class="image-block">
