@@ -997,6 +997,13 @@ h2 {
   font-weight: 300;
 }
 
+.step p a {
+  color: var(--text-2);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.step p a:hover { color: var(--accent); }
+
 /* ============ SPONSORS PAGE ============ */
 .stats-row {
   display: flex;
@@ -1071,6 +1078,67 @@ h2 {
 }
 
 .sponsor-logo-placeholder { text-align: center; }
+
+/* ============ SECRET OVERLAY ============ */
+.secret-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 18, 15, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.secret-overlay.secret-visible { opacity: 1; }
+
+.secret-box {
+  background: var(--bg-alt);
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  padding: 3.5rem;
+  max-width: 480px;
+  text-align: center;
+  box-shadow: 0 0 60px rgba(77, 217, 192, 0.15);
+  transform: translateY(0);
+}
+
+.secret-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.secret-title {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.secret-close {
+  background: var(--accent);
+  color: #0a1210;
+  border: none;
+  border-radius: 99px;
+  padding: 0.7rem 2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+
+.secret-close:hover { background: #6ae4cc; }
 
 /* ============ TBD NOTE ============ */
 .tbd-note {
