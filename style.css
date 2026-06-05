@@ -1140,6 +1140,19 @@ h2 {
 
 .secret-close:hover { background: #6ae4cc; }
 
+/* ============ APPROACH SCENE ANIMATION ============ */
+.approach-scene-wrap {
+  margin-top: 3.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(10, 26, 24, 0.5);
+  overflow: hidden;
+}
+.approach-scene {
+  width: 100%;
+  display: block;
+}
+
 /* ============ TBD NOTE ============ */
 .tbd-note {
   color: var(--text-3);
