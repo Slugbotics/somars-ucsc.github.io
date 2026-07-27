@@ -15,7 +15,7 @@
 
 /* ============ RESET ============ */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg);
@@ -1101,6 +1101,8 @@ h2 {
   .contact-item:last-child { border-bottom: none; }
 
   .work-grid, .work-grid-mech { grid-template-columns: 1fr; }
+  /* Reset the desktop inline grid placement so cards stack in source order */
+  .work-grid-mech > * { grid-column: 1 / -1 !important; grid-row: auto !important; }
   .meeting-cards { grid-template-columns: 1fr; }
   .tier-cards { grid-template-columns: 1fr; }
   .stats-row { flex-direction: column; gap: 1.5rem; }
