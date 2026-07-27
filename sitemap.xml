@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://somars-ucsc.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://somars-ucsc.com/team.html</loc><priority>0.8</priority></url>
-  <url><loc>https://somars-ucsc.com/mechanical.html</loc><priority>0.6</priority></url>
-  <url><loc>https://somars-ucsc.com/embedded.html</loc><priority>0.6</priority></url>
-  <url><loc>https://somars-ucsc.com/perception.html</loc><priority>0.6</priority></url>
-  <url><loc>https://somars-ucsc.com/simulations.html</loc><priority>0.6</priority></url>
-  <url><loc>https://somars-ucsc.com/sponsors.html</loc><priority>0.7</priority></url>
+  <url><loc>https://somars-ucsc.com/html/team.html</loc><priority>0.8</priority></url>
+  <url><loc>https://somars-ucsc.com/html/mechanical.html</loc><priority>0.6</priority></url>
+  <url><loc>https://somars-ucsc.com/html/embedded.html</loc><priority>0.6</priority></url>
+  <url><loc>https://somars-ucsc.com/html/perception.html</loc><priority>0.6</priority></url>
+  <url><loc>https://somars-ucsc.com/html/simulations.html</loc><priority>0.6</priority></url>
+  <url><loc>https://somars-ucsc.com/html/sponsors.html</loc><priority>0.7</priority></url>
 </urlset>
