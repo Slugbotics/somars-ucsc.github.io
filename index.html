@@ -37,156 +37,123 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="hero-text">
-      <p class="hero-eyebrow">UC Santa Cruz · Slugbotics</p>
-      <h1>Autonomous<br>Drones.</h1>
-      <p class="hero-desc">Designing, building, and flying fully autonomous aerial vehicles. No pilot required.</p>
-      <div class="hero-ctas">
-        <a href="team.html#join" class="cta-link">Join the team <span>↗</span></a>
-        <a href="#competitions" class="cta-link cta-link-dim">Our competitions <span>↓</span></a>
-      </div>
+  <section class="panel panel--bottom" id="top">
+    <div class="panel-media panel-media--hero">
+      <svg class="hero-drone drone-svg-wrap" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="140" cy="140" r="48"  fill="none" stroke="#4dd9c0" stroke-width="1" class="drone-pulse drone-pulse-1"/>
+        <circle cx="140" cy="140" r="76"  fill="none" stroke="#4dd9c0" stroke-width="1" class="drone-pulse drone-pulse-2"/>
+        <circle cx="140" cy="140" r="104" fill="none" stroke="#4dd9c0" stroke-width="1" class="drone-pulse drone-pulse-3"/>
+        <circle cx="140" cy="140" r="132" fill="none" stroke="#4dd9c0" stroke-width="1" class="drone-pulse drone-pulse-4"/>
+        <line x1="140" y1="140" x2="75"  y2="75"  stroke="#4dd9c0" stroke-width="2" opacity="0.45" stroke-linecap="round"/>
+        <line x1="140" y1="140" x2="205" y2="75"  stroke="#4dd9c0" stroke-width="2" opacity="0.45" stroke-linecap="round"/>
+        <line x1="140" y1="140" x2="75"  y2="205" stroke="#4dd9c0" stroke-width="2" opacity="0.45" stroke-linecap="round"/>
+        <line x1="140" y1="140" x2="205" y2="205" stroke="#4dd9c0" stroke-width="2" opacity="0.45" stroke-linecap="round"/>
+        <circle cx="75"  cy="75"  r="9" fill="#0f1412" stroke="#4dd9c0" stroke-width="1.5"/>
+        <circle cx="205" cy="75"  r="9" fill="#0f1412" stroke="#4dd9c0" stroke-width="1.5"/>
+        <circle cx="75"  cy="205" r="9" fill="#0f1412" stroke="#4dd9c0" stroke-width="1.5"/>
+        <circle cx="205" cy="205" r="9" fill="#0f1412" stroke="#4dd9c0" stroke-width="1.5"/>
+        <g class="prop-spin">
+          <rect x="49"    y="71.5"  width="52" height="7" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
+          <rect x="71.5"  y="49"    width="7" height="52" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
+        </g>
+        <g class="prop-spin prop-spin-rev">
+          <rect x="179"   y="71.5"  width="52" height="7" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
+          <rect x="201.5" y="49"    width="7" height="52" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
+        </g>
+        <g class="prop-spin prop-spin-rev">
+          <rect x="49"    y="201.5" width="52" height="7" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
+          <rect x="71.5"  y="179"   width="7" height="52" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
+        </g>
+        <g class="prop-spin">
+          <rect x="179"   y="201.5" width="52" height="7" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
+          <rect x="201.5" y="179"   width="7" height="52" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
+        </g>
+        <rect x="117" y="117" width="46" height="46" rx="9" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1.5"/>
+        <line x1="117" y1="140" x2="163" y2="140" stroke="#4dd9c0" stroke-width="0.5" opacity="0.3"/>
+        <line x1="140" y1="117" x2="140" y2="163" stroke="#4dd9c0" stroke-width="0.5" opacity="0.3"/>
+        <circle cx="140" cy="150" r="7" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1" opacity="0.85"/>
+        <circle cx="140" cy="150" r="3" fill="#4dd9c0" opacity="0.6"/>
+        <circle cx="140" cy="127" r="2.5" fill="#4dd9c0" class="drone-led"/>
+      </svg>
     </div>
-    <div class="hero-visual">
-      <div class="drone-svg-wrap">
-        <svg class="drone-svg" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="140" cy="140" r="48"  fill="none" stroke="#4dd9c0" stroke-width="1" class="drone-pulse drone-pulse-1"/>
-          <circle cx="140" cy="140" r="76"  fill="none" stroke="#4dd9c0" stroke-width="1" class="drone-pulse drone-pulse-2"/>
-          <circle cx="140" cy="140" r="104" fill="none" stroke="#4dd9c0" stroke-width="1" class="drone-pulse drone-pulse-3"/>
-          <circle cx="140" cy="140" r="132" fill="none" stroke="#4dd9c0" stroke-width="1" class="drone-pulse drone-pulse-4"/>
-          <line x1="140" y1="140" x2="75"  y2="75"  stroke="#4dd9c0" stroke-width="2" opacity="0.45" stroke-linecap="round"/>
-          <line x1="140" y1="140" x2="205" y2="75"  stroke="#4dd9c0" stroke-width="2" opacity="0.45" stroke-linecap="round"/>
-          <line x1="140" y1="140" x2="75"  y2="205" stroke="#4dd9c0" stroke-width="2" opacity="0.45" stroke-linecap="round"/>
-          <line x1="140" y1="140" x2="205" y2="205" stroke="#4dd9c0" stroke-width="2" opacity="0.45" stroke-linecap="round"/>
-          <circle cx="75"  cy="75"  r="9" fill="#0f1412" stroke="#4dd9c0" stroke-width="1.5"/>
-          <circle cx="205" cy="75"  r="9" fill="#0f1412" stroke="#4dd9c0" stroke-width="1.5"/>
-          <circle cx="75"  cy="205" r="9" fill="#0f1412" stroke="#4dd9c0" stroke-width="1.5"/>
-          <circle cx="205" cy="205" r="9" fill="#0f1412" stroke="#4dd9c0" stroke-width="1.5"/>
-          <g class="prop-spin">
-            <rect x="49"    y="71.5"  width="52" height="7" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
-            <rect x="71.5"  y="49"    width="7" height="52" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
-          </g>
-          <g class="prop-spin prop-spin-rev">
-            <rect x="179"   y="71.5"  width="52" height="7" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
-            <rect x="201.5" y="49"    width="7" height="52" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
-          </g>
-          <g class="prop-spin prop-spin-rev">
-            <rect x="49"    y="201.5" width="52" height="7" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
-            <rect x="71.5"  y="179"   width="7" height="52" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
-          </g>
-          <g class="prop-spin">
-            <rect x="179"   y="201.5" width="52" height="7" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
-            <rect x="201.5" y="179"   width="7" height="52" rx="3.5" fill="#4dd9c0" opacity="0.65"/>
-          </g>
-          <rect x="117" y="117" width="46" height="46" rx="9" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1.5"/>
-          <line x1="117" y1="140" x2="163" y2="140" stroke="#4dd9c0" stroke-width="0.5" opacity="0.3"/>
-          <line x1="140" y1="117" x2="140" y2="163" stroke="#4dd9c0" stroke-width="0.5" opacity="0.3"/>
-          <circle cx="140" cy="150" r="7" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1" opacity="0.85"/>
-          <circle cx="140" cy="150" r="3" fill="#4dd9c0" opacity="0.6"/>
-          <circle cx="140" cy="127" r="2.5" fill="#4dd9c0" class="drone-led"/>
-        </svg>
+    <div class="panel-content">
+      <p class="eyebrow">UC Santa Cruz · Slugbotics</p>
+      <h1>Autonomous Drones</h1>
+      <p class="panel-text">Designing, building, and flying fully autonomous aerial vehicles. No pilot required.</p>
+      <div class="btn-row">
+        <a href="team.html#join" class="btn btn-fill">Join the Team</a>
+        <a href="#competitions" class="btn btn-outline">Our Competitions</a>
       </div>
     </div>
   </section>
 
   <!-- About -->
-  <section class="full-section" id="about">
-    <div class="full-section-inner">
-      <div class="about-layout">
-        <div class="about-text">
-          <p class="section-eyebrow">About us</p>
-          <h2>Building the full<br>autonomous stack.</h2>
-          <p class="section-body">SOMARS — Student Organization for Marine and Aerial Robotics Systems — is UC Santa Cruz's competitive drone team under Slugbotics. We design, fabricate, and fly UAVs capable of fully autonomous missions, competing against top engineering programs nationwide.</p>
-          <p class="section-body">Our members span computer science, electrical engineering, mechanical engineering, and more — collaborating across every layer of the stack, from carbon fiber airframes to computer-vision-guided navigation.</p>
-        </div>
-        <div class="about-drone-wrap">
-          <svg class="about-drone-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-            <!-- Flight path trace (figure-8) -->
-            <path d="M 190,110 C 190,60 130,60 110,110 C 90,160 30,160 30,110 C 30,60 90,60 110,110 C 130,160 190,160 190,110"
-              fill="none" stroke="#4dd9c0" stroke-width="0.8" stroke-dasharray="5 8" opacity="0.15"/>
-            <!-- Drone -->
-            <g>
-              <animateMotion dur="7s" repeatCount="indefinite" rotate="0"
-                path="M 190,110 C 190,60 130,60 110,110 C 90,160 30,160 30,110 C 30,60 90,60 110,110 C 130,160 190,160 190,110"/>
-              <!-- Arms -->
-              <line x1="-16" y1="-12" x2="16" y2="12" stroke="#4dd9c0" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-              <line x1="16" y1="-12" x2="-16" y2="12" stroke="#4dd9c0" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-              <!-- Motor mounts -->
-              <circle cx="-16" cy="-12" r="5" fill="#0f1412" stroke="#4dd9c0" stroke-width="1"/>
-              <circle cx="16" cy="-12" r="5" fill="#0f1412" stroke="#4dd9c0" stroke-width="1"/>
-              <circle cx="-16" cy="12" r="5" fill="#0f1412" stroke="#4dd9c0" stroke-width="1"/>
-              <circle cx="16" cy="12" r="5" fill="#0f1412" stroke="#4dd9c0" stroke-width="1"/>
-              <!-- Props -->
-              <g class="prop-spin">
-                <rect x="-22" y="-14.5" width="12" height="5" rx="2.5" fill="#4dd9c0" opacity="0.65"/>
-                <rect x="-18.5" y="-18" width="5" height="12" rx="2.5" fill="#4dd9c0" opacity="0.65"/>
-              </g>
-              <g class="prop-spin prop-spin-rev">
-                <rect x="10" y="-14.5" width="12" height="5" rx="2.5" fill="#4dd9c0" opacity="0.65"/>
-                <rect x="13.5" y="-18" width="5" height="12" rx="2.5" fill="#4dd9c0" opacity="0.65"/>
-              </g>
-              <g class="prop-spin prop-spin-rev">
-                <rect x="-22" y="9.5" width="12" height="5" rx="2.5" fill="#4dd9c0" opacity="0.65"/>
-                <rect x="-18.5" y="6" width="5" height="12" rx="2.5" fill="#4dd9c0" opacity="0.65"/>
-              </g>
-              <g class="prop-spin">
-                <rect x="10" y="9.5" width="12" height="5" rx="2.5" fill="#4dd9c0" opacity="0.65"/>
-                <rect x="13.5" y="6" width="5" height="12" rx="2.5" fill="#4dd9c0" opacity="0.65"/>
-              </g>
-              <!-- Body -->
-              <rect x="-6" y="-5" width="12" height="10" rx="2" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1"/>
-              <!-- LED -->
-              <circle cx="0" cy="-8" r="2" fill="#4dd9c0" class="drone-led"/>
-            </g>
-          </svg>
-        </div>
+  <section class="panel" id="about">
+    <div class="panel-media" data-label="Team Photo"></div>
+    <div class="panel-content">
+      <p class="eyebrow">About Us</p>
+      <h2>Building the Full Autonomous Stack</h2>
+      <p class="panel-text">SOMARS — Student Organization for Marine and Aerial Robotics Systems — is UC Santa Cruz's competitive drone team under Slugbotics. We design, fabricate, and fly UAVs capable of fully autonomous missions, competing against top engineering programs nationwide.</p>
+      <p class="panel-text">Our members span computer science, electrical engineering, mechanical engineering, and more — collaborating across every layer of the stack, from carbon fiber airframes to computer-vision-guided navigation.</p>
+    </div>
+  </section>
+
+  <!-- Competitions intro -->
+  <section class="panel" id="competitions">
+    <div class="panel-media" data-label="Competition Flight"></div>
+    <div class="panel-content">
+      <p class="eyebrow">Competitions</p>
+      <h2>Where We Compete</h2>
+      <p class="panel-text">SOMARS enters two of the most rigorous student UAV competitions in the country, requiring fully autonomous systems capable of real-world mission performance.</p>
+    </div>
+  </section>
+
+  <!-- Competition 01 — C-UASC -->
+  <section class="panel panel--bottom">
+    <div class="panel-media" data-label="C-UASC"></div>
+    <div class="panel-content">
+      <p class="eyebrow">01</p>
+      <h2 class="comp-title">C-UASC</h2>
+      <p class="comp-fullname">Collegiate Unmanned Aircraft Systems Competition</p>
+      <p class="panel-text">Tests student teams on autonomous fixed-wing and multi-rotor operations — waypoint navigation, payload drop, and autonomous landing. Scored on mission completion, technical reports, and oral presentations.</p>
+      <div class="comp-tags">
+        <span>Waypoint Nav</span>
+        <span>Payload Drop</span>
+        <span>Auto Landing</span>
       </div>
-      <div class="image-block">
-        <img src="photos/team-drone.jpg" alt="SOMARS team with drone at C-UASC" class="section-img" loading="lazy" />
+      <div class="btn-row">
+        <a href="https://www.calstatela.edu/ecst/c-uasc" target="_blank" rel="noopener" class="btn btn-outline">Learn More ↗</a>
       </div>
     </div>
   </section>
 
-  <!-- Competitions -->
-  <section class="full-section full-section-alt" id="competitions">
-    <div class="full-section-inner">
-      <p class="section-eyebrow">Competitions</p>
-      <h2>Where we compete.</h2>
-      <p class="section-body">SOMARS enters two of the most rigorous student UAV competitions in the country, requiring fully autonomous systems capable of real-world mission performance.</p>
-      <div class="comp-cards">
-        <a class="comp-card" href="https://www.calstatela.edu/ecst/c-uasc" target="_blank" rel="noopener">
-          <p class="comp-label">01</p>
-          <h3>C-UASC</h3>
-          <p class="comp-name">Collegiate Unmanned Aircraft Systems Competition</p>
-          <p class="comp-desc">Tests student teams on autonomous fixed-wing and multi-rotor operations — waypoint navigation, payload drop, and autonomous landing. Scored on mission completion, technical reports, and oral presentations.</p>
-          <div class="comp-tags">
-            <span>Waypoint Nav</span>
-            <span>Payload Drop</span>
-            <span>Auto Landing</span>
-          </div>
-        </a>
-        <a class="comp-card" href="https://suas-competition.org/" target="_blank" rel="noopener">
-          <p class="comp-label">02</p>
-          <h3>SUAS</h3>
-          <p class="comp-name">Student Unmanned Aerial Systems Competition · AUVSI</p>
-          <p class="comp-desc">One of the most prestigious student UAV competitions. Teams complete an autonomous search-and-rescue-style mission: obstacle avoidance, target identification, and payload delivery.</p>
-          <div class="comp-tags">
-            <span>Obstacle Avoidance</span>
-            <span>Target ID</span>
-            <span>Payload Delivery</span>
-          </div>
-        </a>
+  <!-- Competition 02 — SUAS -->
+  <section class="panel panel--bottom">
+    <div class="panel-media" data-label="SUAS · AUVSI"></div>
+    <div class="panel-content">
+      <p class="eyebrow">02</p>
+      <h2 class="comp-title">SUAS</h2>
+      <p class="comp-fullname">Student Unmanned Aerial Systems Competition · AUVSI</p>
+      <p class="panel-text">One of the most prestigious student UAV competitions. Teams complete an autonomous search-and-rescue-style mission: obstacle avoidance, target identification, and payload delivery.</p>
+      <div class="comp-tags">
+        <span>Obstacle Avoidance</span>
+        <span>Target ID</span>
+        <span>Payload Delivery</span>
+      </div>
+      <div class="btn-row">
+        <a href="https://suas-competition.org/" target="_blank" rel="noopener" class="btn btn-outline">Learn More ↗</a>
       </div>
     </div>
   </section>
 
   <!-- Approach -->
-  <section class="full-section" id="approach">
-    <div class="full-section-inner">
-      <p class="section-eyebrow">Our approach</p>
-      <h2>Simulation-first.<br>Hardware-proven.</h2>
-      <p class="section-body">Every algorithm is validated in Gazebo before it ever touches real hardware — reducing crash risk and dramatically accelerating iteration speed.</p>
-      <div class="pillars">
+  <section class="panel" id="approach">
+    <div class="panel-media" data-label="Gazebo Simulation"></div>
+    <div class="panel-content">
+      <p class="eyebrow">Our Approach</p>
+      <h2>Simulation-First. Hardware-Proven.</h2>
+      <p class="panel-text">Every algorithm is validated in Gazebo before it ever touches real hardware — reducing crash risk and dramatically accelerating iteration speed.</p>
+      <div class="pillar-row">
         <div class="pillar">
           <h4>Autonomous Navigation</h4>
           <p>Waypoint planning and path execution with no human input in the loop.</p>
@@ -204,18 +171,16 @@
           <p>In-house firmware and tight flight controller integration.</p>
         </div>
       </div>
-      <div class="image-block">
-        <img src="photos/drone-in-flight.jpg" alt="SOMARS drone in flight at C-UASC" class="section-img" loading="lazy" />
-      </div>
     </div>
   </section>
 
   <!-- Subteams -->
-  <section class="full-section full-section-alt" id="subteams">
-    <div class="full-section-inner">
-      <p class="section-eyebrow">Subteams</p>
-      <h2>Four teams.<br>One system.</h2>
-      <p class="section-body">Each subteam owns a critical layer of the autonomous drone stack. <a href="team.html">Meet the full team →</a></p>
+  <section class="panel" id="subteams">
+    <div class="panel-media" data-label="The Stack"></div>
+    <div class="panel-content">
+      <p class="eyebrow">Subteams</p>
+      <h2>Four Teams. One System.</h2>
+      <p class="panel-text">Each subteam owns a critical layer of the autonomous drone stack. <a href="team.html">Meet the full team →</a></p>
       <div class="subteams">
         <a href="mechanical.html" class="subteam">
           <span class="subteam-num">01</span>
@@ -254,24 +219,25 @@
   </section>
 
   <!-- Season -->
-  <section class="full-section" id="season">
-    <div class="full-section-inner">
-      <p class="section-eyebrow">2025 – 2026 Season</p>
-      <h2>Building from<br>the ground up.</h2>
-      <p class="section-body">Our first season competing at C-UASC and SUAS. We're developing the full autonomous flight platform — airframe to software stack — from scratch.</p>
-      <div class="image-block">
-        <img src="photos/season.jpg" alt="SOMARS team at C-UASC" class="section-img" loading="lazy" />
-      </div>
+  <section class="panel panel--bottom" id="season">
+    <div class="panel-media" data-label="2025 – 2026 Season"></div>
+    <div class="panel-content">
+      <p class="eyebrow">2025 – 2026 Season</p>
+      <h2>Building From the Ground Up</h2>
+      <p class="panel-text">Our first season competing at C-UASC and SUAS. We're developing the full autonomous flight platform — airframe to software stack — from scratch.</p>
     </div>
   </section>
 
   <!-- Contact -->
-  <section class="full-section full-section-alt" id="contact">
-    <div class="full-section-inner contact-inner">
-      <p class="section-eyebrow">Get involved</p>
-      <h2>Join the team.</h2>
-      <p class="section-body">Whether you want to build, code, or fly — there's a place for you on SOMARS.</p>
-      <a href="team.html#join" class="btn-join">Apply to join →</a>
+  <section class="panel" id="contact">
+    <div class="panel-media" data-label="Get Involved"></div>
+    <div class="panel-content">
+      <p class="eyebrow">Get Involved</p>
+      <h2>Join the Team</h2>
+      <p class="panel-text">Whether you want to build, code, or fly — there's a place for you on SOMARS.</p>
+      <div class="btn-row">
+        <a href="team.html#join" class="btn btn-fill">Apply to Join</a>
+      </div>
       <div class="contact-links">
         <div class="contact-item">
           <span class="contact-label">Discord</span>
