@@ -9,12 +9,12 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-  <link rel="preload" as="image" href="photos/drone-in-flight.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="photos/main-photo.jpg" fetchpriority="high" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SOMARS" />
   <meta property="og:title" content="SOMARS — Autonomous Drones at UC Santa Cruz" />
   <meta property="og:description" content="UC Santa Cruz's competitive autonomous drone team. We design, build, and fly fully autonomous UAVs for the C-UASC and SUAS competitions." />
-  <meta property="og:image" content="https://somars-ucsc.com/photos/drone-in-flight.jpg" />
+  <meta property="og:image" content="https://somars-ucsc.com/photos/main-photo.jpg" />
   <meta property="og:url" content="https://somars-ucsc.com/" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -51,7 +51,7 @@
 
   <!-- Hero -->
   <section class="panel panel--bottom" id="top">
-    <div class="panel-media photo" style="background-image:url('photos/drone-in-flight.jpg'); background-position: center 95%;"></div>
+    <div class="panel-media photo" style="background-image:url('photos/main-photo.jpg'); background-position: center 95%;"></div>
     <div class="panel-content">
       <p class="eyebrow">UC Santa Cruz · Slugbotics</p>
       <h1>Autonomous Drones</h1>
@@ -65,7 +65,7 @@
 
   <!-- About -->
   <section class="panel" id="about">
-    <div class="panel-media photo" style="background-image:url('photos/team-drone.jpg')"></div>
+    <div class="panel-media photo" style="background-image:url('photos/plate-schematic.jpg')"></div>
     <div class="panel-content">
       <p class="eyebrow">About Us</p>
       <h2>Building the Full Autonomous Stack</h2>
@@ -74,75 +74,130 @@
     </div>
   </section>
 
-  <!-- Competitions intro -->
-  <section class="panel" id="competitions">
+  <!-- Competitions -->
+  <section class="panel panel--bottom" id="competitions">
     <div class="panel-media photo" style="background-image:url('photos/season.jpg')"></div>
     <div class="panel-content">
       <p class="eyebrow">Competitions</p>
       <h2>Where We Compete</h2>
       <p class="panel-text">SOMARS enters two of the most rigorous student UAV competitions in the country, requiring fully autonomous systems capable of real-world mission performance.</p>
-    </div>
-  </section>
-
-  <!-- Competition 01 — C-UASC -->
-  <section class="panel panel--bottom">
-    <div class="panel-media photo" style="background-image:url('photos/drone-in-flight.jpg')"></div>
-    <div class="panel-content">
-      <p class="eyebrow">01</p>
-      <h2 class="comp-title">C-UASC</h2>
-      <p class="comp-fullname">Collegiate Unmanned Aircraft Systems Competition</p>
-      <p class="panel-text">Tests student teams on autonomous fixed-wing and multi-rotor operations — waypoint navigation, payload drop, and autonomous landing. Scored on mission completion, technical reports, and oral presentations.</p>
-      <div class="comp-tags">
-        <span>Waypoint Nav</span>
-        <span>Payload Drop</span>
-        <span>Auto Landing</span>
-      </div>
-      <div class="btn-row">
-        <a href="https://www.calstatela.edu/ecst/c-uasc" target="_blank" rel="noopener" class="btn btn-outline">Learn More ↗</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Competition 02 — SUAS -->
-  <section class="panel panel--bottom">
-    <div class="panel-media photo" style="background-image:url('photos/embedded-electronics.jpg')"></div>
-    <div class="panel-content">
-      <p class="eyebrow">02</p>
-      <h2 class="comp-title">SUAS</h2>
-      <p class="comp-fullname">Student Unmanned Aerial Systems Competition · AUVSI</p>
-      <p class="panel-text">One of the most prestigious student UAV competitions. Teams complete an autonomous search-and-rescue-style mission: obstacle avoidance, target identification, and payload delivery.</p>
-      <div class="comp-tags">
-        <span>Obstacle Avoidance</span>
-        <span>Target ID</span>
-        <span>Payload Delivery</span>
-      </div>
-      <div class="btn-row">
-        <a href="https://suas-competition.org/" target="_blank" rel="noopener" class="btn btn-outline">Learn More ↗</a>
+      <div class="comp-grid">
+        <div class="comp-card">
+          <p class="eyebrow">01</p>
+          <h3 class="comp-title">C-UASC</h3>
+          <p class="comp-fullname">Collegiate Unmanned Aircraft Systems Competition</p>
+          <p class="panel-text">Tests student teams on autonomous fixed-wing and multi-rotor operations — waypoint navigation, payload drop, and autonomous landing. Scored on mission completion, technical reports, and oral presentations.</p>
+          <div class="comp-tags">
+            <span>Waypoint Nav</span>
+            <span>Payload Drop</span>
+            <span>Auto Landing</span>
+          </div>
+          <div class="btn-row">
+            <a href="https://www.calstatela.edu/ecst/c-uasc" target="_blank" rel="noopener" class="btn btn-outline">Learn More ↗</a>
+          </div>
+        </div>
+        <div class="comp-card">
+          <p class="eyebrow">02</p>
+          <h3 class="comp-title">SUAS</h3>
+          <p class="comp-fullname">Student Unmanned Aerial Systems Competition · AUVSI</p>
+          <p class="panel-text">One of the most prestigious student UAV competitions. Teams complete an autonomous search-and-rescue-style mission: obstacle avoidance, target identification, and payload delivery.</p>
+          <div class="comp-tags">
+            <span>Obstacle Avoidance</span>
+            <span>Target ID</span>
+            <span>Payload Delivery</span>
+          </div>
+          <div class="btn-row">
+            <a href="https://suas-competition.org/" target="_blank" rel="noopener" class="btn btn-outline">Learn More ↗</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Approach -->
   <section class="panel" id="approach">
-    <div class="panel-media photo" style="background-image:url('photos/gazebo.png')"></div>
+    <div class="panel-media panel-media--anim">
+      <svg class="waypoint-anim" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <path class="wp-route" d="M90,340 C150,270 190,170 260,120 C330,70 380,210 430,260 C480,310 530,140 600,90 C650,55 690,140 730,200" />
+        <circle class="wp-node" cx="90" cy="340" r="7" style="animation-delay:0s"></circle>
+        <circle class="wp-node" cx="260" cy="120" r="7" style="animation-delay:2s"></circle>
+        <circle class="wp-node" cx="430" cy="260" r="7" style="animation-delay:4s"></circle>
+        <circle class="wp-node" cx="600" cy="90" r="7" style="animation-delay:6s"></circle>
+        <circle class="wp-node" cx="730" cy="200" r="7" style="animation-delay:7.6s"></circle>
+        <g class="wp-drone">
+          <line x1="-14" y1="-14" x2="14" y2="14" />
+          <line x1="-14" y1="14" x2="14" y2="-14" />
+          <circle cx="-14" cy="-14" r="4.5" />
+          <circle cx="14" cy="-14" r="4.5" />
+          <circle cx="-14" cy="14" r="4.5" />
+          <circle cx="14" cy="14" r="4.5" />
+          <rect x="-5.5" y="-5.5" width="11" height="11" rx="2.4" />
+          <animateMotion dur="9s" repeatCount="indefinite" rotate="auto" calcMode="paced" path="M90,340 C150,270 190,170 260,120 C330,70 380,210 430,260 C480,310 530,140 600,90 C650,55 690,140 730,200"></animateMotion>
+        </g>
+      </svg>
+    </div>
     <div class="panel-content">
       <p class="eyebrow">Our Approach</p>
       <h2>Simulation-First. Hardware-Proven.</h2>
       <p class="panel-text">Every algorithm is validated in Gazebo before it ever touches real hardware — reducing crash risk and dramatically accelerating iteration speed.</p>
       <div class="pillar-row">
         <div class="pillar">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 64 64" class="pillar-svg pillar-svg--nav" aria-hidden="true">
+              <path class="pn-route" d="M10,48 C17,39 20,22 29,27 C38,32 42,13 54,17" />
+              <circle class="pn-node" cx="10" cy="48" r="2.2" style="animation-delay:0s"></circle>
+              <circle class="pn-node" cx="29" cy="27" r="2.2" style="animation-delay:.9s"></circle>
+              <circle class="pn-node" cx="54" cy="17" r="2.2" style="animation-delay:1.9s"></circle>
+              <g class="pn-drone">
+                <line x1="-4.6" y1="-4.6" x2="4.6" y2="4.6" />
+                <line x1="-4.6" y1="4.6" x2="4.6" y2="-4.6" />
+                <circle cx="-4.6" cy="-4.6" r="1.5" />
+                <circle cx="4.6" cy="-4.6" r="1.5" />
+                <circle cx="-4.6" cy="4.6" r="1.5" />
+                <circle cx="4.6" cy="4.6" r="1.5" />
+                <rect x="-1.8" y="-1.8" width="3.6" height="3.6" rx="0.8" />
+                <animateMotion dur="3.4s" repeatCount="indefinite" rotate="auto" calcMode="paced" path="M10,48 C17,39 20,22 29,27 C38,32 42,13 54,17"></animateMotion>
+              </g>
+            </svg>
+          </div>
           <h4>Autonomous Navigation</h4>
           <p>Waypoint planning and path execution with no human input in the loop.</p>
         </div>
         <div class="pillar">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 64 64" class="pillar-svg pillar-svg--cv" aria-hidden="true">
+              <path class="cv-frame" d="M10,18 V10 H18 M46,10 H54 V18 M54,46 V54 H46 M18,54 H10 V46" />
+              <rect class="cv-target" x="24" y="24" width="16" height="16" rx="2"></rect>
+              <line class="cv-scan" x1="10" y1="12" x2="54" y2="12"></line>
+            </svg>
+          </div>
           <h4>Computer Vision</h4>
           <p>Real-time target detection and obstacle avoidance onboard the aircraft.</p>
         </div>
         <div class="pillar">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 64 64" class="pillar-svg pillar-svg--sim" aria-hidden="true">
+              <ellipse class="sim-ring sim-ring--a" cx="32" cy="32" rx="22" ry="9"></ellipse>
+              <ellipse class="sim-ring sim-ring--b" cx="32" cy="32" rx="9" ry="22"></ellipse>
+              <circle class="sim-core" cx="32" cy="32" r="3"></circle>
+            </svg>
+          </div>
           <h4>Simulation Pipeline</h4>
           <p>Full Gazebo-based testing environment before every real-world flight.</p>
         </div>
         <div class="pillar">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 64 64" class="pillar-svg pillar-svg--emb" aria-hidden="true">
+              <path class="emb-trace" d="M8,50 H24 V26 H40 V14 H56"></path>
+              <circle class="emb-pad" cx="8" cy="50" r="2.2"></circle>
+              <circle class="emb-pad" cx="24" cy="26" r="2.2"></circle>
+              <circle class="emb-pad" cx="40" cy="14" r="2.2"></circle>
+              <circle class="emb-pad" cx="56" cy="14" r="2.2"></circle>
+              <circle class="emb-pulse" r="2.6">
+                <animateMotion dur="2.8s" repeatCount="indefinite" calcMode="paced" path="M8,50 H24 V26 H40 V14 H56"></animateMotion>
+              </circle>
+            </svg>
+          </div>
           <h4>Custom Embedded Systems</h4>
           <p>In-house firmware and tight flight controller integration.</p>
         </div>
@@ -152,7 +207,7 @@
 
   <!-- Subteams -->
   <section class="panel" id="subteams">
-    <div class="panel-media photo" style="background-image:url('photos/main-assembly.png')"></div>
+    <div class="panel-media"></div>
     <div class="panel-content">
       <p class="eyebrow">Subteams</p>
       <h2>Four Teams. One System.</h2>
@@ -164,6 +219,14 @@
             <h4>Mechanical</h4>
             <p>Airframe design, carbon fiber fabrication, and payload systems.</p>
           </div>
+          <div class="subteam-icon">
+            <svg viewBox="0 0 64 64" class="subteam-svg subteam-svg--mech" aria-hidden="true">
+              <circle class="mech-gear mech-gear--a" cx="24" cy="32" r="14"></circle>
+              <circle class="mech-gear-hub" cx="24" cy="32" r="4"></circle>
+              <circle class="mech-gear mech-gear--b" cx="46" cy="32" r="9"></circle>
+              <circle class="mech-gear-hub mech-gear-hub--b" cx="46" cy="32" r="2.6"></circle>
+            </svg>
+          </div>
           <span class="subteam-arrow">→</span>
         </a>
         <a href="html/embedded.html" class="subteam">
@@ -171,6 +234,18 @@
           <div class="subteam-info">
             <h4>Embedded Systems</h4>
             <p>Firmware, flight controllers, and autonomous controls software.</p>
+          </div>
+          <div class="subteam-icon">
+            <svg viewBox="0 0 64 64" class="subteam-svg subteam-svg--emb" aria-hidden="true">
+              <path class="emb-trace" d="M8,50 H24 V26 H40 V14 H56"></path>
+              <circle class="emb-pad" cx="8" cy="50" r="2.2"></circle>
+              <circle class="emb-pad" cx="24" cy="26" r="2.2"></circle>
+              <circle class="emb-pad" cx="40" cy="14" r="2.2"></circle>
+              <circle class="emb-pad" cx="56" cy="14" r="2.2"></circle>
+              <circle class="emb-pulse" r="2.6">
+                <animateMotion dur="2.8s" repeatCount="indefinite" calcMode="paced" path="M8,50 H24 V26 H40 V14 H56"></animateMotion>
+              </circle>
+            </svg>
           </div>
           <span class="subteam-arrow">→</span>
         </a>
@@ -180,6 +255,13 @@
             <h4>Perception</h4>
             <p>Computer vision pipelines for navigation and object detection.</p>
           </div>
+          <div class="subteam-icon">
+            <svg viewBox="0 0 64 64" class="subteam-svg subteam-svg--cv" aria-hidden="true">
+              <path class="cv-frame" d="M10,18 V10 H18 M46,10 H54 V18 M54,46 V54 H46 M18,54 H10 V46" />
+              <rect class="cv-target" x="24" y="24" width="16" height="16" rx="2"></rect>
+              <line class="cv-scan" x1="10" y1="12" x2="54" y2="12"></line>
+            </svg>
+          </div>
           <span class="subteam-arrow">→</span>
         </a>
         <a href="html/simulations.html" class="subteam">
@@ -187,6 +269,13 @@
           <div class="subteam-info">
             <h4>Simulations</h4>
             <p>Gazebo-based simulation of flight behaviors before real-world tests.</p>
+          </div>
+          <div class="subteam-icon">
+            <svg viewBox="0 0 64 64" class="subteam-svg subteam-svg--sim" aria-hidden="true">
+              <ellipse class="sim-ring sim-ring--a" cx="32" cy="32" rx="22" ry="9"></ellipse>
+              <ellipse class="sim-ring sim-ring--b" cx="32" cy="32" rx="9" ry="22"></ellipse>
+              <circle class="sim-core" cx="32" cy="32" r="3"></circle>
+            </svg>
           </div>
           <span class="subteam-arrow">→</span>
         </a>
@@ -206,7 +295,7 @@
 
   <!-- Contact -->
   <section class="panel" id="contact">
-    <div class="panel-media photo" style="background-image:url('photos/season.jpg')"></div>
+    <div class="panel-media photo" style="background-image:url('photos/another-team-photo.jpg')"></div>
     <div class="panel-content">
       <p class="eyebrow">Get Involved</p>
       <h2>Join the Team</h2>
