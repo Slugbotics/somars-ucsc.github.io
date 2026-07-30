@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <title>SOMARS — Simulations</title>
+  <meta name="description" content="The SOMARS Simulations subteam at UC Santa Cruz — Gazebo-based flight simulation and testing before real-world flights of our autonomous drone." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SOMARS" />
+  <meta property="og:title" content="SOMARS — Simulations" />
+  <meta property="og:description" content="Gazebo-based flight simulation and testing before real-world flights of UC Santa Cruz's autonomous drone." />
+  <meta property="og:image" content="https://somars-ucsc.com/photos/gazebo.png" />
+  <meta property="og:url" content="https://somars-ucsc.com/html/simulations.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">SOMARS</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="../index.html">Home</a>
+        <div class="nav-item has-dropdown">
+          <a href="team.html" class="nav-link-with-dropdown active">Team</a>
+          <div class="dropdown">
+            <a href="mechanical.html">Mechanical</a>
+            <a href="embedded.html">Embedded Systems</a>
+            <a href="perception.html">Perception</a>
+            <a href="simulations.html">Simulations</a>
+          </div>
+        </div>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="team.html#join" class="nav-join">Join Us</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero photo" style="background-image:url('../photos/gazebo-hero.png')">
+    <div class="page-hero-inner">
+      <p class="hero-eyebrow">Subteam · 04</p>
+      <h1>Simulations.</h1>
+      <p class="hero-desc">Using Gazebo to visualize, validate, and simulate autonomous flight before real-world testing.</p>
+    </div>
+  </section>
+
+  <!-- Who we are -->
+  <section class="full-section full-section--photo" style="background-image:url('../photos/isaac-sim.png')">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">About</p>
+      <h2>The virtual world<br>before the real one.</h2>
+      <p class="section-body">The Simulations subteam builds the virtual environment where our autonomous drone learns to fly. Using Gazebo, we create realistic 3D environments that replicate competition arenas, terrain, and obstacles.</p>
+      <p class="section-body">Bugs in the control stack can be caught and fixed in simulation at near-zero cost — dramatically reducing crash risk and accelerating iteration speed across the whole team.</p>
+    </div>
+  </section>
+
+  <!-- What we work on -->
+  <section class="full-section full-section-alt">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Focus Areas</p>
+      <h2>What we work on.</h2>
+      <div class="work-grid work-grid-mech">
+
+        <!-- Left column -->
+        <div class="work-card" style="grid-column:1; grid-row:1;">
+          <h4>Competition World Models</h4>
+          <p>Building accurate Gazebo models of SUAS and C-UASC arenas — waypoint fields, obstacle configurations, and target zones — for full mission rehearsal.</p>
+        </div>
+        <div class="work-card" style="grid-column:1; grid-row:2;">
+          <h4>Hardware-in-the-Loop (HIL)</h4>
+          <p>Setting up SITL and HIL pipelines with ArduPilot / PX4 so flight controller firmware runs against the simulated plant in real time.</p>
+        </div>
+
+        <!-- Right column -->
+        <div class="work-card" style="grid-column:2; grid-row:1;">
+          <h4>Drone Model &amp; Physics</h4>
+          <p>Creating a high-fidelity URDF / SDF model of our physical drone with accurate mass, inertia, motor thrust curves, and aerodynamic drag.</p>
+        </div>
+        <div class="work-card" style="grid-column:2; grid-row:2;">
+          <h4>Flight Path Validation</h4>
+          <p>Validating planned flight paths and waypoint sequences in simulation before upload to the real vehicle, checking for obstacle conflicts and timing.</p>
+        </div>
+
+        <!-- Animation: full-width bottom row -->
+        <div class="payload-scene-wrap" style="grid-column:1 / 3; grid-row:3; margin:0;">
+          <svg class="payload-scene" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+
+            <!-- Grid background (Gazebo world grid) -->
+            <line x1="0" y1="50"  x2="500" y2="50"  stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+            <line x1="0" y1="100" x2="500" y2="100" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+            <line x1="0" y1="150" x2="500" y2="150" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+            <line x1="100" y1="0" x2="100" y2="200" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+            <line x1="200" y1="0" x2="200" y2="200" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+            <line x1="300" y1="0" x2="300" y2="200" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+            <line x1="400" y1="0" x2="400" y2="200" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+
+            <!-- Arena boundary -->
+            <rect x="28" y="16" width="444" height="168" rx="2" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="8,5" opacity="0.25"/>
+            <text x="34" y="30" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" opacity="0.35" letter-spacing="2">COMPETITION ARENA</text>
+
+            <!-- Obstacles -->
+            <line x1="194" y1="92" x2="206" y2="104" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+            <line x1="206" y1="92" x2="194" y2="104" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+            <line x1="304" y1="57" x2="316" y2="69"  stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+            <line x1="316" y1="57" x2="304" y2="69"  stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+            <line x1="224" y1="133" x2="236" y2="145" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+            <line x1="236" y1="133" x2="224" y2="145" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+
+            <!-- Planned path (dashed) -->
+            <polyline points="80,50 240,38 382,88 344,155 152,160 80,50"
+              fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="5,4" opacity="0.2"/>
+
+            <!-- Waypoints -->
+            <circle cx="80"  cy="50"  r="8" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85" class="sim-wp1"/>
+            <circle cx="240" cy="38"  r="8" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85" class="sim-wp2"/>
+            <circle cx="382" cy="88"  r="8" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85" class="sim-wp3"/>
+            <circle cx="344" cy="155" r="8" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85" class="sim-wp4"/>
+            <circle cx="152" cy="160" r="8" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85" class="sim-wp5"/>
+            <text x="80"  y="54"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" class="sim-wp1-txt">1</text>
+            <text x="240" y="42"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" class="sim-wp2-txt">2</text>
+            <text x="382" y="92"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" class="sim-wp3-txt">3</text>
+            <text x="344" y="159" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" class="sim-wp4-txt">4</text>
+            <text x="152" y="164" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" class="sim-wp5-txt">5</text>
+
+            <!-- Waypoint labels -->
+            <text x="80"  y="40"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4">HOME</text>
+            <text x="240" y="28"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4">WP 2</text>
+            <text x="382" y="78"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4">WP 3</text>
+            <text x="356" y="165" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4">WP 4</text>
+            <text x="152" y="175" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4">WP 5</text>
+
+            <!-- Drone (follows path, auto-rotates) -->
+            <g>
+              <animateMotion
+                path="M 80,50 L 240,38 L 382,88 L 344,155 L 152,160 L 80,50"
+                keyTimes="0; 0.23; 0.44; 0.55; 0.82; 1"
+                dur="8s" repeatCount="indefinite" calcMode="linear" rotate="auto"/>
+              <line x1="-10" y1="-8"  x2="10"  y2="8"  stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+              <line x1="10"  y1="-8"  x2="-10" y2="8"  stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+              <circle cx="-10" cy="-8" r="3.5" fill="#0c0c0c" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85"/>
+              <circle cx="10"  cy="-8" r="3.5" fill="#0c0c0c" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85"/>
+              <circle cx="-10" cy="8"  r="3.5" fill="#0c0c0c" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85"/>
+              <circle cx="10"  cy="8"  r="3.5" fill="#0c0c0c" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85"/>
+              <rect x="-5" y="-4" width="10" height="8" rx="2" fill="#0c0c0c" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85"/>
+            </g>
+
+            <!-- Status -->
+            <text x="250" y="192" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" opacity="0.35" letter-spacing="2">SITL SIM RUNNING</text>
+
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Sim environment -->
+  <section class="full-section">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Environment</p>
+      <h2>Our simulation stack.</h2>
+      <div class="stack-layers">
+        <div class="stack-layer">
+          <span class="stack-label">Simulator</span>
+          <span class="stack-desc">Gazebo (Harmonic / Classic)</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Middleware</span>
+          <span class="stack-desc">ROS 2</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Flight Stack Integration</span>
+          <span class="stack-desc">PX4 SITL via Micro XRCE-DDS</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Visualization</span>
+          <span class="stack-desc">Gazebo</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Drone Model Format</span>
+          <span class="stack-desc">SDF / URDF</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Operating System</span>
+          <span class="stack-desc">NVIDIA JetPack 6.2.2</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meetings -->
+  <section class="full-section full-section--photo" style="background-image:url('../photos/jetson-sdk-flash.jpg')">
+    <div class="full-section-inner">
+      <p class="section-eyebrow">Meetings</p>
+      <h2>When we meet.</h2>
+      <div class="meeting-cards meeting-cards--plain">
+        <div class="meeting-card">
+          <h4>Sim Dev Session</h4>
+          <p>Mondays 6:00 PM</p>
+          <p class="meeting-loc">SlugWorks / Remote</p>
+        </div>
+      </div>
+      <p class="meeting-note">Familiarity with Linux is helpful but not required — we'll get you set up.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>SOMARS · Slugbotics · UC Santa Cruz</span>
+      <span>Student Organization for Marine and Aerial Robotics Systems</span>
+    </div>
+  </footer>
+
+  <script src="../assets/script.js"></script>
+</body>
+</html>
