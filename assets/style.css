@@ -245,6 +245,13 @@ img { max-width: 100%; }
 }
 .panel-media.photo::after { content: none; }
 
+#competitions .panel-media.photo { filter: brightness(0.55); }
+
+#subteams .panel-media.photo {
+  background-size: 190%;
+  filter: brightness(0.4);
+}
+
 /* Waypoint navigation animation (replaces a static photo) */
 .panel-media--anim::after { content: none; }
 
@@ -696,6 +703,7 @@ img { max-width: 100%; }
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border-top: none;
 }
 
 .full-section--photo::before {
@@ -717,6 +725,19 @@ img { max-width: 100%; }
 .full-section--photo .full-section-inner {
   position: relative;
   z-index: 1;
+}
+
+/* Perception meetings sits on a detection mosaic whose own labels compete with
+   the copy — needs a heavier wash than the standard photo fade. */
+#meetings.full-section--photo::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.93) 0%,
+    rgba(0,0,0,0.87) 22%,
+    rgba(0,0,0,0.87) 62%,
+    rgba(0,0,0,0.94) 88%,
+    rgba(0,0,0,0.97) 100%
+  );
 }
 
 .full-section-inner {
@@ -948,55 +969,55 @@ h2 {
 .sim-wp5-txt { animation: sim-wp5-txt-flash 8s linear infinite; }
 
 @keyframes sim-wp1-flash {
-  0%,  2% { fill: #4dd9c0; }
-  4%,  96% { fill: #0a1a18; }
-  98%, 100% { fill: #4dd9c0; }
+  0%,  2% { fill: #ffffff; }
+  4%,  96% { fill: #0c0c0c; }
+  98%, 100% { fill: #ffffff; }
 }
 @keyframes sim-wp2-flash {
-  0%,  20% { fill: #0a1a18; }
-  23%, 27% { fill: #4dd9c0; }
-  30%, 100% { fill: #0a1a18; }
+  0%,  20% { fill: #0c0c0c; }
+  23%, 27% { fill: #ffffff; }
+  30%, 100% { fill: #0c0c0c; }
 }
 @keyframes sim-wp3-flash {
-  0%,  41% { fill: #0a1a18; }
-  44%, 48% { fill: #4dd9c0; }
-  51%, 100% { fill: #0a1a18; }
+  0%,  41% { fill: #0c0c0c; }
+  44%, 48% { fill: #ffffff; }
+  51%, 100% { fill: #0c0c0c; }
 }
 @keyframes sim-wp4-flash {
-  0%,  52% { fill: #0a1a18; }
-  55%, 59% { fill: #4dd9c0; }
-  62%, 100% { fill: #0a1a18; }
+  0%,  52% { fill: #0c0c0c; }
+  55%, 59% { fill: #ffffff; }
+  62%, 100% { fill: #0c0c0c; }
 }
 @keyframes sim-wp5-flash {
-  0%,  79% { fill: #0a1a18; }
-  82%, 86% { fill: #4dd9c0; }
-  89%, 100% { fill: #0a1a18; }
+  0%,  79% { fill: #0c0c0c; }
+  82%, 86% { fill: #ffffff; }
+  89%, 100% { fill: #0c0c0c; }
 }
 
 @keyframes sim-wp1-txt-flash {
-  0%,  2% { fill: #0a1a18; }
-  4%,  96% { fill: #4dd9c0; }
-  98%, 100% { fill: #0a1a18; }
+  0%,  2% { fill: #0c0c0c; }
+  4%,  96% { fill: #ffffff; }
+  98%, 100% { fill: #0c0c0c; }
 }
 @keyframes sim-wp2-txt-flash {
-  0%,  20% { fill: #4dd9c0; }
-  23%, 27% { fill: #0a1a18; }
-  30%, 100% { fill: #4dd9c0; }
+  0%,  20% { fill: #ffffff; }
+  23%, 27% { fill: #0c0c0c; }
+  30%, 100% { fill: #ffffff; }
 }
 @keyframes sim-wp3-txt-flash {
-  0%,  41% { fill: #4dd9c0; }
-  44%, 48% { fill: #0a1a18; }
-  51%, 100% { fill: #4dd9c0; }
+  0%,  41% { fill: #ffffff; }
+  44%, 48% { fill: #0c0c0c; }
+  51%, 100% { fill: #ffffff; }
 }
 @keyframes sim-wp4-txt-flash {
-  0%,  52% { fill: #4dd9c0; }
-  55%, 59% { fill: #0a1a18; }
-  62%, 100% { fill: #4dd9c0; }
+  0%,  52% { fill: #ffffff; }
+  55%, 59% { fill: #0c0c0c; }
+  62%, 100% { fill: #ffffff; }
 }
 @keyframes sim-wp5-txt-flash {
-  0%,  79% { fill: #4dd9c0; }
-  82%, 86% { fill: #0a1a18; }
-  89%, 100% { fill: #4dd9c0; }
+  0%,  79% { fill: #ffffff; }
+  82%, 86% { fill: #0c0c0c; }
+  89%, 100% { fill: #ffffff; }
 }
 
 /* ============ SPEC / STACK LAYERS ============ */
@@ -1084,6 +1105,10 @@ h2 {
 .meeting-cards--plain {
   background: none;
   border: none;
+}
+
+.full-section--photo .meeting-card {
+  background: transparent;
 }
 
 .meeting-card h4 {

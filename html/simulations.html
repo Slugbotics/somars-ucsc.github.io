@@ -47,7 +47,7 @@
     </div>
   </header>
 
-  <section class="page-hero photo" style="background-image:url('../photos/gazebo.png')">
+  <section class="page-hero photo" style="background-image:url('../photos/gazebo-hero.png')">
     <div class="page-hero-inner">
       <p class="hero-eyebrow">Subteam · 04</p>
       <h1>Simulations.</h1>
@@ -56,15 +56,12 @@
   </section>
 
   <!-- Who we are -->
-  <section class="full-section">
+  <section class="full-section full-section--photo" style="background-image:url('../photos/isaac-sim.png')">
     <div class="full-section-inner">
       <p class="section-eyebrow">About</p>
       <h2>The virtual world<br>before the real one.</h2>
       <p class="section-body">The Simulations subteam builds the virtual environment where our autonomous drone learns to fly. Using Gazebo, we create realistic 3D environments that replicate competition arenas, terrain, and obstacles.</p>
       <p class="section-body">Bugs in the control stack can be caught and fixed in simulation at near-zero cost — dramatically reducing crash risk and accelerating iteration speed across the whole team.</p>
-      <div class="image-block">
-        <img src="../photos/gazebo.png" alt="Gazebo simulation screenshot" class="section-img" loading="lazy" />
-      </div>
     </div>
   </section>
 
@@ -100,48 +97,48 @@
           <svg class="payload-scene" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
 
             <!-- Grid background (Gazebo world grid) -->
-            <line x1="0" y1="50"  x2="500" y2="50"  stroke="#4dd9c0" stroke-width="0.5" opacity="0.05"/>
-            <line x1="0" y1="100" x2="500" y2="100" stroke="#4dd9c0" stroke-width="0.5" opacity="0.05"/>
-            <line x1="0" y1="150" x2="500" y2="150" stroke="#4dd9c0" stroke-width="0.5" opacity="0.05"/>
-            <line x1="100" y1="0" x2="100" y2="200" stroke="#4dd9c0" stroke-width="0.5" opacity="0.05"/>
-            <line x1="200" y1="0" x2="200" y2="200" stroke="#4dd9c0" stroke-width="0.5" opacity="0.05"/>
-            <line x1="300" y1="0" x2="300" y2="200" stroke="#4dd9c0" stroke-width="0.5" opacity="0.05"/>
-            <line x1="400" y1="0" x2="400" y2="200" stroke="#4dd9c0" stroke-width="0.5" opacity="0.05"/>
+            <line x1="0" y1="50"  x2="500" y2="50"  stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+            <line x1="0" y1="100" x2="500" y2="100" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+            <line x1="0" y1="150" x2="500" y2="150" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+            <line x1="100" y1="0" x2="100" y2="200" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+            <line x1="200" y1="0" x2="200" y2="200" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+            <line x1="300" y1="0" x2="300" y2="200" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+            <line x1="400" y1="0" x2="400" y2="200" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
 
             <!-- Arena boundary -->
-            <rect x="28" y="16" width="444" height="168" rx="2" fill="none" stroke="#4dd9c0" stroke-width="1" stroke-dasharray="8,5" opacity="0.25"/>
-            <text x="34" y="30" font-family="Inter,sans-serif" font-size="7" fill="#4dd9c0" opacity="0.35" letter-spacing="2">COMPETITION ARENA</text>
+            <rect x="28" y="16" width="444" height="168" rx="2" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="8,5" opacity="0.25"/>
+            <text x="34" y="30" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" opacity="0.35" letter-spacing="2">COMPETITION ARENA</text>
 
             <!-- Obstacles -->
-            <line x1="194" y1="92" x2="206" y2="104" stroke="#4dd9c0" stroke-width="1.5" opacity="0.4"/>
-            <line x1="206" y1="92" x2="194" y2="104" stroke="#4dd9c0" stroke-width="1.5" opacity="0.4"/>
-            <line x1="304" y1="57" x2="316" y2="69"  stroke="#4dd9c0" stroke-width="1.5" opacity="0.4"/>
-            <line x1="316" y1="57" x2="304" y2="69"  stroke="#4dd9c0" stroke-width="1.5" opacity="0.4"/>
-            <line x1="224" y1="133" x2="236" y2="145" stroke="#4dd9c0" stroke-width="1.5" opacity="0.4"/>
-            <line x1="236" y1="133" x2="224" y2="145" stroke="#4dd9c0" stroke-width="1.5" opacity="0.4"/>
+            <line x1="194" y1="92" x2="206" y2="104" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+            <line x1="206" y1="92" x2="194" y2="104" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+            <line x1="304" y1="57" x2="316" y2="69"  stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+            <line x1="316" y1="57" x2="304" y2="69"  stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+            <line x1="224" y1="133" x2="236" y2="145" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+            <line x1="236" y1="133" x2="224" y2="145" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
 
             <!-- Planned path (dashed) -->
             <polyline points="80,50 240,38 382,88 344,155 152,160 80,50"
-              fill="none" stroke="#4dd9c0" stroke-width="1" stroke-dasharray="5,4" opacity="0.2"/>
+              fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="5,4" opacity="0.2"/>
 
             <!-- Waypoints -->
-            <circle cx="80"  cy="50"  r="8" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1.2" class="sim-wp1"/>
-            <circle cx="240" cy="38"  r="8" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1.2" class="sim-wp2"/>
-            <circle cx="382" cy="88"  r="8" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1.2" class="sim-wp3"/>
-            <circle cx="344" cy="155" r="8" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1.2" class="sim-wp4"/>
-            <circle cx="152" cy="160" r="8" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1.2" class="sim-wp5"/>
-            <text x="80"  y="54"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#4dd9c0" class="sim-wp1-txt">1</text>
-            <text x="240" y="42"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#4dd9c0" class="sim-wp2-txt">2</text>
-            <text x="382" y="92"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#4dd9c0" class="sim-wp3-txt">3</text>
-            <text x="344" y="159" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#4dd9c0" class="sim-wp4-txt">4</text>
-            <text x="152" y="164" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#4dd9c0" class="sim-wp5-txt">5</text>
+            <circle cx="80"  cy="50"  r="8" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85" class="sim-wp1"/>
+            <circle cx="240" cy="38"  r="8" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85" class="sim-wp2"/>
+            <circle cx="382" cy="88"  r="8" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85" class="sim-wp3"/>
+            <circle cx="344" cy="155" r="8" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85" class="sim-wp4"/>
+            <circle cx="152" cy="160" r="8" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85" class="sim-wp5"/>
+            <text x="80"  y="54"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" class="sim-wp1-txt">1</text>
+            <text x="240" y="42"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" class="sim-wp2-txt">2</text>
+            <text x="382" y="92"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" class="sim-wp3-txt">3</text>
+            <text x="344" y="159" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" class="sim-wp4-txt">4</text>
+            <text x="152" y="164" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" class="sim-wp5-txt">5</text>
 
             <!-- Waypoint labels -->
-            <text x="80"  y="40"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#4dd9c0" opacity="0.4">HOME</text>
-            <text x="240" y="28"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#4dd9c0" opacity="0.4">WP 2</text>
-            <text x="382" y="78"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#4dd9c0" opacity="0.4">WP 3</text>
-            <text x="356" y="165" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#4dd9c0" opacity="0.4">WP 4</text>
-            <text x="152" y="175" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#4dd9c0" opacity="0.4">WP 5</text>
+            <text x="80"  y="40"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4">HOME</text>
+            <text x="240" y="28"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4">WP 2</text>
+            <text x="382" y="78"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4">WP 3</text>
+            <text x="356" y="165" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4">WP 4</text>
+            <text x="152" y="175" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4">WP 5</text>
 
             <!-- Drone (follows path, auto-rotates) -->
             <g>
@@ -149,17 +146,17 @@
                 path="M 80,50 L 240,38 L 382,88 L 344,155 L 152,160 L 80,50"
                 keyTimes="0; 0.23; 0.44; 0.55; 0.82; 1"
                 dur="8s" repeatCount="indefinite" calcMode="linear" rotate="auto"/>
-              <line x1="-10" y1="-8"  x2="10"  y2="8"  stroke="#4dd9c0" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
-              <line x1="10"  y1="-8"  x2="-10" y2="8"  stroke="#4dd9c0" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
-              <circle cx="-10" cy="-8" r="3.5" fill="#0f1412" stroke="#4dd9c0" stroke-width="1"/>
-              <circle cx="10"  cy="-8" r="3.5" fill="#0f1412" stroke="#4dd9c0" stroke-width="1"/>
-              <circle cx="-10" cy="8"  r="3.5" fill="#0f1412" stroke="#4dd9c0" stroke-width="1"/>
-              <circle cx="10"  cy="8"  r="3.5" fill="#0f1412" stroke="#4dd9c0" stroke-width="1"/>
-              <rect x="-5" y="-4" width="10" height="8" rx="2" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1"/>
+              <line x1="-10" y1="-8"  x2="10"  y2="8"  stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+              <line x1="10"  y1="-8"  x2="-10" y2="8"  stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+              <circle cx="-10" cy="-8" r="3.5" fill="#0c0c0c" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85"/>
+              <circle cx="10"  cy="-8" r="3.5" fill="#0c0c0c" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85"/>
+              <circle cx="-10" cy="8"  r="3.5" fill="#0c0c0c" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85"/>
+              <circle cx="10"  cy="8"  r="3.5" fill="#0c0c0c" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85"/>
+              <rect x="-5" y="-4" width="10" height="8" rx="2" fill="#0c0c0c" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85"/>
             </g>
 
             <!-- Status -->
-            <text x="250" y="192" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#4dd9c0" opacity="0.35" letter-spacing="2">SITL SIM RUNNING</text>
+            <text x="250" y="192" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" opacity="0.35" letter-spacing="2">SITL SIM RUNNING</text>
 
           </svg>
         </div>
@@ -203,20 +200,15 @@
   </section>
 
   <!-- Meetings -->
-  <section class="full-section">
+  <section class="full-section full-section--photo" style="background-image:url('../photos/jetson-sdk-flash.jpg')">
     <div class="full-section-inner">
       <p class="section-eyebrow">Meetings</p>
       <h2>When we meet.</h2>
-      <div class="meeting-cards">
+      <div class="meeting-cards meeting-cards--plain">
         <div class="meeting-card">
           <h4>Sim Dev Session</h4>
-          <p class="tbd-note">Time TBD</p>
+          <p>Mondays 6:00 PM</p>
           <p class="meeting-loc">SlugWorks / Remote</p>
-        </div>
-        <div class="meeting-card">
-          <h4>Integration Testing</h4>
-          <p class="tbd-note">Time TBD</p>
-          <p class="meeting-loc">SlugWorks BE-49</p>
         </div>
       </div>
       <p class="meeting-note">Familiarity with Linux is helpful but not required — we'll get you set up.</p>

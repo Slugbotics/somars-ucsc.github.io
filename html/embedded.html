@@ -47,7 +47,7 @@
     </div>
   </header>
 
-  <section class="page-hero photo" style="background-image:url('../photos/fpv.jpg')">
+  <section class="page-hero photo" style="background-image:url('../photos/embedded-jetson.jpg'); background-position:center 62%">
     <div class="page-hero-inner">
       <p class="hero-eyebrow">Subteam · 02</p>
       <h1>Embedded Systems.</h1>
@@ -56,15 +56,12 @@
   </section>
 
   <!-- Who we are -->
-  <section class="full-section">
+  <section class="full-section full-section--photo" style="background-image:url('../photos/embedded-about.jpg')">
     <div class="full-section-inner">
       <p class="section-eyebrow">About</p>
       <h2>Where hardware<br>meets software.</h2>
       <p class="section-body">The Embedded Systems subteam sits at the intersection of hardware and software. We design and integrate the electronics that make the drone tick — flight controllers, companion computers, sensors, power systems, and communication links.</p>
       <p class="section-body">We also develop the autonomous control algorithms that allow the drone to navigate, stabilize, and execute competition missions without a human pilot in the loop.</p>
-      <div class="image-block">
-        <img src="../photos/embedded-electronics.jpg" alt="SOMARS electronics and hardware bench at C-UASC" class="section-img" loading="lazy" />
-      </div>
     </div>
   </section>
 
@@ -88,7 +85,7 @@
         <!-- Right column -->
         <div class="work-card" style="grid-column:2; grid-row:1;">
           <h4>Companion Computer</h4>
-          <p>Integrating an onboard companion computer (Raspberry Pi / Jetson) running high-level autonomy, communicating via MAVLink, and interfacing with perception outputs.</p>
+          <p>Integrating an onboard NVIDIA Jetson running high-level autonomy, exchanging control parameters with the Pixhawk over uXRCE-DDS, and interfacing with perception outputs.</p>
         </div>
         <div class="work-card" style="grid-column:2; grid-row:2;">
           <h4>Autonomous Controls</h4>
@@ -100,96 +97,96 @@
           <svg class="payload-scene" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
 
             <!-- Connection lines -->
-            <line x1="72" y1="62"  x2="105" y2="88"  stroke="#4dd9c0" stroke-width="0.8" opacity="0.2"/>
-            <line x1="72" y1="138" x2="105" y2="112" stroke="#4dd9c0" stroke-width="0.8" opacity="0.2"/>
-            <line x1="185" y1="96"  x2="230" y2="96"  stroke="#4dd9c0" stroke-width="0.8" opacity="0.2"/>
-            <line x1="230" y1="104" x2="185" y2="104" stroke="#4dd9c0" stroke-width="0.8" opacity="0.2"/>
-            <line x1="185" y1="82"  x2="434" y2="38"  stroke="#4dd9c0" stroke-width="0.8" opacity="0.15"/>
-            <line x1="185" y1="92"  x2="434" y2="78"  stroke="#4dd9c0" stroke-width="0.8" opacity="0.15"/>
-            <line x1="185" y1="108" x2="434" y2="122" stroke="#4dd9c0" stroke-width="0.8" opacity="0.15"/>
-            <line x1="185" y1="118" x2="434" y2="162" stroke="#4dd9c0" stroke-width="0.8" opacity="0.15"/>
+            <line x1="72" y1="62"  x2="105" y2="88"  stroke="#ffffff" stroke-width="0.8" opacity="0.2"/>
+            <line x1="72" y1="138" x2="105" y2="112" stroke="#ffffff" stroke-width="0.8" opacity="0.2"/>
+            <line x1="185" y1="96"  x2="230" y2="96"  stroke="#ffffff" stroke-width="0.8" opacity="0.2"/>
+            <line x1="230" y1="104" x2="185" y2="104" stroke="#ffffff" stroke-width="0.8" opacity="0.2"/>
+            <line x1="185" y1="82"  x2="434" y2="38"  stroke="#ffffff" stroke-width="0.8" opacity="0.15"/>
+            <line x1="185" y1="92"  x2="434" y2="78"  stroke="#ffffff" stroke-width="0.8" opacity="0.15"/>
+            <line x1="185" y1="108" x2="434" y2="122" stroke="#ffffff" stroke-width="0.8" opacity="0.15"/>
+            <line x1="185" y1="118" x2="434" y2="162" stroke="#ffffff" stroke-width="0.8" opacity="0.15"/>
 
             <!-- Connection labels -->
-            <text x="207" y="90"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#4dd9c0" opacity="0.4" letter-spacing="1">MAVLink</text>
-            <text x="318" y="52"  font-family="Inter,sans-serif" font-size="6.5" fill="#4dd9c0" opacity="0.3" letter-spacing="1">PWM</text>
+            <text x="207" y="90"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4" letter-spacing="1">MAVLink</text>
+            <text x="318" y="52"  font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.3" letter-spacing="1">PWM</text>
 
             <!-- GPS block -->
-            <rect x="8" y="50" width="64" height="24" rx="4" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1.2"/>
-            <text x="40" y="66" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#4dd9c0" letter-spacing="1.5">GPS</text>
+            <rect x="8" y="50" width="64" height="24" rx="4" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
+            <text x="40" y="66" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#ffffff" letter-spacing="1.5" opacity="0.85">GPS</text>
 
             <!-- IMU block -->
-            <rect x="8" y="126" width="64" height="24" rx="4" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1.2"/>
-            <text x="40" y="142" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#4dd9c0" letter-spacing="1.5">IMU</text>
+            <rect x="8" y="126" width="64" height="24" rx="4" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
+            <text x="40" y="142" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#ffffff" letter-spacing="1.5" opacity="0.85">IMU</text>
 
             <!-- Flight Controller block -->
-            <rect x="105" y="68" width="80" height="64" rx="4" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1.5"/>
-            <text x="145" y="93"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#4dd9c0" letter-spacing="1" opacity="0.8">FLIGHT</text>
-            <text x="145" y="105" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#4dd9c0" letter-spacing="1" opacity="0.8">CONTROLLER</text>
-            <circle cx="145" cy="120" r="3" fill="#4dd9c0" class="drone-led"/>
+            <rect x="105" y="68" width="80" height="64" rx="4" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.85"/>
+            <text x="145" y="93"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" letter-spacing="1" opacity="0.8">FLIGHT</text>
+            <text x="145" y="105" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" letter-spacing="1" opacity="0.8">CONTROLLER</text>
+            <circle cx="145" cy="120" r="3" fill="#ffffff" class="drone-led"/>
 
             <!-- Companion Computer block -->
-            <rect x="230" y="68" width="90" height="64" rx="4" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1.5"/>
-            <text x="275" y="93"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#4dd9c0" letter-spacing="1" opacity="0.8">COMPANION</text>
-            <text x="275" y="105" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#4dd9c0" letter-spacing="1" opacity="0.8">COMPUTER</text>
-            <circle cx="275" cy="120" r="3" fill="#4dd9c0" class="drone-led" style="animation-delay:0.7s"/>
+            <rect x="230" y="68" width="90" height="64" rx="4" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.85"/>
+            <text x="275" y="93"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" letter-spacing="1" opacity="0.8">COMPANION</text>
+            <text x="275" y="105" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" letter-spacing="1" opacity="0.8">COMPUTER</text>
+            <circle cx="275" cy="120" r="3" fill="#ffffff" class="drone-led" style="animation-delay:0.7s"/>
 
             <!-- Motors -->
-            <circle cx="448" cy="38"  r="14" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1.2"/>
-            <circle cx="448" cy="78"  r="14" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1.2"/>
-            <circle cx="448" cy="122" r="14" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1.2"/>
-            <circle cx="448" cy="162" r="14" fill="#0a1a18" stroke="#4dd9c0" stroke-width="1.2"/>
-            <text x="448" y="42"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#4dd9c0" opacity="0.5">M1</text>
-            <text x="448" y="82"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#4dd9c0" opacity="0.5">M2</text>
-            <text x="448" y="126" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#4dd9c0" opacity="0.5">M3</text>
-            <text x="448" y="166" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#4dd9c0" opacity="0.5">M4</text>
+            <circle cx="448" cy="38"  r="14" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
+            <circle cx="448" cy="78"  r="14" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
+            <circle cx="448" cy="122" r="14" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
+            <circle cx="448" cy="162" r="14" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
+            <text x="448" y="42"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.5">M1</text>
+            <text x="448" y="82"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.5">M2</text>
+            <text x="448" y="126" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.5">M3</text>
+            <text x="448" y="166" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.5">M4</text>
 
             <!-- Motor prop crosses (spinning) -->
             <g class="emb-spin-cw">
-              <line x1="441" y1="38"  x2="455" y2="38"  stroke="#4dd9c0" stroke-width="1.5" opacity="0.55"/>
-              <line x1="448" y1="31"  x2="448" y2="45"  stroke="#4dd9c0" stroke-width="1.5" opacity="0.55"/>
+              <line x1="441" y1="38"  x2="455" y2="38"  stroke="#ffffff" stroke-width="1.5" opacity="0.55"/>
+              <line x1="448" y1="31"  x2="448" y2="45"  stroke="#ffffff" stroke-width="1.5" opacity="0.55"/>
             </g>
             <g class="emb-spin-ccw">
-              <line x1="441" y1="78"  x2="455" y2="78"  stroke="#4dd9c0" stroke-width="1.5" opacity="0.55"/>
-              <line x1="448" y1="71"  x2="448" y2="85"  stroke="#4dd9c0" stroke-width="1.5" opacity="0.55"/>
+              <line x1="441" y1="78"  x2="455" y2="78"  stroke="#ffffff" stroke-width="1.5" opacity="0.55"/>
+              <line x1="448" y1="71"  x2="448" y2="85"  stroke="#ffffff" stroke-width="1.5" opacity="0.55"/>
             </g>
             <g class="emb-spin-cw">
-              <line x1="441" y1="122" x2="455" y2="122" stroke="#4dd9c0" stroke-width="1.5" opacity="0.55"/>
-              <line x1="448" y1="115" x2="448" y2="129" stroke="#4dd9c0" stroke-width="1.5" opacity="0.55"/>
+              <line x1="441" y1="122" x2="455" y2="122" stroke="#ffffff" stroke-width="1.5" opacity="0.55"/>
+              <line x1="448" y1="115" x2="448" y2="129" stroke="#ffffff" stroke-width="1.5" opacity="0.55"/>
             </g>
             <g class="emb-spin-ccw">
-              <line x1="441" y1="162" x2="455" y2="162" stroke="#4dd9c0" stroke-width="1.5" opacity="0.55"/>
-              <line x1="448" y1="155" x2="448" y2="169" stroke="#4dd9c0" stroke-width="1.5" opacity="0.55"/>
+              <line x1="441" y1="162" x2="455" y2="162" stroke="#ffffff" stroke-width="1.5" opacity="0.55"/>
+              <line x1="448" y1="155" x2="448" y2="169" stroke="#ffffff" stroke-width="1.5" opacity="0.55"/>
             </g>
 
             <!-- Data packets -->
-            <circle r="3" fill="#4dd9c0" opacity="0.9">
+            <circle r="3" fill="#ffffff" opacity="0.9">
               <animateMotion path="M 72,62 L 105,88" dur="2s" begin="0s" repeatCount="indefinite" calcMode="linear"/>
             </circle>
-            <circle r="3" fill="#4dd9c0" opacity="0.9">
+            <circle r="3" fill="#ffffff" opacity="0.9">
               <animateMotion path="M 72,62 L 105,88" dur="2s" begin="1s" repeatCount="indefinite" calcMode="linear"/>
             </circle>
-            <circle r="3" fill="#4dd9c0" opacity="0.9">
+            <circle r="3" fill="#ffffff" opacity="0.9">
               <animateMotion path="M 72,138 L 105,112" dur="2s" begin="0.5s" repeatCount="indefinite" calcMode="linear"/>
             </circle>
-            <circle r="3" fill="#4dd9c0" opacity="0.9">
+            <circle r="3" fill="#ffffff" opacity="0.9">
               <animateMotion path="M 72,138 L 105,112" dur="2s" begin="1.5s" repeatCount="indefinite" calcMode="linear"/>
             </circle>
-            <circle r="3" fill="#4dd9c0" opacity="0.9">
+            <circle r="3" fill="#ffffff" opacity="0.9">
               <animateMotion path="M 185,96 L 230,96" dur="1.4s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
             </circle>
-            <circle r="3" fill="#4dd9c0" opacity="0.65">
+            <circle r="3" fill="#ffffff" opacity="0.65">
               <animateMotion path="M 230,104 L 185,104" dur="1.4s" begin="1.0s" repeatCount="indefinite" calcMode="linear"/>
             </circle>
-            <circle r="3" fill="#4dd9c0" opacity="0.85">
+            <circle r="3" fill="#ffffff" opacity="0.85">
               <animateMotion path="M 185,82 L 434,38" dur="2.2s" begin="0.2s" repeatCount="indefinite" calcMode="linear"/>
             </circle>
-            <circle r="3" fill="#4dd9c0" opacity="0.85">
+            <circle r="3" fill="#ffffff" opacity="0.85">
               <animateMotion path="M 185,92 L 434,78" dur="2.2s" begin="0.7s" repeatCount="indefinite" calcMode="linear"/>
             </circle>
-            <circle r="3" fill="#4dd9c0" opacity="0.85">
+            <circle r="3" fill="#ffffff" opacity="0.85">
               <animateMotion path="M 185,108 L 434,122" dur="2.2s" begin="1.2s" repeatCount="indefinite" calcMode="linear"/>
             </circle>
-            <circle r="3" fill="#4dd9c0" opacity="0.85">
+            <circle r="3" fill="#ffffff" opacity="0.85">
               <animateMotion path="M 185,118 L 434,162" dur="2.2s" begin="1.7s" repeatCount="indefinite" calcMode="linear"/>
             </circle>
 
@@ -232,11 +229,11 @@
   </section>
 
   <!-- Meetings -->
-  <section class="full-section">
+  <section class="full-section full-section--photo" style="background-image:url('../photos/embedded-meeting-bg.jpg')">
     <div class="full-section-inner">
       <p class="section-eyebrow">Meetings</p>
       <h2>When we meet.</h2>
-      <div class="meeting-cards">
+      <div class="meeting-cards meeting-cards--plain">
         <div class="meeting-card">
           <h4>Hardware Session</h4>
           <p>Fridays 4:00–5:00 PM</p>
