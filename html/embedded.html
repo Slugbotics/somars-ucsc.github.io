@@ -51,17 +51,17 @@
     <div class="page-hero-inner">
       <p class="hero-eyebrow">Subteam · 02</p>
       <h1>Embedded Systems.</h1>
-      <p class="hero-desc">Hardware, firmware, and autonomous control. We build the brain and nervous system of the drone.</p>
+      <p class="hero-desc">Hardware, firmware, and autonomous control. We build the brain and nervous system of the drone: a Pixhawk 6X running PX4, a Jetson running ROS 2, and everything wired between them.</p>
     </div>
   </section>
 
   <!-- Who we are -->
-  <section class="full-section full-section--photo" style="background-image:url('../photos/bench-soldering.jpg'); background-position:center 68%">
+  <section class="full-section full-section--photo" style="background-image:url('../photos/desk-cad-build.jpg'); background-position:center 45%">
     <div class="full-section-inner">
       <p class="section-eyebrow">About</p>
       <h2>Where hardware<br>meets software.</h2>
-      <p class="section-body">We are the subteam that lives between hardware and software. We design and wire up the electronics that make the drone work: the flight controller, the companion computer, sensors, power systems, and communication links.</p>
-      <p class="section-body">We also write the control code that lets the drone navigate, hold steady, and fly competition missions with no human pilot in the loop. If you like soldering as much as you like writing code, you will fit right in.</p>
+      <p class="section-body">We are the subteam that lives between hardware and software. We design and wire up the electronics that make the drone work: a Pixhawk 6X flight controller running PX4, an NVIDIA Jetson Orin Nano Super companion computer, two DroneCAN buses for the ESCs and sensors, the radios, and the power system.</p>
+      <p class="section-body">We also write the ROS 2 autonomy that lets the drone navigate, hold steady, run the payload winch, and fly competition missions with no human pilot in the loop. If you like soldering as much as you like writing code, you will fit right in.</p>
     </div>
   </section>
 
@@ -75,21 +75,21 @@
         <!-- Left column -->
         <div class="work-card" style="grid-column:1; grid-row:1;">
           <h4>Flight Controller Integration</h4>
-          <p>We configure and tune the flight controller (Pixhawk / ArduPilot / PX4) so it handles low-level stabilization, motor mixing, and attitude control.</p>
+          <p>We fly a Pixhawk 6X running PX4 (the v1.16 line) with our own patch series on top. We configure and tune it so it handles low-level stabilization, motor mixing, and attitude control, and our firmware build includes ELRS/CRSF RC support.</p>
         </div>
         <div class="work-card" style="grid-column:1; grid-row:2;">
           <h4>Sensors, Power &amp; Communication</h4>
-          <p>We hook up GPS, IMU, rangefinders, telemetry radios, and camera interfaces. We also pick the batteries, lay out power distribution, and wire the ESCs.</p>
+          <p>We run two DroneCAN buses: one for the four MAD AMPX 60A HV ESCs (throttle over PWM, telemetry over DroneCAN) and one for the sensors, which are RTK GNSS with a compass, a Holybro flow module with an AFBR-S50 rangefinder and optical flow, a CubeID Remote ID, and a power module. Video and data reach the ground over a Skydroid YL20 and GR01 link (2.4/5.8 GHz) working as a network bridge, backed by a 915 MHz telemetry radio, with a BotBlox Ethernet switch onboard.</p>
         </div>
 
         <!-- Right column -->
         <div class="work-card" style="grid-column:2; grid-row:1;">
           <h4>Companion Computer</h4>
-          <p>We run high-level autonomy on an onboard NVIDIA Jetson. It exchanges control parameters with the Pixhawk over uXRCE-DDS and takes in what the perception code detects.</p>
+          <p>We run high-level autonomy on an NVIDIA Jetson Orin Nano Super with JetPack 6.2.2 and ROS 2 Humble. It talks to PX4 over uXRCE-DDS using px4_msgs and takes in what the perception code detects. Our somars_gcs_bridge node carries MAVLink v2 to the ground station.</p>
         </div>
         <div class="work-card" style="grid-column:2; grid-row:2;">
           <h4>Autonomous Controls</h4>
-          <p>We write the control loops, state machines, and mission planners that fly the drone through waypoints and carry out mission tasks on their own.</p>
+          <p>We write the control loops, state machines, and mission planners that fly the drone through waypoints and drive the two-bay winch (a passive spool with a brake and pawl) from PX4 AUX outputs. The safety rules are fixed: 15 seconds of lost ground link triggers return-to-home, 90 seconds triggers flight termination, and nothing else ever ends a flight. We have also rewritten the whole stack in Rust, cutting memory from about 183 MB to about 70 MB; it is installed on the aircraft but disabled for now.</p>
         </div>
 
         <!-- Animation: full-width bottom row -->
@@ -107,7 +107,7 @@
             <line x1="185" y1="118" x2="434" y2="162" stroke="#ffffff" stroke-width="0.8" opacity="0.15"/>
 
             <!-- Connection labels -->
-            <text x="207" y="90"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4" letter-spacing="1">MAVLink</text>
+            <text x="207" y="90"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4" letter-spacing="1">XRCE-DDS</text>
             <text x="318" y="52"  font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.3" letter-spacing="1">PWM</text>
 
             <!-- GPS block -->
@@ -202,27 +202,43 @@
     <div class="full-section-inner">
       <p class="section-eyebrow">Software Stack</p>
       <h2>How it's built.</h2>
-      <p class="section-body">Our autonomy software runs on ROS 2 and talks to the flight controller over MAVLink / MAVROS. Here is how the layers fit together.</p>
+      <p class="section-body">Our autonomy software runs on ROS 2 Humble and talks to PX4 over uXRCE-DDS. Here is how the layers fit together.</p>
       <div class="stack-layers">
         <div class="stack-layer">
-          <span class="stack-label">Hardware Abstraction</span>
-          <span class="stack-desc">MAVLink / MAVROS bridge between companion computer and flight controller</span>
+          <span class="stack-label">Flight Controller</span>
+          <span class="stack-desc">Pixhawk 6X running PX4 (v1.16 line) with our own patch series and ELRS/CRSF RC support</span>
         </div>
         <div class="stack-layer">
-          <span class="stack-label">State Estimation</span>
-          <span class="stack-desc">EKF-based pose estimation fusing GPS, IMU, and barometer</span>
+          <span class="stack-label">PX4 Bridge</span>
+          <span class="stack-desc">uXRCE-DDS link between the Jetson and PX4 using px4_msgs</span>
         </div>
         <div class="stack-layer">
-          <span class="stack-label">Mission Planning</span>
-          <span class="stack-desc">Waypoint sequencing and dynamic replanning</span>
+          <span class="stack-label">ROS 2 Packages</span>
+          <span class="stack-desc">somars_vision, somars_controls, somars_interfaces, and somars_gcs_bridge</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Sensor Buses</span>
+          <span class="stack-desc">Two DroneCAN buses: ESC telemetry on one, GPS, flow, rangefinder, Remote ID, and power module on the other</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Guidance &amp; Safety</span>
+          <span class="stack-desc">Waypoint sequencing, winch payload drops, return-to-home after 15 seconds of lost link, termination after 90</span>
         </div>
         <div class="stack-layer">
           <span class="stack-label">Perception Interface</span>
           <span class="stack-desc">Listens for target detections from the Perception subteam</span>
         </div>
         <div class="stack-layer">
+          <span class="stack-label">Ground Link</span>
+          <span class="stack-desc">MAVLink v2 through somars_gcs_bridge over the Skydroid network bridge and a 915 MHz telemetry radio</span>
+        </div>
+        <div class="stack-layer">
           <span class="stack-label">Ground Control</span>
-          <span class="stack-desc">MAVProxy / QGroundControl for telemetry and monitoring</span>
+          <span class="stack-desc">Native Rust operator app, a terminal GCS written in Go, a web operator page, and QGroundControl</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Rust Rewrite</span>
+          <span class="stack-desc">Whole stack (control, guidance, winch, terminator, ground bridge) in about 70 MB versus about 183 MB for Python; installed but disabled</span>
         </div>
       </div>
     </div>

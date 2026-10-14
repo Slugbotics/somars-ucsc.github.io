@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#000000" />
   <title>Perception | SOMARS</title>
-  <meta name="description" content="The SOMARS Perception subteam at UC Santa Cruz. We build the computer vision that lets our competition drone find targets and navigate on its own." />
+  <meta name="description" content="The SOMARS Perception subteam at UC Santa Cruz. We build the computer vision that lets our competition drone find ground targets on its own." />
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SOMARS" />
   <meta property="og:title" content="Perception | SOMARS" />
-  <meta property="og:description" content="We build the computer vision that lets UC Santa Cruz's competition drone find targets and navigate on its own." />
+  <meta property="og:description" content="We build the computer vision that lets UC Santa Cruz's competition drone find ground targets on its own." />
   <meta property="og:image" content="https://somars-ucsc.com/photos/caligula-ii-night-flight.jpg" />
   <meta property="og:url" content="https://somars-ucsc.com/html/perception.html" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -51,7 +51,7 @@
     <div class="page-hero-inner">
       <p class="hero-eyebrow">Subteam · 03</p>
       <h1>Perception.</h1>
-      <p class="hero-desc">We teach the drone to see. Real-time object detection and navigation, from the air, with nobody at the controls.</p>
+      <p class="hero-desc">We teach the drone to see. A YOLO11n detector running under TensorRT on a Jetson Orin Nano Super, finding targets from the air with nobody at the controls.</p>
     </div>
   </section>
 
@@ -60,8 +60,8 @@
     <div class="full-section-inner">
       <p class="section-eyebrow">About</p>
       <h2>Giving the drone<br>its eyes.</h2>
-      <p class="section-body">We are the Perception subteam. We write the computer vision that lets the drone see the ground below it, pick out competition targets, and tell the autonomy stack where those targets are.</p>
-      <p class="section-body">Day to day, that means working with the onboard cameras, training detection models, and getting inference to run in real time on the drone itself. It has to keep working at altitude during a fully autonomous flight, not just on a laptop at the bench.</p>
+      <p class="section-body">We are the Perception subteam. We write the computer vision that lets the drone see the ground below it and pick out the SUAS 2026 targets: a mannequin, a tent and a car. Our detector is Ultralytics YOLO11n, trained on Kaggle and deployed on the NVIDIA Jetson Orin Nano Super with TensorRT 10.3 in FP16. In simulation the same model runs through ONNX.</p>
+      <p class="section-body">Day to day, that means working with the onboard camera, labeling flight imagery, rendering synthetic scenes, and keeping our ROS 2 nodes talking to the flight controller. It has to keep working at altitude during a fully autonomous flight, not just on a laptop at the bench.</p>
     </div>
   </section>
 
@@ -75,22 +75,22 @@
         <!-- Left column -->
         <div class="work-card" style="grid-column:1; grid-row:1;">
           <h4>Target Detection &amp; Classification</h4>
-          <p>We train YOLO11n to find and classify competition targets (shapes, letters, colors) in aerial imagery, then run it under TensorRT on the onboard Jetson.</p>
+          <p>We train Ultralytics YOLO11n on Kaggle to find the three SUAS 2026 target classes (mannequin, tent, car) in aerial imagery, then run it on the Jetson Orin Nano Super with TensorRT 10.3 in FP16. We also keep an 8-class label set ready for future work.</p>
         </div>
         <div class="work-card" style="grid-column:1; grid-row:2;">
-          <h4>Dataset Collection &amp; Training</h4>
-          <p>We label real aerial imagery in Roboflow, and when we need more, we render synthetic images from Blender assets and environments to fill the gaps.</p>
+          <h4>Dataset Collection &amp; Labeling</h4>
+          <p>We label real flight frames locally in Label Studio. Two survey flights so far have given us 1,253 frames that we are working through. To fill the gaps, we render synthetic training scenes in Blender 4.2 and train on both together.</p>
         </div>
 
         <!-- Right column -->
         <div class="work-card" style="grid-column:2; grid-row:1;">
-          <h4>Geolocation</h4>
-          <p>Once we spot a target, we work out its GPS coordinates. We combine the camera geometry, the drone's pose (GPS plus attitude), and a ground-plane projection to get there.</p>
+          <h4>Camera &amp; Calibration</h4>
+          <p>Our camera is an Arducam Pivariety AR0234: color, global shutter, 1920x1200, read over V4L2. We recently fitted a 6 mm lens, calibrated it with a ChArUco board, and are retraining the detector for the new field of view.</p>
         </div>
 
         <div class="work-card" style="grid-column:2; grid-row:2;">
-          <h4>Model Training Pipeline</h4>
-          <p>We augment those datasets, train YOLO11n so it still detects and classifies targets accurately under real flight conditions, and export the result to TensorRT for deployment on the drone.</p>
+          <h4>Survey Mapping</h4>
+          <p>During a survey, the drone streams photos to the ground station while it flies, and we stitch them into a map there. OpenDroneMap is an optional step when we want a fuller reconstruction.</p>
         </div>
 
         <!-- Animation: full-width bottom row -->
@@ -209,24 +209,28 @@
       <h2>Our stack.</h2>
       <div class="stack-layers">
         <div class="stack-layer">
-          <span class="stack-label">Framework</span>
-          <span class="stack-desc">Python and PyTorch for training. TensorRT for optimized inference on the NVIDIA Jetson.</span>
+          <span class="stack-label">Detection Model</span>
+          <span class="stack-desc">Ultralytics YOLO11n, trained on Kaggle on the three SUAS 2026 classes (mannequin, tent, car)</span>
         </div>
         <div class="stack-layer">
-          <span class="stack-label">Detection Model</span>
-          <span class="stack-desc">YOLO11n</span>
+          <span class="stack-label">Inference</span>
+          <span class="stack-desc">TensorRT 10.3 in FP16 on the NVIDIA Jetson Orin Nano Super. ONNX for the same model in simulation</span>
         </div>
         <div class="stack-layer">
           <span class="stack-label">Camera</span>
-          <span class="stack-desc">Arducam AR0234, 2.3 MP global shutter, 1920x1200 at 30 fps</span>
+          <span class="stack-desc">Arducam Pivariety AR0234, color global shutter, 1920x1200 over V4L2, 6 mm lens calibrated with a ChArUco board</span>
         </div>
         <div class="stack-layer">
-          <span class="stack-label">ROS 2 Integration</span>
-          <span class="stack-desc">Control parameters pass between the Jetson and the Pixhawk over uXRCE-DDS (Micro XRCE-DDS)</span>
+          <span class="stack-label">Flight Software</span>
+          <span class="stack-desc">ROS 2 Humble on the Jetson in our somars_vision package, talking to PX4 on the Pixhawk 6X over uXRCE-DDS with px4_msgs</span>
         </div>
         <div class="stack-layer">
-          <span class="stack-label">Ground Truth Validation</span>
-          <span class="stack-desc">Roboflow datasets, plus simulated assets and environments we build in Blender</span>
+          <span class="stack-label">Data &amp; Labeling</span>
+          <span class="stack-desc">Label Studio for local labeling, real flight frames, and synthetic scenes rendered in Blender 4.2</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Mapping</span>
+          <span class="stack-desc">Photos streamed to the ground during flight and stitched there, with OpenDroneMap as an optional step</span>
         </div>
       </div>
     </div>

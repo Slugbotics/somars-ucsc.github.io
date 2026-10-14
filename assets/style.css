@@ -248,6 +248,18 @@ img { max-width: 100%; }
 
 #competitions .panel-media.photo { filter: brightness(0.55); }
 
+/* The hero video is night footage; ease the top of the scrim so it does not read as black */
+#top.panel::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.45) 0%,
+    rgba(0,0,0,0.05) 30%,
+    rgba(0,0,0,0.1) 55%,
+    rgba(0,0,0,0.85) 84%,
+    #000 100%
+  );
+}
+
 #subteams .panel-media.photo {
   background-size: 190%;
   filter: brightness(0.4);
@@ -519,12 +531,13 @@ img { max-width: 100%; }
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2.5rem 3rem;
+  gap: 2.5rem 2rem;
   margin-top: 3.25rem;
 }
 
 .pillar {
-  max-width: 210px;
+  flex: 1 1 180px;
+  max-width: 200px;  /* four across inside the 940px panel; wraps to 2x2 on phones */
   text-align: center;
 }
 

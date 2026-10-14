@@ -51,17 +51,17 @@
     <div class="page-hero-inner">
       <p class="hero-eyebrow">Subteam · 04</p>
       <h1>Simulations.</h1>
-      <p class="hero-desc">We fly the drone in Gazebo first. If something is going to go wrong, we would rather find out on a screen.</p>
+      <p class="hero-desc">We fly the drone in PX4 SITL and Gazebo first. If something is going to go wrong, we would rather find out on a screen.</p>
     </div>
   </section>
 
   <!-- Who we are -->
-  <section class="full-section full-section--photo" style="background-image:url('../photos/isaac-sim.png')">
+  <section class="full-section full-section--photo" style="background-image:url('../photos/gazebo.png')">
     <div class="full-section-inner">
       <p class="section-eyebrow">About</p>
       <h2>The virtual world<br>before the real one.</h2>
-      <p class="section-body">We build the virtual world our drone flies in before it flies for real. In Gazebo, we put together 3D environments that match the competition arenas, with the same terrain and obstacles.</p>
-      <p class="section-body">That lets the rest of the team try things without risking the aircraft. When a bug in the control stack shows up in simulation, we fix it there. Nobody has to rebuild a drone, and everyone gets to test more often.</p>
+      <p class="section-body">We run PX4 SITL inside Podman containers, with two simulators to choose from: PX4's built-in SIH for quick checks, and Gazebo Harmonic with a simulated camera when we need the full picture. The same YOLO11n detector the aircraft uses runs in simulation through ONNX, so the perception code gets exercised too.</p>
+      <p class="section-body">That lets the rest of the team try things without risking the aircraft. When a bug shows up in simulation, we fix it there. Nobody has to rebuild a drone, and everyone gets to test more often.</p>
     </div>
   </section>
 
@@ -74,22 +74,22 @@
 
         <!-- Left column -->
         <div class="work-card" style="grid-column:1; grid-row:1;">
-          <h4>Competition World Models</h4>
-          <p>We build Gazebo models of the SUAS and C-UASC arenas, including the waypoint fields, obstacle layouts and target zones, so we can rehearse a whole mission.</p>
+          <h4>Simulators</h4>
+          <p>We run PX4 SITL in Podman containers with two simulators: PX4's built-in SIH when we want a fast loop, and Gazebo Harmonic with a simulated camera when we need to see what the aircraft sees.</p>
         </div>
         <div class="work-card" style="grid-column:1; grid-row:2;">
           <h4>Hardware-in-the-Loop (HIL)</h4>
-          <p>We set up SITL and HIL pipelines with ArduPilot / PX4, so the flight controller firmware runs against the simulated plant in real time.</p>
+          <p>We also run the real Pixhawk 6X and Jetson against the simulator, so the actual flight controller and companion computer get exercised before anything goes near the aircraft.</p>
         </div>
 
         <!-- Right column -->
         <div class="work-card" style="grid-column:2; grid-row:1;">
-          <h4>Drone Model &amp; Physics</h4>
-          <p>We keep a URDF / SDF model of our physical drone with its real mass, inertia, motor thrust curves and aerodynamic drag, so the sim behaves like the aircraft does.</p>
+          <h4>Mission Gate</h4>
+          <p>A scripted set of automated test flights we call the mission gate runs the full mission end to end. As of 14 October 2026 it passes 6 of 6 scenarios on both our Python stack and our Rust stack, and every change is expected to pass it before it goes near the aircraft.</p>
         </div>
         <div class="work-card" style="grid-column:2; grid-row:2;">
-          <h4>Flight Path Validation</h4>
-          <p>Before a flight plan goes onto the real vehicle, we run its waypoint sequence in simulation and check for obstacle conflicts and timing.</p>
+          <h4>Perception in the Loop</h4>
+          <p>The same YOLO11n detector the aircraft flies with runs in simulation through ONNX, so we can check the detection pipeline against the simulated camera and not just the flight logic.</p>
         </div>
 
         <!-- Animation: full-width bottom row -->
@@ -172,28 +172,24 @@
       <h2>Our simulation stack.</h2>
       <div class="stack-layers">
         <div class="stack-layer">
-          <span class="stack-label">Simulator</span>
-          <span class="stack-desc">Gazebo (Harmonic / Classic)</span>
+          <span class="stack-label">Simulators</span>
+          <span class="stack-desc">PX4 SIH and Gazebo Harmonic (simulated camera)</span>
+        </div>
+        <div class="stack-layer">
+          <span class="stack-label">Flight Stack</span>
+          <span class="stack-desc">PX4 SITL in Podman containers</span>
         </div>
         <div class="stack-layer">
           <span class="stack-label">Middleware</span>
-          <span class="stack-desc">ROS 2</span>
+          <span class="stack-desc">ROS 2 Humble over Micro XRCE-DDS with px4_msgs</span>
         </div>
         <div class="stack-layer">
-          <span class="stack-label">Flight Stack Integration</span>
-          <span class="stack-desc">PX4 SITL via Micro XRCE-DDS</span>
+          <span class="stack-label">Detector</span>
+          <span class="stack-desc">YOLO11n through ONNX</span>
         </div>
         <div class="stack-layer">
-          <span class="stack-label">Visualization</span>
-          <span class="stack-desc">Gazebo</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Drone Model Format</span>
-          <span class="stack-desc">SDF / URDF</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Operating System</span>
-          <span class="stack-desc">NVIDIA JetPack 6.2.2</span>
+          <span class="stack-label">Testing</span>
+          <span class="stack-desc">Mission gate (6 of 6 scenarios, Python and Rust stacks) and HIL with Pixhawk 6X and Jetson</span>
         </div>
       </div>
     </div>

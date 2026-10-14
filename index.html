@@ -74,7 +74,7 @@
       <p class="eyebrow">About Us</p>
       <h2>Building the Full Autonomous Stack</h2>
       <p class="panel-text">SOMARS, short for Slugs for the Oversight and Management of Aerial Robotic Systems, is the competitive drone team at UC Santa Cruz and part of Slugbotics. We design, build, and fly UAVs that can run a full mission on their own, and we compete against engineering programs from across the country.</p>
-      <p class="panel-text">We come from computer science, electrical engineering, mechanical engineering, and plenty of other majors. Everyone gets to work across the whole stack, from carbon fiber airframes to the computer vision that guides the drone.</p>
+      <p class="panel-text">We come from computer science, electrical engineering, mechanical engineering, and plenty of other majors. Everyone gets to work across the whole stack, from carbon fiber airframes to the PX4 and ROS 2 software and the computer vision that guides the drone.</p>
     </div>
   </section>
 
@@ -84,17 +84,17 @@
     <div class="panel-content">
       <p class="eyebrow">Competitions</p>
       <h2>Where We Compete</h2>
-      <p class="panel-text">We enter two student UAV competitions. Both ask for a drone that can fly a real mission with nobody at the controls.</p>
+      <p class="panel-text">We enter two student UAV competitions, and we are building one aircraft to fly both. Each asks for a drone that can run a real mission with nobody at the controls.</p>
       <div class="comp-grid">
         <div class="comp-card">
           <p class="eyebrow">01</p>
           <h3 class="comp-title">C-UASC</h3>
           <p class="comp-fullname">Collegiate Unmanned Aircraft Systems Competition</p>
-          <p class="panel-text">Student teams fly autonomous fixed-wing and multi-rotor aircraft through waypoint navigation, a payload drop, and an autonomous landing. Scoring covers the mission itself, a technical report, and an oral presentation.</p>
+          <p class="panel-text">Our next competition, in Encino, California, 4 to 6 June 2027. C-UASC 2027 offers six optional missions: waypoints, a timed circuit, a package drop, a package delivery, target localization, and package recovery. We are preparing one aircraft to fly all of them.</p>
           <div class="comp-tags">
-            <span>Waypoint Nav</span>
-            <span>Payload Drop</span>
-            <span>Auto Landing</span>
+            <span>Waypoints</span>
+            <span>Package Delivery</span>
+            <span>Target Localization</span>
           </div>
           <div class="btn-row">
             <a href="https://www.calstatela.edu/ecst/c-uasc" target="_blank" rel="noopener" class="btn btn-outline">Learn More ↗</a>
@@ -104,11 +104,11 @@
           <p class="eyebrow">02</p>
           <h3 class="comp-title">SUAS</h3>
           <p class="comp-fullname">Student Unmanned Aerial Systems Competition · AUVSI</p>
-          <p class="panel-text">A long-running student UAV competition. Teams fly an autonomous search and rescue style mission with obstacle avoidance, target identification, and payload delivery.</p>
+          <p class="panel-text">SUAS 2026 at Skyway Range in Tulsa, Oklahoma, was our first competition, with mission flights on 15 to 17 September 2026. The operator sends one BEGIN command, then the aircraft flies waypoint laps on its own, surveys a search area while streaming imagery to the ground, finds ground targets like a mannequin, a tent, and a car, lowers payloads by winch, and returns home, all inside 45 minutes.</p>
           <div class="comp-tags">
-            <span>Obstacle Avoidance</span>
-            <span>Target ID</span>
-            <span>Payload Delivery</span>
+            <span>Waypoint Laps</span>
+            <span>Target Search</span>
+            <span>Winch Delivery</span>
           </div>
           <div class="btn-row">
             <a href="https://suas-competition.org/" target="_blank" rel="noopener" class="btn btn-outline">Learn More ↗</a>
@@ -165,7 +165,7 @@
             </svg>
           </div>
           <h4>Autonomous Navigation</h4>
-          <p>Waypoint planning and path following with no human in the loop.</p>
+          <p>PX4 and ROS 2 fly the mission. We send one command and the aircraft handles the rest.</p>
         </div>
         <div class="pillar">
           <div class="pillar-icon">
@@ -176,7 +176,7 @@
             </svg>
           </div>
           <h4>Computer Vision</h4>
-          <p>Real-time target detection and obstacle avoidance, running on the aircraft itself.</p>
+          <p>A YOLO11n detector finds ground targets in real time, running on the Jetson with TensorRT.</p>
         </div>
         <div class="pillar">
           <div class="pillar-icon">
@@ -187,7 +187,7 @@
             </svg>
           </div>
           <h4>Simulation Pipeline</h4>
-          <p>A full Gazebo test environment that we fly in before every real flight.</p>
+          <p>PX4 SITL and Gazebo, plus an automated mission gate that every change has to pass.</p>
         </div>
         <div class="pillar">
           <div class="pillar-icon">
@@ -202,8 +202,8 @@
               </circle>
             </svg>
           </div>
-          <h4>Custom Embedded Systems</h4>
-          <p>Our own firmware, built to work closely with the flight controller.</p>
+          <h4>Our Own Flight Stack</h4>
+          <p>ROS 2 nodes, a Rust version of the stack, and ground control software we wrote ourselves.</p>
         </div>
       </div>
     </div>
@@ -310,9 +310,9 @@
   <section class="panel panel--bottom" id="season">
     <div class="panel-media photo" style="background-image:url('photos/team-drone.jpg'); background-position: center 45%;"></div>
     <div class="panel-content">
-      <p class="eyebrow">2025 to 2026 Season</p>
+      <p class="eyebrow">2026 to 2027 Season</p>
       <h2>Building From the Ground Up</h2>
-      <p class="panel-text">Our first season competing at C-UASC and SUAS. We are building the whole platform, airframe to software, from scratch.</p>
+      <p class="panel-text">SUAS 2026 in Tulsa was our first competition. We are now building toward C-UASC 2027, with one aircraft that serves both missions. The whole platform, airframe to software, is ours.</p>
     </div>
   </section>
 
