@@ -1306,8 +1306,8 @@ h2 {
      inline background-position has no vertical slack. Zoom a little and anchor
      to the bottom so the drone rises above the headline instead of behind it. */
   #top .panel-media.photo {
-    background-size: auto 115%;
-    background-position: 58% 100% !important;  /* drone sits at ~58% across, ~38% down the frame */
+    background-size: cover;
+    background-position: 50% 0 !important;  /* hero crop already has the drone in the upper third */
   }
 
   .nav-links {
