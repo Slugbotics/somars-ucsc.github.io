@@ -1299,6 +1299,14 @@ h2 {
 @media (max-width: 768px) {
   .nav-inner { padding: 0 1.4rem; }
 
+  /* On phones a portrait hero photo already fills the viewport height, so the
+     inline background-position has no vertical slack. Zoom a little and anchor
+     to the bottom so the drone rises above the headline instead of behind it. */
+  #top .panel-media.photo {
+    background-size: auto 135%;
+    background-position: center bottom !important;
+  }
+
   .nav-links {
     display: none;
     position: absolute;
