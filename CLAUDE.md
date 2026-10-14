@@ -16,8 +16,8 @@ Static website for SOMARS (Slugs for the Oversight and Management of Aerial Robo
 ## Voice and facts
 
 - Copy is plain, warm, first person plural ("we", "our"), short sentences, no marketing hype. **No em dashes or en dashes anywhere** (titles, meta tags, body, HTML comments). Titles use the form `Page | SOMARS`.
-- Technical claims come from the team's flight-software repo, cloned at `~/Documents/somars_autonomous` (private; read it locally, never copy IPs, hostnames, logins, coordinates, people's names or crash details onto the site). Current truth: PX4 on a Pixhawk 6X, ROS 2 Humble on a Jetson Orin Nano Super over uXRCE-DDS (no MAVROS/ArduPilot), YOLO11n on TensorRT, Label Studio + Blender synthetic data (no Roboflow), PX4 SITL + Gazebo Harmonic with the "mission gate" (no Isaac Sim). Competitions: SUAS 2026 (Tulsa, Sep 2026, no results published) and C-UASC 2027 (Encino, Jun 2027).
-- Airframe names "Caligula I" (bare carbon, previous) and "Caligula II" (yellow shell, current) are placeholders the team will rename; the homepage section ids are `airframe-previous` / `airframe-current` so a rename does not break anchors.
+- Technical claims come from the team's flight-software repo, cloned at `~/Documents/somars_autonomous` (private; read it locally, never copy IPs, hostnames, logins, coordinates, people's names or crash details onto the site). Current truth: PX4 on a Pixhawk 6X, ROS 2 Humble on a Jetson Orin Nano Super over uXRCE-DDS (no MAVROS/ArduPilot), YOLO11n on TensorRT, Label Studio + Blender synthetic data (no Roboflow), PX4 SITL + Gazebo Harmonic with the "mission gate" (no Isaac Sim). Competitions so far: C-UASC 2026 with Caligula I, SUAS 2026 (Tulsa, Sep 2026) with Caligula II; next is C-UASC 2027 (Encino, Jun 2027). No results are published on the site.
+- Airframe names "Caligula I" (bare carbon, built for C-UASC 2026) and "Caligula II" (yellow shell, built for SUAS 2026) are placeholders the team will rename; the homepage section ids are `airframe-previous` / `airframe-current` so a rename does not break anchors.
 
 ## Preview locally
 
