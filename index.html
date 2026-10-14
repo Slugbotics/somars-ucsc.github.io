@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#000000" />
-  <title>SOMARS — Autonomous Drones at UC Santa Cruz</title>
+  <title>SOMARS | Autonomous Drones at UC Santa Cruz</title>
   <meta name="description" content="UC Santa Cruz's competitive autonomous drone team under Slugbotics. We design, build, and fly fully autonomous UAVs for the C-UASC and SUAS competitions." />
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-  <link rel="preload" as="image" href="photos/caligula-ii-field.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="video/hero-flight-poster.jpg" fetchpriority="high" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SOMARS" />
-  <meta property="og:title" content="SOMARS — Autonomous Drones at UC Santa Cruz" />
+  <meta property="og:title" content="SOMARS | Autonomous Drones at UC Santa Cruz" />
   <meta property="og:description" content="UC Santa Cruz's competitive autonomous drone team. We design, build, and fly fully autonomous UAVs for the C-UASC and SUAS competitions." />
   <meta property="og:image" content="https://somars-ucsc.com/photos/caligula-ii-field.jpg" />
   <meta property="og:url" content="https://somars-ucsc.com/" />
@@ -27,7 +27,7 @@
   <!-- Navbar -->
   <header class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">SOMARS</a>
+      <a href="index.html" class="nav-logo"><img src="assets/wordmark-white.png" srcset="assets/wordmark-white@2x.png 2x" alt="SOMARS" width="96" height="26" /></a>
       <nav class="nav-links" id="navLinks">
         <a href="index.html" class="active">Home</a>
         <div class="nav-item has-dropdown">
@@ -51,11 +51,15 @@
 
   <!-- Hero -->
   <section class="panel panel--bottom" id="top">
-    <div class="panel-media photo" style="background-image:url('photos/caligula-ii-field.jpg'); background-position: center 65%;"></div>
+    <div class="panel-media panel-media--video" style="background-image:url('video/hero-flight-poster.jpg')">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="video/hero-flight-poster.jpg" aria-hidden="true" tabindex="-1">
+        <source src="video/hero-flight.mp4" type="video/mp4" />
+      </video>
+    </div>
     <div class="panel-content">
       <p class="eyebrow">UC Santa Cruz · Slugbotics</p>
       <h1>Autonomous Drones</h1>
-      <p class="panel-text">Designing, building, and flying fully autonomous aerial vehicles. No pilot required.</p>
+      <p class="panel-text">We design, build, and fly drones that complete a mission on their own. No pilot required.</p>
       <div class="btn-row">
         <a href="html/team.html#join" class="btn btn-fill">Join the Team</a>
         <a href="#competitions" class="btn btn-outline">Our Competitions</a>
@@ -65,12 +69,12 @@
 
   <!-- About -->
   <section class="panel" id="about">
-    <div class="panel-media photo" style="background-image:url('photos/caligula-i-field.jpg'); background-position: center 85%;"></div>
+    <div class="panel-media photo" style="background-image:url('photos/season.jpg'); background-position: center 40%;"></div>
     <div class="panel-content">
       <p class="eyebrow">About Us</p>
       <h2>Building the Full Autonomous Stack</h2>
-      <p class="panel-text">SOMARS — Slugs for the Oversight and Management of Aerial Robotic Systems — is UC Santa Cruz's competitive drone team under Slugbotics. We design, fabricate, and fly UAVs capable of fully autonomous missions, competing against top engineering programs nationwide.</p>
-      <p class="panel-text">Our members span computer science, electrical engineering, mechanical engineering, and more — collaborating across every layer of the stack, from carbon fiber airframes to computer-vision-guided navigation.</p>
+      <p class="panel-text">SOMARS, short for Slugs for the Oversight and Management of Aerial Robotic Systems, is the competitive drone team at UC Santa Cruz and part of Slugbotics. We design, build, and fly UAVs that can run a full mission on their own, and we compete against engineering programs from across the country.</p>
+      <p class="panel-text">We come from computer science, electrical engineering, mechanical engineering, and plenty of other majors. Everyone gets to work across the whole stack, from carbon fiber airframes to the computer vision that guides the drone.</p>
     </div>
   </section>
 
@@ -80,13 +84,13 @@
     <div class="panel-content">
       <p class="eyebrow">Competitions</p>
       <h2>Where We Compete</h2>
-      <p class="panel-text">SOMARS enters two of the most rigorous student UAV competitions in the country, requiring fully autonomous systems capable of real-world mission performance.</p>
+      <p class="panel-text">We enter two student UAV competitions. Both ask for a drone that can fly a real mission with nobody at the controls.</p>
       <div class="comp-grid">
         <div class="comp-card">
           <p class="eyebrow">01</p>
           <h3 class="comp-title">C-UASC</h3>
           <p class="comp-fullname">Collegiate Unmanned Aircraft Systems Competition</p>
-          <p class="panel-text">Tests student teams on autonomous fixed-wing and multi-rotor operations — waypoint navigation, payload drop, and autonomous landing. Scored on mission completion, technical reports, and oral presentations.</p>
+          <p class="panel-text">Student teams fly autonomous fixed-wing and multi-rotor aircraft through waypoint navigation, a payload drop, and an autonomous landing. Scoring covers the mission itself, a technical report, and an oral presentation.</p>
           <div class="comp-tags">
             <span>Waypoint Nav</span>
             <span>Payload Drop</span>
@@ -100,7 +104,7 @@
           <p class="eyebrow">02</p>
           <h3 class="comp-title">SUAS</h3>
           <p class="comp-fullname">Student Unmanned Aerial Systems Competition · AUVSI</p>
-          <p class="panel-text">One of the most prestigious student UAV competitions. Teams complete an autonomous search-and-rescue-style mission: obstacle avoidance, target identification, and payload delivery.</p>
+          <p class="panel-text">A long-running student UAV competition. Teams fly an autonomous search and rescue style mission with obstacle avoidance, target identification, and payload delivery.</p>
           <div class="comp-tags">
             <span>Obstacle Avoidance</span>
             <span>Target ID</span>
@@ -138,8 +142,8 @@
     </div>
     <div class="panel-content">
       <p class="eyebrow">Our Approach</p>
-      <h2>Simulation-First. Hardware-Proven.</h2>
-      <p class="panel-text">Every algorithm is validated in Gazebo before it ever touches real hardware — reducing crash risk and dramatically accelerating iteration speed.</p>
+      <h2>Simulation first. Then the real thing.</h2>
+      <p class="panel-text">Every algorithm flies in Gazebo before it touches the real drone. We crash less, and we get to try more ideas.</p>
       <div class="pillar-row">
         <div class="pillar">
           <div class="pillar-icon">
@@ -161,7 +165,7 @@
             </svg>
           </div>
           <h4>Autonomous Navigation</h4>
-          <p>Waypoint planning and path execution with no human input in the loop.</p>
+          <p>Waypoint planning and path following with no human in the loop.</p>
         </div>
         <div class="pillar">
           <div class="pillar-icon">
@@ -172,7 +176,7 @@
             </svg>
           </div>
           <h4>Computer Vision</h4>
-          <p>Real-time target detection and obstacle avoidance onboard the aircraft.</p>
+          <p>Real-time target detection and obstacle avoidance, running on the aircraft itself.</p>
         </div>
         <div class="pillar">
           <div class="pillar-icon">
@@ -183,7 +187,7 @@
             </svg>
           </div>
           <h4>Simulation Pipeline</h4>
-          <p>Full Gazebo-based testing environment before every real-world flight.</p>
+          <p>A full Gazebo test environment that we fly in before every real flight.</p>
         </div>
         <div class="pillar">
           <div class="pillar-icon">
@@ -199,7 +203,7 @@
             </svg>
           </div>
           <h4>Custom Embedded Systems</h4>
-          <p>In-house firmware and tight flight controller integration.</p>
+          <p>Our own firmware, built to work closely with the flight controller.</p>
         </div>
       </div>
     </div>
@@ -210,8 +214,8 @@
     <div class="panel-media photo" style="background-image:url('photos/slugbotics-cover.png')"></div>
     <div class="panel-content">
       <p class="eyebrow">Subteams</p>
-      <h2>Four Teams. One System.</h2>
-      <p class="panel-text">Each subteam owns a critical layer of the autonomous drone stack. <a href="html/team.html">Meet the full team →</a></p>
+      <h2>Four teams. One drone.</h2>
+      <p class="panel-text">Each subteam owns one layer of the drone, and they all have to fit together. <a href="html/team.html">Meet the full team →</a></p>
       <div class="subteams">
         <a href="html/mechanical.html" class="subteam">
           <span class="subteam-num">01</span>
@@ -285,30 +289,30 @@
 
   <!-- Airframes -->
   <section class="panel panel--bottom" id="airframe-previous">
-    <div class="panel-media photo" style="background-image:url('photos/caligula-i-field-prep.jpg'); background-position: center 70%;"></div>
+    <div class="panel-media photo" style="background-image:url('photos/caligula-i-field.jpg'); background-position: center 60%;"></div>
     <div class="panel-content">
       <p class="eyebrow">Previous Airframe</p>
       <h2>Caligula I</h2>
-      <p class="panel-text">Our previous-generation airframe: a bare carbon-fiber quadcopter with its electronics left exposed.</p>
+      <p class="panel-text">Our previous airframe. A bare carbon fiber quadcopter with its electronics out in the open. It got us flying.</p>
     </div>
   </section>
 
   <section class="panel" id="airframe-current">
-    <div class="panel-media photo" style="background-image:url('photos/caligula-ii-tent.jpg'); background-position: center 65%;"></div>
+    <div class="panel-media photo" style="background-image:url('photos/caligula-ii-field.jpg'); background-position: center 60%;"></div>
     <div class="panel-content">
       <p class="eyebrow">Current Airframe</p>
       <h2>Caligula II</h2>
-      <p class="panel-text">Our current airframe: carbon-fiber arms and landing gear with a yellow shell covering the center body.</p>
+      <p class="panel-text">Our current airframe. Carbon fiber arms and landing gear, with a yellow shell over the center body.</p>
     </div>
   </section>
 
   <!-- Season -->
   <section class="panel panel--bottom" id="season">
-    <div class="panel-media photo" style="background-image:url('photos/caligula-ii-night-flight-2.jpg'); background-position: center 40%;"></div>
+    <div class="panel-media photo" style="background-image:url('photos/team-drone.jpg'); background-position: center 45%;"></div>
     <div class="panel-content">
-      <p class="eyebrow">2025 – 2026 Season</p>
+      <p class="eyebrow">2025 to 2026 Season</p>
       <h2>Building From the Ground Up</h2>
-      <p class="panel-text">Our first season competing at C-UASC and SUAS. We're developing the full autonomous flight platform — airframe to software stack — from scratch.</p>
+      <p class="panel-text">Our first season competing at C-UASC and SUAS. We are building the whole platform, airframe to software, from scratch.</p>
     </div>
   </section>
 
@@ -318,7 +322,7 @@
     <div class="panel-content">
       <p class="eyebrow">Get Involved</p>
       <h2>Join the Team</h2>
-      <p class="panel-text">Whether you want to build, code, or fly — there's a place for you on SOMARS.</p>
+      <p class="panel-text">Whether you want to build, code, or fly, there is a place for you on SOMARS.</p>
       <div class="btn-row">
         <a href="html/team.html#join" class="btn btn-fill">Apply to Join</a>
       </div>
