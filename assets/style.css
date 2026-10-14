@@ -248,7 +248,7 @@ img { max-width: 100%; }
 
 #competitions .panel-media.photo { filter: brightness(0.7); }
 
-/* The hero video is night footage; ease the top of the scrim so it does not read as black */
+/* The hero photo is night footage; ease the top of the scrim so it does not read as black */
 #top.panel::before {
   background: linear-gradient(
     to bottom,
@@ -265,26 +265,7 @@ img { max-width: 100%; }
   filter: brightness(0.55);
 }
 
-/* Hero video: poster is painted as the background so there is never a blank frame */
-.panel-media--video {
-  background-color: #000;
-  background-size: cover;
-  background-position: center 40%;
-  background-repeat: no-repeat;
-}
-.panel-media--video::after { content: none; }
-.hero-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 65% 40%;  /* the drone sits right of centre in the clip; matters on phones where the sides crop */
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-video { display: none; }
-  .reveal { opacity: 1; transform: none; transition: none; }
-}
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 
 /* Waypoint navigation animation (replaces a static photo) */
 .panel-media--anim::after { content: none; }
@@ -1325,8 +1306,8 @@ h2 {
      inline background-position has no vertical slack. Zoom a little and anchor
      to the bottom so the drone rises above the headline instead of behind it. */
   #top .panel-media.photo {
-    background-size: auto 135%;
-    background-position: center bottom !important;
+    background-size: auto 115%;
+    background-position: 58% 100% !important;  /* drone sits at ~58% across, ~38% down the frame */
   }
 
   .nav-links {

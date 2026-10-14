@@ -29,16 +29,16 @@ Serve from the repo root, not from inside `html/`, because subpages link back wi
 
 ## Architecture
 
-- **Layout:** `index.html` and `404.html` at the root; all other pages in `html/`. Shared CSS/JS and brand assets in `assets/`, images in `photos/`, the hero clip in `video/`. Root pages refer to these as `assets/...`, while pages in `html/` use `../assets/...`. Keep the right prefix when moving markup between levels.
+- **Layout:** `index.html` and `404.html` at the root; all other pages in `html/`. Shared CSS/JS and brand assets in `assets/`, images in `photos/`. Root pages refer to these as `assets/...`, while pages in `html/` use `../assets/...`. Keep the right prefix when moving markup between levels.
 - **No templating.** Every page has its own full copy of the `<head>`, the navbar (wordmark image + Team dropdown listing the four subteam pages) and the footer. Changing the nav, adding a page, or renaming a page means editing all 8 HTML files. The current page's link gets the `active` class.
 - **Adding or renaming a page** also means updating `sitemap.xml` (absolute URLs on the custom domain) and the Team dropdown on every page; a subteam page also goes in the list on `html/team.html`.
 - **`assets/style.css`** is the only stylesheet, split into `/* ============ NAME ============ */` sections: design tokens in `:root` (accent is the badge gold `--accent`, blue in `--brand-blue`), homepage `panel` sections, subpage `page-hero` / `full-section` / `work-grid`, SVG line animations, a `.reveal` fade-up, and phone rules in the single `@media (max-width: 768px)` block. Reuse tokens and classes instead of adding inline styles. The one sanctioned inline exception is per-page `background-image` / `background-position` on hero and section photo backgrounds.
-- **Animation style** (keep it this way): hairline strokes (1px), low-opacity white, slow eased motion (6 to 36 s cycles), no marching dashes, hard flashes or glows, no blueprint grids. All motion is disabled under `prefers-reduced-motion`, and the hero video is hidden there (poster shows instead).
+- **Animation style** (keep it this way): hairline strokes (1px), low-opacity white, slow eased motion (6 to 36 s cycles), no marching dashes, hard flashes or glows, no blueprint grids. All motion is disabled under `prefers-reduced-motion`.
 - **`assets/script.js`** handles the mobile nav toggle (`#navToggle` / `#navLinks`), the `.scrolled` navbar state, and the IntersectionObserver that adds `.reveal` / `.is-visible` to content blocks. Pages depend on those IDs and class names.
-- **Homepage hero** is `video/hero-flight.mp4` (muted, looping, 960x720, a forward-then-reverse cut of the Caligula II night flight) with `video/hero-flight-poster.jpg` as poster and background. `#top.panel::before` has its own lighter scrim because the footage is dark.
+- **Homepage hero** is `photos/caligula-ii-airborne.jpg`, a frame clipped from the SUAS 2026 night-flight phone video (Caligula II in the air). There is no site video; the team confirmed none existed. `#top.panel::before` has its own lighter scrim because the shot is dark.
 - **Brand assets** in `assets/`: `wordmark-white.png` (+`@2x`) for the navbar, `favicon-32.png` / `favicon-192.png` / `apple-touch-icon.png` / `badge-512.png` cut from the round team badge. Source files live outside the repo.
 - **Photos:** web-sized JPEGs (2000px long edge, EXIF stripped, so phone GPS data never ships). When a photo stops being referenced by any page, remove it from the branch; it stays in history.
 
 ## Privacy
 
-Exported account reports and the raw photo/video/branding zips in the root are git-ignored (`*.csv`, `*.zip`) and must stay out of commits. Raw media is processed into `photos/` and `video/`; never commit originals.
+Exported account reports and the raw photo/video/branding zips in the root are git-ignored (`*.csv`, `*.zip`) and must stay out of commits. Raw media is processed into `photos/`; never commit originals.
