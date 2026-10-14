@@ -4,32 +4,41 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Static website for SOMARS (UC Santa Cruz autonomous drone team under Slugbotics), hosted on GitHub Pages and kept up as part of the SUAS competition requirements. It is plain HTML/CSS/JS: no build step, no package manager, no framework, no tests. The custom domain comes from `CNAME`.
+Static website for SOMARS (Slugs for the Oversight and Management of Aerial Robotic Systems: the UC Santa Cruz autonomous drone team under Slugbotics), hosted on GitHub Pages and kept up as part of the SUAS competition requirements. Plain HTML/CSS/JS: no build step, no package manager, no framework, no tests. The custom domain comes from `CNAME`.
 
 ## Working rules for this repo
 
-- **Keep everything local.** Never push, and never open pull requests, to `main` or any other remote branch. Never commit to `main`. Do all work on a local working branch (for example `git switch -c <topic>`) and leave it unpushed until the user says otherwise in that session.
-- **One agent per page.** Work that touches pages is split up so that each page gets its own agent (Agent tool, ideally with `isolation: "worktree"`): `index.html`, `404.html`, and each file in `html/` (`team`, `mechanical`, `embedded`, `perception`, `simulations`, `sponsors`). One agent edits only its own page.
-- **Shared files are owned by the coordinating session**, not by page agents: `assets/style.css`, `assets/script.js`, `sitemap.xml`, `robots.txt`, and the navbar/footer markup that every page repeats. If a page agent needs a shared change, it reports back what it needs, and the coordinator makes that change once and applies it to every page. This keeps parallel agents from conflicting.
-- After merging page agents' work into the local working branch, check that the navbar is still the same on every page.
+- **Keep everything local.** Never push, and never open pull requests, to `main` or any other remote branch. Never commit to `main`. Do all work on a local working branch (currently `site-update`) and leave it unpushed until the user says otherwise in that session.
+- **One agent per page.** Work that touches pages is split so each page gets its own agent: `index.html`, `404.html`, and each file in `html/`. An agent edits only its own page and does not run git commands that change state; the coordinator commits. (Worktree isolation branches from `main`, not from the working branch, so agents in worktrees will not see uncommitted or branch-only files; running them in the main checkout on disjoint files has worked better.)
+- **Shared files are owned by the coordinating session**, not by page agents: `assets/style.css`, `assets/script.js`, `sitemap.xml`, `robots.txt`, favicon/`<head>` boilerplate, and the navbar/footer markup every page repeats. A page agent that needs a shared change reports it; the coordinator makes it once on every page.
+- After merging page work, check the navbar is still the same on every page and that no page references a missing photo.
+
+## Voice and facts
+
+- Copy is plain, warm, first person plural ("we", "our"), short sentences, no marketing hype. **No em dashes or en dashes anywhere** (titles, meta tags, body, HTML comments). Titles use the form `Page | SOMARS`.
+- Technical claims come from the team's flight-software repo, cloned at `~/Documents/somars_autonomous` (private; read it locally, never copy IPs, hostnames, logins, coordinates, people's names or crash details onto the site). Current truth: PX4 on a Pixhawk 6X, ROS 2 Humble on a Jetson Orin Nano Super over uXRCE-DDS (no MAVROS/ArduPilot), YOLO11n on TensorRT, Label Studio + Blender synthetic data (no Roboflow), PX4 SITL + Gazebo Harmonic with the "mission gate" (no Isaac Sim). Competitions: SUAS 2026 (Tulsa, Sep 2026, no results published) and C-UASC 2027 (Encino, Jun 2027).
+- Airframe names "Caligula I" (bare carbon, previous) and "Caligula II" (yellow shell, current) are placeholders the team will rename; the homepage section ids are `airframe-previous` / `airframe-current` so a rename does not break anchors.
 
 ## Preview locally
 
 ```sh
-python3 -m http.server "${PORT:-8000}"   # run from the repo root, then open http://localhost:${PORT:-8000}/
+python3 -m http.server "${PORT:-8000}"   # from the repo root, then open http://localhost:${PORT:-8000}/
 ```
 
-Serve from the repo root, not from inside `html/`, because subpages link back with `../`.
+Serve from the repo root, not from inside `html/`, because subpages link back with `../`. For screenshots without a browser extension, headless `google-chrome --headless=new --screenshot` works; to capture a mid-page section, use a throwaway same-origin wrapper page that hides every other `body > section` (fragment scrolling does not take effect in headless screenshots). Delete the wrapper afterwards.
 
 ## Architecture
 
-- **Layout:** `index.html` and `404.html` are at the root. All other pages are in `html/`. Shared CSS, JS and favicons are in `assets/`, and all images are in `photos/`. Root pages refer to these as `assets/...` and `photos/...`, while pages in `html/` use `../assets/...` and `../photos/...`. Keep the right relative prefix when you move markup between levels.
-- **No templating.** Every page has its own full copy of the `<head>` (meta, Open Graph, Inter from Google Fonts, favicons), the navbar (with the Team dropdown that lists the four subteam pages) and the footer. Changing the nav, adding a page, or renaming a page means editing all 8 HTML files. The current page's link gets the `active` class.
-- **Adding or renaming a page** also means updating `sitemap.xml` (it uses absolute URLs on the custom domain) and the Team dropdown on every page. If it is a subteam page, also add it to the subteam list on `html/team.html`.
-- **`assets/style.css`** is the only stylesheet. It is split into sections with `/* ============ NAME ============ */` banners: design tokens in `:root` at the top, then homepage `panel` sections, subpage `page-hero` / `page-section` / `work-grid`, and pure-CSS/SVG animations (waypoints, gears, payload drop, and so on). Reuse the existing tokens and classes instead of adding inline styles. The one exception is per-page `background-image` / `background-position` on hero `photo` divs, which are set inline on purpose.
-- **`assets/script.js`** handles only the mobile nav toggle (`#navToggle` / `#navLinks`) and the `.scrolled` navbar state. Pages depend on those IDs and class names.
-- Visual style is monochrome (black theme). Subteam pages share one hero-plus-sections layout.
+- **Layout:** `index.html` and `404.html` at the root; all other pages in `html/`. Shared CSS/JS and brand assets in `assets/`, images in `photos/`, the hero clip in `video/`. Root pages refer to these as `assets/...`, while pages in `html/` use `../assets/...`. Keep the right prefix when moving markup between levels.
+- **No templating.** Every page has its own full copy of the `<head>`, the navbar (wordmark image + Team dropdown listing the four subteam pages) and the footer. Changing the nav, adding a page, or renaming a page means editing all 8 HTML files. The current page's link gets the `active` class.
+- **Adding or renaming a page** also means updating `sitemap.xml` (absolute URLs on the custom domain) and the Team dropdown on every page; a subteam page also goes in the list on `html/team.html`.
+- **`assets/style.css`** is the only stylesheet, split into `/* ============ NAME ============ */` sections: design tokens in `:root` (accent is the badge gold `--accent`, blue in `--brand-blue`), homepage `panel` sections, subpage `page-hero` / `full-section` / `work-grid`, SVG line animations, a `.reveal` fade-up, and phone rules in the single `@media (max-width: 768px)` block. Reuse tokens and classes instead of adding inline styles. The one sanctioned inline exception is per-page `background-image` / `background-position` on hero and section photo backgrounds.
+- **Animation style** (keep it this way): hairline strokes (1px), low-opacity white, slow eased motion (6 to 36 s cycles), no marching dashes, hard flashes or glows, no blueprint grids. All motion is disabled under `prefers-reduced-motion`, and the hero video is hidden there (poster shows instead).
+- **`assets/script.js`** handles the mobile nav toggle (`#navToggle` / `#navLinks`), the `.scrolled` navbar state, and the IntersectionObserver that adds `.reveal` / `.is-visible` to content blocks. Pages depend on those IDs and class names.
+- **Homepage hero** is `video/hero-flight.mp4` (muted, looping, 960x720, a forward-then-reverse cut of the Caligula II night flight) with `video/hero-flight-poster.jpg` as poster and background. `#top.panel::before` has its own lighter scrim because the footage is dark.
+- **Brand assets** in `assets/`: `wordmark-white.png` (+`@2x`) for the navbar, `favicon-32.png` / `favicon-192.png` / `apple-touch-icon.png` / `badge-512.png` cut from the round team badge. Source files live outside the repo.
+- **Photos:** web-sized JPEGs (2000px long edge, EXIF stripped, so phone GPS data never ships). When a photo stops being referenced by any page, remove it from the branch; it stays in history.
 
 ## Privacy
 
-Exported account reports, such as the Cloudflare security-insights CSV currently untracked in the root, must not be committed.
+Exported account reports and the raw photo/video/branding zips in the root are git-ignored (`*.csv`, `*.zip`) and must stay out of commits. Raw media is processed into `photos/` and `video/`; never commit originals.

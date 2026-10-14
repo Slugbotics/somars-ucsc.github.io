@@ -279,7 +279,7 @@ img { max-width: 100%; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 40%;
+  object-position: 65% 40%;  /* the drone sits right of centre in the clip; matters on phones where the sides crop */
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-video { display: none; }
