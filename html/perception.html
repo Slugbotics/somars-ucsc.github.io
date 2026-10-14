@@ -61,7 +61,7 @@
       <p class="section-eyebrow">About</p>
       <h2>Giving the drone<br>its eyes.</h2>
       <p class="section-body">We are the Perception subteam. We write the computer vision that lets the drone see the ground below it and pick out the SUAS 2026 targets: a mannequin, a tent and a car. Our detector is Ultralytics YOLO11n, trained on Kaggle and deployed on the NVIDIA Jetson Orin Nano Super with TensorRT 10.3 in FP16. In simulation the same model runs through ONNX.</p>
-      <p class="section-body">Day to day, that means working with the onboard camera, labeling flight imagery, rendering synthetic scenes, and keeping our ROS 2 nodes talking to the flight controller. It has to keep working at altitude during a fully autonomous flight, not just on a laptop at the bench.</p>
+      <p class="section-body">Day to day, that means working with the onboard camera, labeling flight imagery, rendering synthetic scenes, stitching survey photos into a map, and keeping our ROS 2 nodes talking to the flight controller. It has to keep working at altitude during a fully autonomous flight, not just on a laptop at the bench.</p>
     </div>
   </section>
 
@@ -85,7 +85,7 @@
         <!-- Right column -->
         <div class="work-card" style="grid-column:2; grid-row:1;">
           <h4>Camera &amp; Calibration</h4>
-          <p>Our camera is an Arducam Pivariety AR0234: color, global shutter, 1920x1200, read over V4L2. We recently fitted a 6 mm lens, calibrated it with a ChArUco board, and are retraining the detector for the new field of view.</p>
+          <p>Our camera is an Arducam Jetvariety AR0234: color, global shutter, 1920x1200, read over V4L2. We recently fitted a 6 mm lens, calibrated it with a ChArUco board, and are retraining the detector for the new field of view.</p>
         </div>
 
         <div class="work-card" style="grid-column:2; grid-row:2;">
@@ -218,7 +218,7 @@
         </div>
         <div class="stack-layer">
           <span class="stack-label">Camera</span>
-          <span class="stack-desc">Arducam Pivariety AR0234, color global shutter, 1920x1200 over V4L2, 6 mm lens calibrated with a ChArUco board</span>
+          <span class="stack-desc">Arducam Jetvariety AR0234, color global shutter, 1920x1200 over V4L2, 6 mm lens calibrated with a ChArUco board</span>
         </div>
         <div class="stack-layer">
           <span class="stack-label">Flight Software</span>

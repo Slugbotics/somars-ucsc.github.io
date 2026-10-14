@@ -89,7 +89,7 @@
         </div>
         <div class="work-card" style="grid-column:2; grid-row:2;">
           <h4>Autonomous Controls</h4>
-          <p>We write the control loops, state machines, and mission planners that fly the drone through waypoints and drive the two-bay winch (a passive spool with a brake and pawl) from PX4 AUX outputs. The safety rules are fixed: 15 seconds of lost ground link triggers return-to-home, 90 seconds triggers flight termination, and nothing else ever ends a flight. We have also rewritten the whole stack in Rust, cutting memory from about 183 MB to about 70 MB; it is installed on the aircraft but disabled for now.</p>
+          <p>We write the control loops, state machines, and mission planners that fly the drone through waypoints and drive the two-bay winch (a passive spool with a brake and pawl) from PX4 AUX outputs. The safety rules are fixed: 15 seconds of lost ground link triggers return-to-home, 90 seconds triggers flight termination, and nothing else ever ends a flight.</p>
         </div>
 
         <!-- Animation: full-width bottom row -->
@@ -234,11 +234,7 @@
         </div>
         <div class="stack-layer">
           <span class="stack-label">Ground Control</span>
-          <span class="stack-desc">Native Rust operator app, a terminal GCS written in Go, a web operator page, and QGroundControl</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Rust Rewrite</span>
-          <span class="stack-desc">Whole stack (control, guidance, winch, terminator, ground bridge) in about 70 MB versus about 183 MB for Python; installed but disabled</span>
+          <span class="stack-desc">Our own ground station software plus QGroundControl</span>
         </div>
       </div>
     </div>

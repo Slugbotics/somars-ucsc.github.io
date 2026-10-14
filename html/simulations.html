@@ -62,6 +62,7 @@
       <h2>The virtual world<br>before the real one.</h2>
       <p class="section-body">We run PX4 SITL inside Podman containers, with two simulators to choose from: PX4's built-in SIH for quick checks, and Gazebo Harmonic with a simulated camera when we need the full picture. The same YOLO11n detector the aircraft uses runs in simulation through ONNX, so the perception code gets exercised too.</p>
       <p class="section-body">That lets the rest of the team try things without risking the aircraft. When a bug shows up in simulation, we fix it there. Nobody has to rebuild a drone, and everyone gets to test more often.</p>
+      <p class="section-body">Day to day, that means writing mission gate scenarios, keeping the containers and Gazebo worlds working, and running the rest of the team's changes through the gate before they fly.</p>
     </div>
   </section>
 
@@ -85,7 +86,7 @@
         <!-- Right column -->
         <div class="work-card" style="grid-column:2; grid-row:1;">
           <h4>Mission Gate</h4>
-          <p>A scripted set of automated test flights we call the mission gate runs the full mission end to end. As of 14 October 2026 it passes 6 of 6 scenarios on both our Python stack and our Rust stack, and every change is expected to pass it before it goes near the aircraft.</p>
+          <p>A scripted set of automated test flights we call the mission gate runs the full mission end to end. As of 14 October 2026 it passes 6 of 6 scenarios, and every change has to pass it before it goes near the aircraft.</p>
         </div>
         <div class="work-card" style="grid-column:2; grid-row:2;">
           <h4>Perception in the Loop</h4>
@@ -181,7 +182,7 @@
         </div>
         <div class="stack-layer">
           <span class="stack-label">Middleware</span>
-          <span class="stack-desc">ROS 2 Humble over Micro XRCE-DDS with px4_msgs</span>
+          <span class="stack-desc">ROS 2 Humble over uXRCE-DDS with px4_msgs</span>
         </div>
         <div class="stack-layer">
           <span class="stack-label">Detector</span>
@@ -189,7 +190,7 @@
         </div>
         <div class="stack-layer">
           <span class="stack-label">Testing</span>
-          <span class="stack-desc">Mission gate (6 of 6 scenarios, Python and Rust stacks) and HIL with Pixhawk 6X and Jetson</span>
+          <span class="stack-desc">Mission gate (6 of 6 scenarios) and HIL with Pixhawk 6X and Jetson</span>
         </div>
       </div>
     </div>
