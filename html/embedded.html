@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#000000" />
   <title>Embedded Systems | SOMARS</title>
-  <meta name="description" content="The SOMARS Embedded Systems subteam at UC Santa Cruz. We build the flight controller setup, firmware, companion computer, and autonomous controls for our competition drone." />
+  <meta name="description" content="The SOMARS Embedded Systems subteam at UC Santa Cruz: flight controller, companion computer, sensors, radios, and the autonomy code for our drone." />
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SOMARS" />
   <meta property="og:title" content="Embedded Systems | SOMARS" />
-  <meta property="og:description" content="Flight controllers, firmware, companion computers, and autonomous controls for UC Santa Cruz's competition drone. Come build the brain of the drone with us." />
+  <meta property="og:description" content="We build the electronics and flight software for UC Santa Cruz's competition drone. Come build the brain of the drone with us." />
   <meta property="og:image" content="https://somars-ucsc.com/photos/flight-controller-arms.jpg" />
   <meta property="og:url" content="https://somars-ucsc.com/html/embedded.html" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -51,7 +51,7 @@
     <div class="page-hero-inner">
       <p class="hero-eyebrow">Subteam · 02</p>
       <h1>Embedded Systems.</h1>
-      <p class="hero-desc">Hardware, firmware, and autonomous control. We build the brain and nervous system of the drone: a Pixhawk 6X running PX4, a Jetson running ROS 2, and everything wired between them.</p>
+      <p class="hero-desc">We build the electronics and flight software that let the drone fly a mission on its own.</p>
     </div>
   </section>
 
@@ -60,8 +60,7 @@
     <div class="full-section-inner">
       <p class="section-eyebrow">About</p>
       <h2>Where hardware<br>meets software.</h2>
-      <p class="section-body">We are the subteam that lives between hardware and software. We design and wire up the electronics that make the drone work: a Pixhawk 6X flight controller running PX4, an NVIDIA Jetson Orin Nano Super companion computer, two DroneCAN buses for the ESCs and sensors, the radios, and the power system.</p>
-      <p class="section-body">We also write the ROS 2 autonomy that lets the drone navigate, hold steady, run the payload winch, and fly competition missions with no human pilot in the loop. If you like soldering as much as you like writing code, you will fit right in.</p>
+      <p class="section-body">We own everything between airframe and mission: flight controller, companion computer, sensor buses, radios, and power, plus the ROS 2 code that ties them together. If any of it fails, the drone stays on the ground.</p>
     </div>
   </section>
 
@@ -75,117 +74,97 @@
         <!-- Left column -->
         <div class="work-card" style="grid-column:1; grid-row:1;">
           <h4>Flight Controller Integration</h4>
-          <p>We fly a Pixhawk 6X running PX4 (the v1.16 line) with our own patch series on top. We configure and tune it so it handles low-level stabilization, motor mixing, and attitude control, and our firmware build includes ELRS/CRSF RC support.</p>
+          <p>We build PX4 with our own patches and tune it for stabilization, motor mixing, and radio control.</p>
         </div>
         <div class="work-card" style="grid-column:1; grid-row:2;">
           <h4>Sensors, Power &amp; Communication</h4>
-          <p>We run two DroneCAN buses: one for the four MAD AMPX 60A HV ESCs (throttle over PWM, telemetry over DroneCAN) and one for the sensors, which are RTK GNSS with a compass, a Holybro flow module with an AFBR-S50 rangefinder and optical flow, a CubeID Remote ID, and a power module. Video and data reach the ground over a Skydroid YL20 and GR01 link (2.4/5.8 GHz) working as a network bridge, backed by a 915 MHz telemetry radio, with a BotBlox Ethernet switch onboard.</p>
+          <p>We wire the two DroneCAN buses for ESCs and sensors, plus the radios and the power system.</p>
         </div>
 
         <!-- Right column -->
         <div class="work-card" style="grid-column:2; grid-row:1;">
           <h4>Companion Computer</h4>
-          <p>We run high-level autonomy on an NVIDIA Jetson Orin Nano Super with JetPack 6.2.2 and ROS 2 Humble. It talks to PX4 over uXRCE-DDS using px4_msgs and takes in what the perception code detects. Our somars_gcs_bridge node carries MAVLink v2 to the ground station.</p>
+          <p>The Jetson runs our ROS 2 autonomy, talks to PX4, and bridges MAVLink to the ground.</p>
         </div>
         <div class="work-card" style="grid-column:2; grid-row:2;">
           <h4>Autonomous Controls</h4>
-          <p>We write the control loops, state machines, and mission planners that fly the drone through waypoints and drive the two-bay winch (a passive spool with a brake and pawl) from PX4 AUX outputs. The safety rules are fixed: 15 seconds of lost ground link triggers return-to-home, 90 seconds triggers flight termination, and nothing else ever ends a flight.</p>
+          <p>We write the state machines and mission planners that fly waypoints, work the winch, and enforce the lost-link rules.</p>
         </div>
 
         <!-- Animation: full-width bottom row -->
         <div class="payload-scene-wrap" style="grid-column:1 / 3; grid-row:3; margin:0;">
-          <svg class="payload-scene" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+          <svg class="payload-scene" viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flight electronics: sensors on a DroneCAN bus feed the Pixhawk flight controller, which exchanges data with the Jetson companion computer over XRCE-DDS; the Jetson reads the camera; the Pixhawk drives four motors and the winch; both link to the ground station.">
+            <defs>
+              <marker id="arr" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="rgba(255,255,255,0.6)"/></marker>
+              <marker id="arrg" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#f0c000"/></marker>
+            </defs>
 
-            <!-- Connection lines -->
-            <line x1="72" y1="62"  x2="105" y2="88"  stroke="#ffffff" stroke-width="0.8" opacity="0.2"/>
-            <line x1="72" y1="138" x2="105" y2="112" stroke="#ffffff" stroke-width="0.8" opacity="0.2"/>
-            <line x1="185" y1="96"  x2="230" y2="96"  stroke="#ffffff" stroke-width="0.8" opacity="0.2"/>
-            <line x1="230" y1="104" x2="185" y2="104" stroke="#ffffff" stroke-width="0.8" opacity="0.2"/>
-            <line x1="185" y1="82"  x2="434" y2="38"  stroke="#ffffff" stroke-width="0.8" opacity="0.15"/>
-            <line x1="185" y1="92"  x2="434" y2="78"  stroke="#ffffff" stroke-width="0.8" opacity="0.15"/>
-            <line x1="185" y1="108" x2="434" y2="122" stroke="#ffffff" stroke-width="0.8" opacity="0.15"/>
-            <line x1="185" y1="118" x2="434" y2="162" stroke="#ffffff" stroke-width="0.8" opacity="0.15"/>
-
-            <!-- Connection labels -->
-            <text x="207" y="90"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4" letter-spacing="1">XRCE-DDS</text>
-            <text x="318" y="52"  font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.3" letter-spacing="1">PWM</text>
-            <text x="88" y="70" text-anchor="middle" font-family="Inter,sans-serif" font-size="6" fill="#ffffff" opacity="0.3" letter-spacing="1">CAN</text>
-
-            <!-- GPS block -->
-            <rect x="8" y="50" width="64" height="24" rx="4" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
-            <text x="40" y="66" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#ffffff" letter-spacing="1.5" opacity="0.85">GPS</text>
-
-            <!-- IMU block -->
-            <rect x="8" y="126" width="64" height="24" rx="4" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
-            <text x="40" y="142" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#ffffff" letter-spacing="1.5" opacity="0.85">IMU</text>
-
-            <!-- Flight Controller block -->
-            <rect x="105" y="68" width="80" height="64" rx="4" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.85"/>
-            <text x="145" y="93"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" letter-spacing="1" opacity="0.8">FLIGHT</text>
-            <text x="145" y="105" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" letter-spacing="1" opacity="0.8">CONTROLLER</text>
-            <circle cx="145" cy="120" r="2.5" fill="#ffffff" opacity="0.8"/>
-
-            <!-- Companion Computer block -->
-            <rect x="230" y="68" width="90" height="64" rx="4" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.85"/>
-            <text x="275" y="93"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" letter-spacing="1" opacity="0.8">COMPANION</text>
-            <text x="275" y="105" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" letter-spacing="1" opacity="0.8">COMPUTER</text>
-            <circle cx="275" cy="120" r="2.5" fill="#ffffff" opacity="0.8"/>
-
-            <!-- Motors -->
-            <circle cx="448" cy="38"  r="14" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
-            <circle cx="448" cy="78"  r="14" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
-            <circle cx="448" cy="122" r="14" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
-            <circle cx="448" cy="162" r="14" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
-            <text x="448" y="42"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.5">M1</text>
-            <text x="448" y="82"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.5">M2</text>
-            <text x="448" y="126" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.5">M3</text>
-            <text x="448" y="166" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.5">M4</text>
-
-            <!-- Props: static crosses, the motion is in the data flow -->
-            <g stroke="#ffffff" stroke-width="1" opacity="0.5">
-              <line x1="441" y1="38"  x2="455" y2="38"/><line x1="448" y1="31"  x2="448" y2="45"/>
-              <line x1="441" y1="78"  x2="455" y2="78"/><line x1="448" y1="71"  x2="448" y2="85"/>
-              <line x1="441" y1="122" x2="455" y2="122"/><line x1="448" y1="115" x2="448" y2="129"/>
-              <line x1="441" y1="162" x2="455" y2="162"/><line x1="448" y1="155" x2="448" y2="169"/>
+            <!-- Sensors on the DroneCAN bus -->
+            <rect x="12" y="44" width="96" height="112" rx="4" class="dg-faint"/>
+            <text x="60" y="38" text-anchor="middle" class="dg-text dg-text--dim">Sensors · DroneCAN</text>
+            <g class="dg-text" text-anchor="middle">
+              <text x="60" y="64">RTK GNSS</text>
+              <text x="60" y="88">Flow + Range</text>
+              <text x="60" y="112">Remote ID</text>
+              <text x="60" y="136">Power module</text>
             </g>
+            <line x1="108" y1="100" x2="158" y2="100" class="dg-line" marker-end="url(#arr)"/>
 
-            <!-- One cycle, 6 s: sensors report in, the flight controller and companion computer
-                 exchange a message, then one command goes out to all four motors together. -->
-            <g fill="#ffffff">
-              <circle r="2.6" opacity="0">
-                <animateMotion path="M 72,62 L 105,88" dur="6s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.02;0.2;1" calcMode="spline" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1"/>
-                <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0.9;0.9;0;0" keyTimes="0;0.02;0.19;0.21;1"/>
-              </circle>
-              <circle r="2.6" opacity="0">
-                <animateMotion path="M 72,138 L 105,112" dur="6s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.02;0.2;1" calcMode="spline" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1"/>
-                <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0.9;0.9;0;0" keyTimes="0;0.02;0.19;0.21;1"/>
-              </circle>
-              <circle r="2.6" opacity="0">
-                <animateMotion path="M 185,96 L 230,96" dur="6s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.3;0.45;1" calcMode="spline" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1"/>
-                <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;0.9;0.9;0;0" keyTimes="0;0.29;0.31;0.44;0.46;1"/>
-              </circle>
-              <circle r="2.6" opacity="0">
-                <animateMotion path="M 230,104 L 185,104" dur="6s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.48;0.63;1" calcMode="spline" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1"/>
-                <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;0.9;0.9;0;0" keyTimes="0;0.47;0.49;0.62;0.64;1"/>
-              </circle>
-              <circle r="2.6" opacity="0">
-                <animateMotion path="M 185,82 L 434,38" dur="6s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.66;0.86;1" calcMode="spline" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1"/>
-                <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;0.9;0.9;0;0" keyTimes="0;0.65;0.67;0.85;0.87;1"/>
-              </circle>
-              <circle r="2.6" opacity="0">
-                <animateMotion path="M 185,92 L 434,78" dur="6s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.66;0.86;1" calcMode="spline" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1"/>
-                <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;0.9;0.9;0;0" keyTimes="0;0.65;0.67;0.85;0.87;1"/>
-              </circle>
-              <circle r="2.6" opacity="0">
-                <animateMotion path="M 185,108 L 434,122" dur="6s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.66;0.86;1" calcMode="spline" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1"/>
-                <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;0.9;0.9;0;0" keyTimes="0;0.65;0.67;0.85;0.87;1"/>
-              </circle>
-              <circle r="2.6" opacity="0">
-                <animateMotion path="M 185,118 L 434,162" dur="6s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.66;0.86;1" calcMode="spline" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1"/>
-                <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;0.9;0.9;0;0" keyTimes="0;0.65;0.67;0.85;0.87;1"/>
-              </circle>
+            <!-- Flight controller -->
+            <rect x="160" y="72" width="100" height="56" rx="4" class="dg-box"/>
+            <text x="210" y="95" text-anchor="middle" class="dg-text dg-text--big">Pixhawk 6X</text>
+            <text x="210" y="110" text-anchor="middle" class="dg-text dg-text--dim">PX4 autopilot</text>
+
+            <!-- Companion computer -->
+            <rect x="320" y="72" width="110" height="56" rx="4" class="dg-box"/>
+            <text x="375" y="95" text-anchor="middle" class="dg-text dg-text--big">Jetson Orin Nano</text>
+            <text x="375" y="110" text-anchor="middle" class="dg-text dg-text--dim">ROS 2 autonomy</text>
+
+            <!-- The one link to look at: XRCE-DDS between autopilot and companion -->
+            <line x1="262" y1="94" x2="316" y2="94" class="dg-line dg-accent" marker-end="url(#arrg)"/>
+            <line x1="318" y1="106" x2="264" y2="106" class="dg-line dg-accent" marker-end="url(#arrg)"/>
+            <text x="290" y="84" text-anchor="middle" class="dg-text dg-text--accent">XRCE-DDS</text>
+            <circle r="2.4" class="dg-fill-accent" opacity="0">
+              <animateMotion path="M 262,94 L 316,94" dur="6s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.1;0.4;1" calcMode="spline" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1"/>
+              <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.1;0.12;0.39;0.41;1"/>
+            </circle>
+            <circle r="2.4" class="dg-fill-accent" opacity="0">
+              <animateMotion path="M 318,106 L 264,106" dur="6s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.55;0.85;1" calcMode="spline" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1"/>
+              <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.55;0.57;0.84;0.86;1"/>
+            </circle>
+
+            <!-- Camera into the companion -->
+            <rect x="335" y="14" width="80" height="26" rx="4" class="dg-box"/>
+            <text x="375" y="27" text-anchor="middle" class="dg-text">Camera</text>
+            <text x="375" y="36" text-anchor="middle" class="dg-text dg-text--dim">AR0234 global shutter</text>
+            <line x1="375" y1="42" x2="375" y2="68" class="dg-line" marker-end="url(#arr)"/>
+
+            <!-- Motors and winch off the flight controller -->
+            <g class="dg-line">
+              <line x1="185" y1="130" x2="150" y2="178" marker-end="url(#arr)"/>
+              <line x1="200" y1="130" x2="185" y2="178" marker-end="url(#arr)"/>
+              <line x1="220" y1="130" x2="235" y2="178" marker-end="url(#arr)"/>
+              <line x1="235" y1="130" x2="270" y2="178" marker-end="url(#arr)"/>
             </g>
+            <g class="dg-box">
+              <circle cx="148" cy="190" r="10"/><circle cx="184" cy="190" r="10"/><circle cx="236" cy="190" r="10"/><circle cx="272" cy="190" r="10"/>
+            </g>
+            <g class="dg-text dg-text--dim" text-anchor="middle">
+              <text x="148" y="193">M1</text><text x="184" y="193">M2</text><text x="236" y="193">M3</text><text x="272" y="193">M4</text>
+            </g>
+            <text x="210" y="218" text-anchor="middle" class="dg-text dg-text--dim">4 × ESC · PWM</text>
+            <line x1="160" y1="118" x2="90" y2="178" class="dg-line" marker-end="url(#arr)"/>
+            <rect x="52" y="180" width="68" height="22" rx="4" class="dg-box"/>
+            <text x="86" y="194" text-anchor="middle" class="dg-text">Winch · AUX</text>
 
+            <!-- Ground station: video and data over the Skydroid link, telemetry over 915 MHz -->
+            <rect x="330" y="176" width="140" height="36" rx="4" class="dg-box"/>
+            <text x="400" y="191" text-anchor="middle" class="dg-text dg-text--big">Ground station</text>
+            <text x="400" y="203" text-anchor="middle" class="dg-text dg-text--dim">Our GCS + QGroundControl</text>
+            <line x1="395" y1="130" x2="395" y2="172" class="dg-line" marker-end="url(#arr)"/>
+            <text x="420" y="152" class="dg-text dg-text--dim">Skydroid link</text>
+            <path d="M 240,130 C 240,165 300,160 326,185" class="dg-line" marker-end="url(#arr)"/>
+            <text x="262" y="166" class="dg-text dg-text--dim">915 MHz telemetry</text>
           </svg>
         </div>
 
@@ -197,42 +176,15 @@
   <section class="full-section">
     <div class="full-section-inner">
       <p class="section-eyebrow">Software Stack</p>
-      <h2>How it's built.</h2>
-      <p class="section-body">Our autonomy software runs on ROS 2 Humble and talks to PX4 over uXRCE-DDS. Here is how the layers fit together.</p>
-      <div class="stack-layers">
-        <div class="stack-layer">
-          <span class="stack-label">Flight Controller</span>
-          <span class="stack-desc">Pixhawk 6X running PX4 (v1.16 line) with our own patch series and ELRS/CRSF RC support</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">PX4 Bridge</span>
-          <span class="stack-desc">uXRCE-DDS link between the Jetson and PX4 using px4_msgs</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">ROS 2 Packages</span>
-          <span class="stack-desc">somars_vision, somars_controls, somars_interfaces, and somars_gcs_bridge</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Sensor Buses</span>
-          <span class="stack-desc">Two DroneCAN buses: ESC telemetry on one, GPS, flow, rangefinder, Remote ID, and power module on the other</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Guidance &amp; Safety</span>
-          <span class="stack-desc">Waypoint sequencing, winch payload drops, return-to-home after 15 seconds of lost link, termination after 90</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Perception Interface</span>
-          <span class="stack-desc">Listens for target detections from the Perception subteam</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Ground Link</span>
-          <span class="stack-desc">MAVLink v2 through somars_gcs_bridge over the Skydroid network bridge and a 915 MHz telemetry radio</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Ground Control</span>
-          <span class="stack-desc">Our own ground station software plus QGroundControl</span>
-        </div>
-      </div>
+      <h2>At a glance.</h2>
+      <dl class="spec-strip">
+        <div class="spec"><dt>Flight controller</dt><dd>Pixhawk 6X running PX4 with our patches</dd></div>
+        <div class="spec"><dt>Companion computer</dt><dd>Jetson Orin Nano Super, ROS 2 Humble</dd></div>
+        <div class="spec"><dt>Autopilot link</dt><dd>uXRCE-DDS with px4_msgs</dd></div>
+        <div class="spec"><dt>Sensors</dt><dd>RTK GNSS, optical flow, rangefinder, Remote ID</dd></div>
+        <div class="spec"><dt>Radios</dt><dd>Skydroid video link, 915 MHz telemetry, ELRS RC</dd></div>
+        <div class="spec"><dt>Lost link</dt><dd>15 s: return home. 90 s: terminate</dd></div>
+      </dl>
     </div>
   </section>
 
@@ -248,7 +200,7 @@
           <p class="meeting-loc">SlugWorks BE-49</p>
         </div>
       </div>
-      <p class="meeting-note">Message us on Discord to join. We'll help you set up the dev environment.</p>
+      <p class="meeting-note">Like soldering as much as code? Message us on Discord.</p>
     </div>
   </section>
 

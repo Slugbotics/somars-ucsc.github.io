@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#000000" />
   <title>Simulations | SOMARS</title>
-  <meta name="description" content="The SOMARS Simulations subteam at UC Santa Cruz. We build Gazebo worlds and fly our autonomous drone in simulation before it ever leaves the ground." />
+  <meta name="description" content="The SOMARS Simulations subteam at UC Santa Cruz. We fly our autonomous drone in simulation before it ever leaves the ground." />
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SOMARS" />
   <meta property="og:title" content="Simulations | SOMARS" />
-  <meta property="og:description" content="We fly UC Santa Cruz's autonomous drone in Gazebo first, so the real flights go smoother." />
+  <meta property="og:description" content="We fly UC Santa Cruz's autonomous drone in simulation first, so problems show up on a screen, not in the air." />
   <meta property="og:image" content="https://somars-ucsc.com/photos/gazebo.png" />
   <meta property="og:url" content="https://somars-ucsc.com/html/simulations.html" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -51,7 +51,7 @@
     <div class="page-hero-inner">
       <p class="hero-eyebrow">Subteam · 04</p>
       <h1>Simulations.</h1>
-      <p class="hero-desc">We fly the drone in PX4 SITL and Gazebo first. If something is going to go wrong, we would rather find out on a screen.</p>
+      <p class="hero-desc">If something is going to go wrong, we would rather find out on a screen.</p>
     </div>
   </section>
 
@@ -60,9 +60,7 @@
     <div class="full-section-inner">
       <p class="section-eyebrow">About</p>
       <h2>The virtual world<br>before the real one.</h2>
-      <p class="section-body">We run PX4 SITL inside Podman containers, with two simulators to choose from: PX4's built-in SIH for quick checks, and Gazebo Harmonic with a simulated camera when we need the full picture. The same YOLO11n detector the aircraft uses runs in simulation through ONNX, so the perception code gets exercised too.</p>
-      <p class="section-body">That lets the rest of the team try things without risking the aircraft. When a bug shows up in simulation, we fix it there. Nobody has to rebuild a drone, and everyone gets to test more often.</p>
-      <p class="section-body">Day to day, that means writing mission gate scenarios, keeping the containers and Gazebo worlds working, and running the rest of the team's changes through the gate before they fly.</p>
+      <p class="section-body">We fly the drone in simulation before it leaves the ground. Bugs caught there are cheap to fix, so the team can test often without risking the aircraft.</p>
     </div>
   </section>
 
@@ -76,21 +74,21 @@
         <!-- Left column -->
         <div class="work-card" style="grid-column:1; grid-row:1;">
           <h4>Simulators</h4>
-          <p>We run PX4 SITL in Podman containers with two simulators: PX4's built-in SIH when we want a fast loop, and Gazebo Harmonic with a simulated camera when we need to see what the aircraft sees.</p>
+          <p>Quick checks in a fast loop, or the full picture in a Gazebo world.</p>
         </div>
         <div class="work-card" style="grid-column:1; grid-row:2;">
           <h4>Hardware-in-the-Loop (HIL)</h4>
-          <p>We also run the real Pixhawk 6X and Jetson against the simulator, so the actual flight controller and companion computer get exercised before anything goes near the aircraft.</p>
+          <p>The real Pixhawk 6X and Jetson fly against the simulator too.</p>
         </div>
 
         <!-- Right column -->
         <div class="work-card" style="grid-column:2; grid-row:1;">
           <h4>Mission Gate</h4>
-          <p>A scripted set of automated test flights we call the mission gate runs the full mission end to end. As of 14 October 2026 it passes 6 of 6 scenarios, and every change has to pass it before it goes near the aircraft.</p>
+          <p>Scripted automated test flights. Every change must pass them before it flies.</p>
         </div>
         <div class="work-card" style="grid-column:2; grid-row:2;">
           <h4>Perception in the Loop</h4>
-          <p>The same YOLO11n detector the aircraft flies with runs in simulation through ONNX, so we can check the detection pipeline against the simulated camera and not just the flight logic.</p>
+          <p>The aircraft's own YOLO11n detector runs in simulation, so detection gets tested too.</p>
         </div>
 
         <!-- Animation: full-width bottom row -->
@@ -164,29 +162,15 @@
   <section class="full-section">
     <div class="full-section-inner">
       <p class="section-eyebrow">Environment</p>
-      <h2>Our simulation stack.</h2>
-      <div class="stack-layers">
-        <div class="stack-layer">
-          <span class="stack-label">Simulators</span>
-          <span class="stack-desc">PX4 SIH and Gazebo Harmonic (simulated camera)</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Flight Stack</span>
-          <span class="stack-desc">PX4 SITL in Podman containers</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Middleware</span>
-          <span class="stack-desc">ROS 2 Humble over uXRCE-DDS with px4_msgs</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Detector</span>
-          <span class="stack-desc">YOLO11n through ONNX</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Testing</span>
-          <span class="stack-desc">Mission gate (6 of 6 scenarios) and HIL with Pixhawk 6X and Jetson</span>
-        </div>
-      </div>
+      <h2>At a glance.</h2>
+      <dl class="spec-strip">
+        <div class="spec"><dt>Simulators</dt><dd>PX4 SIH for quick loops, Gazebo Harmonic for the full picture</dd></div>
+        <div class="spec"><dt>Flight stack</dt><dd>PX4 SITL in Podman containers</dd></div>
+        <div class="spec"><dt>Middleware</dt><dd>ROS 2 Humble over uXRCE-DDS</dd></div>
+        <div class="spec"><dt>Perception</dt><dd>The same YOLO11n detector, through ONNX</dd></div>
+        <div class="spec"><dt>Mission gate</dt><dd>6 of 6 scenarios passing (14 Oct 2026)</dd></div>
+        <div class="spec"><dt>Hardware in the loop</dt><dd>Real Pixhawk 6X and Jetson against the simulator</dd></div>
+      </dl>
     </div>
   </section>
 
@@ -202,7 +186,7 @@
           <p class="meeting-loc">SlugWorks / Remote</p>
         </div>
       </div>
-      <p class="meeting-note">Knowing a bit of Linux helps, but you don't need it. We'll get you set up.</p>
+      <p class="meeting-note">Some Linux helps, but we will get you set up.</p>
     </div>
   </section>
 
