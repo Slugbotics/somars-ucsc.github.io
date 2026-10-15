@@ -119,21 +119,11 @@
     <div class="panel-media panel-media--anim">
       <svg class="waypoint-anim" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <path class="wp-route" d="M90,340 C150,270 190,170 260,120 C330,70 380,210 430,260 C480,310 530,140 600,90 C650,55 690,140 730,200" />
-        <circle class="wp-node" cx="90" cy="340" r="7" style="animation-delay:0s"></circle>
-        <circle class="wp-node" cx="260" cy="120" r="7" style="animation-delay:2s"></circle>
-        <circle class="wp-node" cx="430" cy="260" r="7" style="animation-delay:4s"></circle>
-        <circle class="wp-node" cx="600" cy="90" r="7" style="animation-delay:6s"></circle>
-        <circle class="wp-node" cx="730" cy="200" r="7" style="animation-delay:7.6s"></circle>
-        <g class="wp-drone">
-          <line x1="-14" y1="-14" x2="14" y2="14" />
-          <line x1="-14" y1="14" x2="14" y2="-14" />
-          <circle cx="-14" cy="-14" r="4.5" />
-          <circle cx="14" cy="-14" r="4.5" />
-          <circle cx="-14" cy="14" r="4.5" />
-          <circle cx="14" cy="14" r="4.5" />
-          <rect x="-5.5" y="-5.5" width="11" height="11" rx="2.4" />
-          <animateMotion dur="9s" repeatCount="indefinite" rotate="auto" calcMode="paced" path="M90,340 C150,270 190,170 260,120 C330,70 380,210 430,260 C480,310 530,140 600,90 C650,55 690,140 730,200"></animateMotion>
-        </g>
+        <circle class="wp-node" cx="90" cy="340" r="7"></circle>
+        <circle class="wp-node" cx="260" cy="120" r="7"></circle>
+        <circle class="wp-node" cx="430" cy="260" r="7"></circle>
+        <circle class="wp-node" cx="600" cy="90" r="7"></circle>
+        <circle class="wp-node" cx="730" cy="200" r="7"></circle>
       </svg>
     </div>
     <div class="panel-content">
@@ -145,19 +135,9 @@
           <div class="pillar-icon">
             <svg viewBox="0 0 64 64" class="pillar-svg pillar-svg--nav" aria-hidden="true">
               <path class="pn-route" d="M10,48 C17,39 20,22 29,27 C38,32 42,13 54,17" />
-              <circle class="pn-node" cx="10" cy="48" r="2.2" style="animation-delay:0s"></circle>
-              <circle class="pn-node" cx="29" cy="27" r="2.2" style="animation-delay:.9s"></circle>
-              <circle class="pn-node" cx="54" cy="17" r="2.2" style="animation-delay:1.9s"></circle>
-              <g class="pn-drone">
-                <line x1="-4.6" y1="-4.6" x2="4.6" y2="4.6" />
-                <line x1="-4.6" y1="4.6" x2="4.6" y2="-4.6" />
-                <circle cx="-4.6" cy="-4.6" r="1.5" />
-                <circle cx="4.6" cy="-4.6" r="1.5" />
-                <circle cx="-4.6" cy="4.6" r="1.5" />
-                <circle cx="4.6" cy="4.6" r="1.5" />
-                <rect x="-1.8" y="-1.8" width="3.6" height="3.6" rx="0.8" />
-                <animateMotion dur="3.4s" repeatCount="indefinite" rotate="auto" calcMode="paced" path="M10,48 C17,39 20,22 29,27 C38,32 42,13 54,17"></animateMotion>
-              </g>
+              <circle class="pn-node" cx="10" cy="48" r="2.2"></circle>
+              <circle class="pn-node" cx="29" cy="27" r="2.2"></circle>
+              <circle class="pn-node" cx="54" cy="17" r="2.2"></circle>
             </svg>
           </div>
           <h4>Autonomous Navigation</h4>
@@ -168,7 +148,6 @@
             <svg viewBox="0 0 64 64" class="pillar-svg pillar-svg--cv" aria-hidden="true">
               <path class="cv-frame" d="M10,18 V10 H18 M46,10 H54 V18 M54,46 V54 H46 M18,54 H10 V46" />
               <rect class="cv-target" x="24" y="24" width="16" height="16" rx="2"></rect>
-              <line class="cv-scan" x1="10" y1="12" x2="54" y2="12"></line>
             </svg>
           </div>
           <h4>Computer Vision</h4>
@@ -193,9 +172,6 @@
               <circle class="emb-pad" cx="24" cy="26" r="2.2"></circle>
               <circle class="emb-pad" cx="40" cy="14" r="2.2"></circle>
               <circle class="emb-pad" cx="56" cy="14" r="2.2"></circle>
-              <circle class="emb-pulse" r="2.6">
-                <animateMotion dur="2.8s" repeatCount="indefinite" calcMode="paced" path="M8,50 H24 V26 H40 V14 H56"></animateMotion>
-              </circle>
             </svg>
           </div>
           <h4>Our Own Flight Stack</h4>
@@ -242,9 +218,6 @@
               <circle class="emb-pad" cx="24" cy="26" r="2.2"></circle>
               <circle class="emb-pad" cx="40" cy="14" r="2.2"></circle>
               <circle class="emb-pad" cx="56" cy="14" r="2.2"></circle>
-              <circle class="emb-pulse" r="2.6">
-                <animateMotion dur="2.8s" repeatCount="indefinite" calcMode="paced" path="M8,50 H24 V26 H40 V14 H56"></animateMotion>
-              </circle>
             </svg>
           </div>
           <span class="subteam-arrow">→</span>
@@ -259,7 +232,6 @@
             <svg viewBox="0 0 64 64" class="subteam-svg subteam-svg--cv" aria-hidden="true">
               <path class="cv-frame" d="M10,18 V10 H18 M46,10 H54 V18 M54,46 V54 H46 M18,54 H10 V46" />
               <rect class="cv-target" x="24" y="24" width="16" height="16" rx="2"></rect>
-              <line class="cv-scan" x1="10" y1="12" x2="54" y2="12"></line>
             </svg>
           </div>
           <span class="subteam-arrow">→</span>

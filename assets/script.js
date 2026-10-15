@@ -33,6 +33,10 @@ if (navbar) {
 // Gentle reveal as content blocks scroll into view. Blocks above the fold are
 // shown immediately; everything else fades up once, then stops being observed.
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (reduceMotion) {
+  // CSS cannot stop SMIL, so freeze the diagram animations on their first frame
+  document.querySelectorAll('svg').forEach(svg => { if (svg.pauseAnimations) svg.pauseAnimations(); });
+}
 if ('IntersectionObserver' in window && !reduceMotion) {
   const blocks = document.querySelectorAll(
     '.panel-content, .full-section-inner, .work-card, .comp-card, .pillar, .subteam, .meeting-card, .faq-item, .stack-layer'

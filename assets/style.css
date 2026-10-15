@@ -204,31 +204,12 @@ img { max-width: 100%; }
 
 .panel--bottom { padding-bottom: 10vh; }
 
-/* Placeholder media (blueprint grid) */
+/* Panel media layer: a photo, or the static route drawing on the Approach panel */
 .panel-media {
   position: absolute;
   inset: 0;
   z-index: 0;
   background-color: var(--panel);
-  background-image:
-    radial-gradient(circle at 50% 38%, rgba(255,255,255,0.05), transparent 62%),
-    linear-gradient(rgba(255,255,255,0.032) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.032) 1px, transparent 1px);
-  background-size: 100% 100%, 46px 46px, 46px 46px;
-}
-
-.panel-media::after {
-  content: attr(data-label);
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.13);
-  font-weight: 500;
 }
 
 .panel-media--hero {
@@ -244,7 +225,6 @@ img { max-width: 100%; }
   background-position: center;
   background-repeat: no-repeat;
 }
-.panel-media.photo::after { content: none; }
 
 #competitions .panel-media.photo { filter: brightness(0.7); }
 
@@ -267,8 +247,7 @@ img { max-width: 100%; }
 
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 
-/* Waypoint navigation animation (replaces a static photo) */
-.panel-media--anim::after { content: none; }
+/* Static route drawing behind the Approach panel */
 
 .waypoint-anim {
   position: absolute;
@@ -286,25 +265,8 @@ img { max-width: 100%; }
 
 .wp-node {
   fill: #000;
-  stroke: rgba(255,255,255,0.6);
+  stroke: rgba(255,255,255,0.45);
   stroke-width: 1;
-  animation: wpPulse 12s ease-in-out infinite;
-}
-
-.wp-drone {
-  color: var(--text);
-  opacity: 0.5;
-}
-.wp-drone line { stroke: currentColor; stroke-width: 1; stroke-linecap: round; }
-.wp-drone circle { fill: var(--panel); stroke: currentColor; stroke-width: 1; }
-.wp-drone rect { fill: currentColor; }
-
-@keyframes wpFlow { to { stroke-dashoffset: -36; } }
-
-@keyframes wpPulse {
-  0%, 100% { opacity: 0.5; }
-  6% { opacity: 1; }
-  14% { opacity: 0.5; }
 }
 
 /* ============ PILLAR ICONS ============ */
@@ -327,11 +289,7 @@ img { max-width: 100%; }
   fill: #000;
   stroke: rgba(255,255,255,0.6);
   stroke-width: 1;
-  animation: wpPulse 6s ease-in-out infinite;
 }
-.pn-drone { color: var(--text); opacity: 0.6; }
-.pn-drone line { stroke: currentColor; stroke-width: 1; stroke-linecap: round; }
-.pn-drone circle { fill: var(--panel); stroke: currentColor; stroke-width: 1; }
 .pn-drone rect { fill: currentColor; }
 
 /* Computer Vision */
@@ -345,24 +303,6 @@ img { max-width: 100%; }
   fill: none;
   stroke: var(--text);
   stroke-width: 1;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: cvBlip 2.6s ease-in-out infinite;
-}
-.cv-scan {
-  stroke: rgba(255,255,255,0.6);
-  stroke-width: 1;
-  animation: cvSweep 6s cubic-bezier(0.45,0,0.55,1) infinite;
-}
-@keyframes cvBlip {
-  0%, 100% { opacity: 0.5; transform: scale(0.97); }
-  50% { opacity: 1; transform: scale(1); }
-}
-@keyframes cvSweep {
-  0% { transform: translateY(0); opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { transform: translateY(42px); opacity: 0; }
 }
 
 /* Simulation Pipeline */
@@ -372,16 +312,8 @@ img { max-width: 100%; }
   stroke-width: 1;
   stroke-dasharray: 2 6;
   stroke-linecap: round;
-  transform-box: fill-box;
-  transform-origin: center;
 }
-.sim-ring--a { animation: simSpin 24s linear infinite; }
-.sim-ring--b { animation: simSpin 36s linear infinite reverse; }
-.sim-core {
-  fill: var(--text);
-  animation: cvBlip 6s ease-in-out infinite;
-}
-@keyframes simSpin { to { transform: rotate(360deg); } }
+.sim-core { fill: var(--text); }
 
 /* Custom Embedded Systems */
 .emb-trace {
@@ -396,8 +328,6 @@ img { max-width: 100%; }
   stroke: rgba(255,255,255,0.55);
   stroke-width: 1;
 }
-.emb-pulse { fill: var(--text); }
-
 /* Legibility scrim */
 .panel::before {
   content: '';
@@ -609,8 +539,6 @@ img { max-width: 100%; }
   transform-box: fill-box;
   transform-origin: center;
 }
-.mech-gear--a { animation: simSpin 6s linear infinite; }
-.mech-gear--b { animation: simSpin 4s linear infinite reverse; }
 .mech-gear-hub {
   fill: var(--panel);
   stroke: rgba(255,255,255,0.6);
@@ -657,42 +585,12 @@ img { max-width: 100%; }
 .contact-val:hover { text-decoration: underline; }
 .contact-tbd, .tbd-note { color: var(--text-3); font-style: italic; }
 
-/* Hero drone placeholder */
-.hero-drone {
-  width: min(520px, 62vw);
-  height: auto;
-  opacity: 0.5;
-}
-
-/* ============ HERO SVG ANIMATIONS ============ */
-.prop-spin {
-  animation: prop-rotate 1.6s linear infinite;
-  transform-box: fill-box;
-  transform-origin: center;
-}
-.prop-spin-rev { animation-direction: reverse; }
-
-@keyframes prop-rotate { to { transform: rotate(360deg); } }
-
-.drone-pulse { opacity: 0.1; animation: drone-ring-pulse 10s ease-in-out infinite; }
-.drone-pulse-1 { animation-delay: 0s; }
-.drone-pulse-2 { animation-delay: 0.5s; }
-.drone-pulse-3 { animation-delay: 1.0s; }
-.drone-pulse-4 { animation-delay: 1.5s; }
-
-@keyframes drone-ring-pulse {
-  0%, 30%, 100% { opacity: 0.1; }
-  12% { opacity: 0.45; }
-}
-
-.drone-led { opacity: 0.9; }
-
 /* ============ REVEAL ON SCROLL ============ */
 /* script.js tags content blocks with .reveal and flips .is-visible when they enter view. */
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.9s var(--reveal-ease), transform 0.9s var(--reveal-ease);
+  transform: translateY(12px);
+  transition: opacity 0.6s var(--reveal-ease), transform 0.6s var(--reveal-ease);
 }
 .reveal.is-visible { opacity: 1; transform: none; }
 
@@ -772,38 +670,6 @@ h2 {
 .section-body a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border-2); }
 .section-body a:hover { border-color: var(--text); }
 
-/* Images */
-.image-block { margin-top: 3.5rem; }
-
-.section-img {
-  width: 100%;
-  border: 1px solid var(--border);
-  display: block;
-}
-
-.img-placeholder {
-  width: 100%;
-  aspect-ratio: 16 / 7;
-  background-color: var(--panel);
-  background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 44px 44px, 44px 44px;
-  border: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.img-label {
-  font-size: 0.7rem;
-  color: var(--text-3);
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-}
-
 /* ============ PAGE HERO (subpages) ============ */
 .page-hero {
   position: relative;
@@ -820,11 +686,6 @@ h2 {
   inset: 0;
   z-index: 0;
   background-color: var(--panel);
-  background-image:
-    radial-gradient(circle at 50% 40%, rgba(255,255,255,0.05), transparent 62%),
-    linear-gradient(rgba(255,255,255,0.032) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.032) 1px, transparent 1px);
-  background-size: 100% 100%, 46px 46px, 46px 46px;
 }
 
 .page-hero::after {
@@ -932,82 +793,6 @@ h2 {
   0%, 55%   { opacity: 0.35; }
   70%, 78%  { opacity: 0.9; }
   92%, 100% { opacity: 0.35; }
-}
-
-/* ============ EMBEDDED ANIMATION ============ */
-.emb-spin-cw {
-  animation: prop-rotate 1.4s linear infinite;
-  transform-box: fill-box;
-  transform-origin: center;
-}
-.emb-spin-ccw {
-  animation: prop-rotate 1.4s linear infinite reverse;
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-/* ============ SIMULATIONS WAYPOINT FLASH ============ */
-.sim-wp1 { animation: sim-wp1-flash 8s ease-in-out infinite; }
-.sim-wp2 { animation: sim-wp2-flash 8s ease-in-out infinite; }
-.sim-wp3 { animation: sim-wp3-flash 8s ease-in-out infinite; }
-.sim-wp4 { animation: sim-wp4-flash 8s ease-in-out infinite; }
-.sim-wp5 { animation: sim-wp5-flash 8s ease-in-out infinite; }
-.sim-wp1-txt { animation: sim-wp1-txt-flash 8s ease-in-out infinite; }
-.sim-wp2-txt { animation: sim-wp2-txt-flash 8s ease-in-out infinite; }
-.sim-wp3-txt { animation: sim-wp3-txt-flash 8s ease-in-out infinite; }
-.sim-wp4-txt { animation: sim-wp4-txt-flash 8s ease-in-out infinite; }
-.sim-wp5-txt { animation: sim-wp5-txt-flash 8s ease-in-out infinite; }
-
-@keyframes sim-wp1-flash {
-  0%,  2% { fill: #ffffff; }
-  4%,  96% { fill: #0c0c0c; }
-  98%, 100% { fill: #ffffff; }
-}
-@keyframes sim-wp2-flash {
-  0%,  20% { fill: #0c0c0c; }
-  23%, 27% { fill: #ffffff; }
-  30%, 100% { fill: #0c0c0c; }
-}
-@keyframes sim-wp3-flash {
-  0%,  41% { fill: #0c0c0c; }
-  44%, 48% { fill: #ffffff; }
-  51%, 100% { fill: #0c0c0c; }
-}
-@keyframes sim-wp4-flash {
-  0%,  52% { fill: #0c0c0c; }
-  55%, 59% { fill: #ffffff; }
-  62%, 100% { fill: #0c0c0c; }
-}
-@keyframes sim-wp5-flash {
-  0%,  79% { fill: #0c0c0c; }
-  82%, 86% { fill: #ffffff; }
-  89%, 100% { fill: #0c0c0c; }
-}
-
-@keyframes sim-wp1-txt-flash {
-  0%,  2% { fill: #0c0c0c; }
-  4%,  96% { fill: #ffffff; }
-  98%, 100% { fill: #0c0c0c; }
-}
-@keyframes sim-wp2-txt-flash {
-  0%,  20% { fill: #ffffff; }
-  23%, 27% { fill: #0c0c0c; }
-  30%, 100% { fill: #ffffff; }
-}
-@keyframes sim-wp3-txt-flash {
-  0%,  41% { fill: #ffffff; }
-  44%, 48% { fill: #0c0c0c; }
-  51%, 100% { fill: #ffffff; }
-}
-@keyframes sim-wp4-txt-flash {
-  0%,  52% { fill: #ffffff; }
-  55%, 59% { fill: #0c0c0c; }
-  62%, 100% { fill: #ffffff; }
-}
-@keyframes sim-wp5-txt-flash {
-  0%,  79% { fill: #ffffff; }
-  82%, 86% { fill: #0c0c0c; }
-  89%, 100% { fill: #ffffff; }
 }
 
 /* ============ SPEC / STACK LAYERS ============ */

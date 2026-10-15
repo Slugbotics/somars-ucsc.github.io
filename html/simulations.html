@@ -118,46 +118,40 @@
             <line x1="224" y1="133" x2="236" y2="145" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
             <line x1="236" y1="133" x2="224" y2="145" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
 
-            <!-- Planned path (dashed) -->
-            <polyline points="80,50 240,38 382,88 344,155 152,160 80,50"
-              fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="5,4" opacity="0.2"/>
+            <!-- Planned path -->
+            <polyline points="80,50 240,38 382,88 344,155 152,160 80,50" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="4,5" opacity="0.18"/>
+
+            <!-- Flown path: draws on behind the aircraft over one 14 s lap, then resets -->
+            <polyline points="80,50 240,38 382,88 344,155 152,160 80,50" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" opacity="0.6"
+              stroke-dasharray="712" stroke-dashoffset="712">
+              <animate attributeName="stroke-dashoffset" dur="14s" repeatCount="indefinite" calcMode="linear" values="712;0;0;712" keyTimes="0;0.9;0.96;1"/>
+              <animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0.6;0.6;0;0" keyTimes="0;0.95;0.97;1"/>
+            </polyline>
 
             <!-- Waypoints -->
-            <circle cx="80"  cy="50"  r="8" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85" class="sim-wp1"/>
-            <circle cx="240" cy="38"  r="8" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85" class="sim-wp2"/>
-            <circle cx="382" cy="88"  r="8" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85" class="sim-wp3"/>
-            <circle cx="344" cy="155" r="8" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85" class="sim-wp4"/>
-            <circle cx="152" cy="160" r="8" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85" class="sim-wp5"/>
-            <text x="80"  y="54"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" class="sim-wp1-txt">1</text>
-            <text x="240" y="42"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" class="sim-wp2-txt">2</text>
-            <text x="382" y="92"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" class="sim-wp3-txt">3</text>
-            <text x="344" y="159" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" class="sim-wp4-txt">4</text>
-            <text x="152" y="164" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" class="sim-wp5-txt">5</text>
+            <g fill="#0c0c0c" stroke="#ffffff" stroke-width="1" stroke-opacity="0.8">
+              <circle cx="80"  cy="50"  r="7"/><circle cx="240" cy="38"  r="7"/><circle cx="382" cy="88"  r="7"/><circle cx="344" cy="155" r="7"/><circle cx="152" cy="160" r="7"/>
+            </g>
+            <g font-family="Inter,sans-serif" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.85">
+              <text x="80"  y="53">1</text><text x="240" y="41">2</text><text x="382" y="91">3</text><text x="344" y="158">4</text><text x="152" y="163">5</text>
+            </g>
+            <g font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.4">
+              <text x="80"  y="40">HOME</text><text x="240" y="28">WP 2</text><text x="382" y="78">WP 3</text><text x="356" y="165">WP 4</text><text x="152" y="175">WP 5</text>
+            </g>
 
-            <!-- Waypoint labels -->
-            <text x="80"  y="40"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4">HOME</text>
-            <text x="240" y="28"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4">WP 2</text>
-            <text x="382" y="78"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4">WP 3</text>
-            <text x="356" y="165" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4">WP 4</text>
-            <text x="152" y="175" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4">WP 5</text>
-
-            <!-- Drone (follows path, auto-rotates) -->
+            <!-- Aircraft: constant ground speed around the lap (keyTimes match segment lengths), pauses at home -->
             <g>
-              <animateMotion
-                path="M 80,50 L 240,38 L 382,88 L 344,155 L 152,160 L 80,50"
-                keyTimes="0; 0.23; 0.44; 0.55; 0.82; 1"
-                dur="8s" repeatCount="indefinite" calcMode="linear" rotate="auto"/>
-              <line x1="-10" y1="-8"  x2="10"  y2="8"  stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
-              <line x1="10"  y1="-8"  x2="-10" y2="8"  stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
-              <circle cx="-10" cy="-8" r="3.5" fill="#0c0c0c" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85"/>
-              <circle cx="10"  cy="-8" r="3.5" fill="#0c0c0c" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85"/>
-              <circle cx="-10" cy="8"  r="3.5" fill="#0c0c0c" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85"/>
-              <circle cx="10"  cy="8"  r="3.5" fill="#0c0c0c" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85"/>
-              <rect x="-5" y="-4" width="10" height="8" rx="2" fill="#0c0c0c" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85"/>
+              <animateMotion path="M 80,50 L 240,38 L 382,88 L 344,155 L 152,160 L 80,50" dur="14s" repeatCount="indefinite" calcMode="linear" rotate="auto"
+                keyPoints="0;0.225;0.437;0.545;0.815;1.000;1" keyTimes="0;0.203;0.393;0.491;0.734;0.900;1"/>
+              <line x1="-9" y1="-7" x2="9" y2="7" stroke="#ffffff" stroke-width="1" stroke-linecap="round" opacity="0.85"/>
+              <line x1="9" y1="-7" x2="-9" y2="7" stroke="#ffffff" stroke-width="1" stroke-linecap="round" opacity="0.85"/>
+              <circle cx="-9" cy="-7" r="3" fill="#0c0c0c" stroke="#ffffff" stroke-width="1"/><circle cx="9" cy="-7" r="3" fill="#0c0c0c" stroke="#ffffff" stroke-width="1"/>
+              <circle cx="-9" cy="7" r="3" fill="#0c0c0c" stroke="#ffffff" stroke-width="1"/><circle cx="9" cy="7" r="3" fill="#0c0c0c" stroke="#ffffff" stroke-width="1"/>
+              <rect x="-4.5" y="-3.5" width="9" height="7" rx="2" fill="#0c0c0c" stroke="#ffffff" stroke-width="1"/>
             </g>
 
             <!-- Status -->
-            <text x="250" y="192" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" opacity="0.35" letter-spacing="2">SITL SIM RUNNING</text>
+            <text x="250" y="192" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" opacity="0.35" letter-spacing="2">PX4 SITL · GAZEBO HARMONIC</text>
 
           </svg>
         </div>
