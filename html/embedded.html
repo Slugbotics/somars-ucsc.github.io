@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/style.css?v=38fb971" />
+  <link rel="stylesheet" href="../assets/style.css?v=2cea2979" />
 </head>
 <body>
 
@@ -93,78 +93,74 @@
 
         <!-- Animation: full-width bottom row -->
         <div class="payload-scene-wrap" style="grid-column:1 / 3; grid-row:3; margin:0;">
-          <svg class="payload-scene" viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flight electronics: sensors on a DroneCAN bus feed the Pixhawk flight controller, which exchanges data with the Jetson companion computer over XRCE-DDS; the Jetson reads the camera; the Pixhawk drives four motors and the winch; both link to the ground station.">
+          <svg class="payload-scene diagram--labels" viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flight electronics: sensors on a DroneCAN bus feed the Pixhawk flight controller, which exchanges data with the Jetson companion computer over XRCE-DDS; the Jetson reads the camera; the Pixhawk drives four motors and the winch; both link to the ground station.">
             <defs>
-              <marker id="arr" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="rgba(255,255,255,0.6)"/></marker>
+              <marker id="arr" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="rgba(255,255,255,0.7)"/></marker>
               <marker id="arrg" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#f0c000"/></marker>
             </defs>
 
-            <!-- Sensors on the DroneCAN bus -->
-            <rect x="12" y="44" width="96" height="112" rx="4" class="dg-faint"/>
-            <text x="60" y="38" text-anchor="middle" class="dg-text dg-text--dim">Sensors · DroneCAN</text>
+            <!-- Camera -->
+            <rect x="455" y="16" width="170" height="38" rx="4" class="dg-box"/>
+            <text x="540" y="32" text-anchor="middle" class="dg-text dg-text--big">Camera</text>
+            <text x="540" y="46" text-anchor="middle" class="dg-text dg-text--dim dg-text--desc">AR0234 global shutter</text>
+            <line x1="540" y1="56" x2="540" y2="96" class="dg-line" marker-end="url(#arr)"/>
+
+            <!-- Sensors on the CAN bus -->
+            <text x="95" y="76" text-anchor="middle" class="dg-text dg-text--dim">Sensors on DroneCAN</text>
+            <rect x="20" y="84" width="150" height="94" rx="4" class="dg-faint"/>
             <g class="dg-text" text-anchor="middle">
-              <text x="60" y="64">RTK GNSS</text>
-              <text x="60" y="88">Flow + Range</text>
-              <text x="60" y="112">Remote ID</text>
-              <text x="60" y="136">Power module</text>
+              <text x="95" y="106">RTK GNSS</text>
+              <text x="95" y="128">Flow + rangefinder</text>
+              <text x="95" y="150">Remote ID</text>
+              <text x="95" y="172">Power module</text>
             </g>
-            <line x1="108" y1="100" x2="158" y2="100" class="dg-line" marker-end="url(#arr)"/>
+            <line x1="172" y1="130" x2="246" y2="130" class="dg-line" marker-end="url(#arr)"/>
 
-            <!-- Flight controller -->
-            <rect x="160" y="72" width="100" height="56" rx="4" class="dg-box"/>
-            <text x="210" y="95" text-anchor="middle" class="dg-text dg-text--big">Pixhawk 6X</text>
-            <text x="210" y="110" text-anchor="middle" class="dg-text dg-text--dim">PX4 autopilot</text>
+            <!-- Flight controller and companion computer -->
+            <rect x="250" y="100" width="140" height="60" rx="4" class="dg-box"/>
+            <text x="320" y="126" text-anchor="middle" class="dg-text dg-text--big">Pixhawk 6X</text>
+            <text x="320" y="144" text-anchor="middle" class="dg-text dg-text--dim">PX4 autopilot</text>
+            <rect x="462" y="100" width="156" height="60" rx="4" class="dg-box"/>
+            <text x="540" y="126" text-anchor="middle" class="dg-text dg-text--big">Jetson Orin Nano</text>
+            <text x="540" y="144" text-anchor="middle" class="dg-text dg-text--dim">ROS 2 autonomy</text>
 
-            <!-- Companion computer -->
-            <rect x="320" y="72" width="110" height="56" rx="4" class="dg-box"/>
-            <text x="375" y="95" text-anchor="middle" class="dg-text dg-text--big">Jetson Orin Nano</text>
-            <text x="375" y="110" text-anchor="middle" class="dg-text dg-text--dim">ROS 2 autonomy</text>
-
-            <!-- The one link to look at: XRCE-DDS between autopilot and companion -->
-            <line x1="262" y1="94" x2="316" y2="94" class="dg-line dg-accent" marker-end="url(#arrg)"/>
-            <line x1="318" y1="106" x2="264" y2="106" class="dg-line dg-accent" marker-end="url(#arrg)"/>
-            <text x="290" y="84" text-anchor="middle" class="dg-text dg-text--accent">XRCE-DDS</text>
-            <circle r="2.4" class="dg-fill-accent" opacity="0">
-              <animateMotion path="M 262,94 L 316,94" dur="6s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.1;0.4;1" calcMode="spline" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1"/>
+            <!-- The link to look at -->
+            <text x="426" y="112" text-anchor="middle" class="dg-text dg-text--accent">XRCE-DDS</text>
+            <line x1="394" y1="124" x2="456" y2="124" class="dg-line dg-accent" marker-end="url(#arrg)"/>
+            <line x1="458" y1="140" x2="396" y2="140" class="dg-line dg-accent" marker-end="url(#arrg)"/>
+            <circle r="2.6" class="dg-fill-accent" opacity="0">
+              <animateMotion path="M 394,124 L 456,124" dur="6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.1;0.4;1" calcMode="spline" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1"/>
               <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.1;0.12;0.39;0.41;1"/>
             </circle>
-            <circle r="2.4" class="dg-fill-accent" opacity="0">
-              <animateMotion path="M 318,106 L 264,106" dur="6s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.55;0.85;1" calcMode="spline" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1"/>
+            <circle r="2.6" class="dg-fill-accent" opacity="0">
+              <animateMotion path="M 458,140 L 396,140" dur="6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.55;0.85;1" calcMode="spline" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1"/>
               <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.55;0.57;0.84;0.86;1"/>
             </circle>
 
-            <!-- Camera into the companion -->
-            <rect x="335" y="14" width="80" height="26" rx="4" class="dg-box"/>
-            <text x="375" y="27" text-anchor="middle" class="dg-text">Camera</text>
-            <text x="375" y="36" text-anchor="middle" class="dg-text dg-text--dim">AR0234 global shutter</text>
-            <line x1="375" y1="42" x2="375" y2="68" class="dg-line" marker-end="url(#arr)"/>
-
-            <!-- Motors and winch off the flight controller -->
+            <!-- Motors -->
             <g class="dg-line">
-              <line x1="185" y1="130" x2="150" y2="178" marker-end="url(#arr)"/>
-              <line x1="200" y1="130" x2="185" y2="178" marker-end="url(#arr)"/>
-              <line x1="220" y1="130" x2="235" y2="178" marker-end="url(#arr)"/>
-              <line x1="235" y1="130" x2="270" y2="178" marker-end="url(#arr)"/>
+              <line x1="268" y1="162" x2="254" y2="220" marker-end="url(#arr)"/>
+              <line x1="302" y1="162" x2="291" y2="220" marker-end="url(#arr)"/>
+              <line x1="338" y1="162" x2="349" y2="220" marker-end="url(#arr)"/>
+              <line x1="372" y1="162" x2="386" y2="220" marker-end="url(#arr)"/>
             </g>
-            <g class="dg-box">
-              <circle cx="148" cy="190" r="10"/><circle cx="184" cy="190" r="10"/><circle cx="236" cy="190" r="10"/><circle cx="272" cy="190" r="10"/>
-            </g>
-            <g class="dg-text dg-text--dim" text-anchor="middle">
-              <text x="148" y="193">M1</text><text x="184" y="193">M2</text><text x="236" y="193">M3</text><text x="272" y="193">M4</text>
-            </g>
-            <text x="210" y="218" text-anchor="middle" class="dg-text dg-text--dim">4 × ESC · PWM</text>
-            <line x1="160" y1="118" x2="90" y2="178" class="dg-line" marker-end="url(#arr)"/>
-            <rect x="52" y="180" width="68" height="22" rx="4" class="dg-box"/>
-            <text x="86" y="194" text-anchor="middle" class="dg-text">Winch · AUX</text>
+            <g class="dg-box"><circle cx="250" cy="236" r="12"/><circle cx="288" cy="236" r="12"/><circle cx="352" cy="236" r="12"/><circle cx="390" cy="236" r="12"/></g>
+            <g class="dg-text dg-text--dim" text-anchor="middle"><text x="250" y="240">M1</text><text x="288" y="240">M2</text><text x="352" y="240">M3</text><text x="390" y="240">M4</text></g>
+            <text x="320" y="272" text-anchor="middle" class="dg-text dg-text--dim">4 × ESC · PWM</text>
 
-            <!-- Ground station: video and data over the Skydroid link, telemetry over 915 MHz -->
-            <rect x="330" y="176" width="140" height="36" rx="4" class="dg-box"/>
-            <text x="400" y="191" text-anchor="middle" class="dg-text dg-text--big">Ground station</text>
-            <text x="400" y="203" text-anchor="middle" class="dg-text dg-text--dim">Our GCS + QGroundControl</text>
-            <line x1="395" y1="130" x2="395" y2="172" class="dg-line" marker-end="url(#arr)"/>
-            <text x="420" y="152" class="dg-text dg-text--dim">Skydroid link</text>
-            <path d="M 240,130 C 240,165 300,160 326,185" class="dg-line" marker-end="url(#arr)"/>
-            <text x="262" y="166" class="dg-text dg-text--dim">915 MHz telemetry</text>
+            <!-- Winch -->
+            <line x1="250" y1="150" x2="180" y2="226" class="dg-line" marker-end="url(#arr)"/>
+            <rect x="50" y="222" width="130" height="30" rx="4" class="dg-box"/>
+            <text x="115" y="241" text-anchor="middle" class="dg-text">Winch · AUX out</text>
+
+            <!-- Ground station -->
+            <rect x="460" y="222" width="200" height="44" rx="4" class="dg-box"/>
+            <text x="560" y="241" text-anchor="middle" class="dg-text dg-text--big">Ground station</text>
+            <text x="560" y="257" text-anchor="middle" class="dg-text dg-text--dim dg-text--desc">Our GCS + QGroundControl</text>
+            <line x1="540" y1="162" x2="540" y2="218" class="dg-line" marker-end="url(#arr)"/>
+            <text x="548" y="206" class="dg-text dg-text--dim dg-text--desc">Skydroid video + data</text>
+            <path d="M 390,152 L 440,152 L 440,244 L 456,244" class="dg-line" marker-end="url(#arr)"/>
+            <text x="446" y="186" class="dg-text dg-text--dim dg-text--desc">915 MHz telemetry</text>
           </svg>
         </div>
 
@@ -211,6 +207,6 @@
     </div>
   </footer>
 
-  <script src="../assets/script.js?v=38fb971"></script>
+  <script src="../assets/script.js?v=2cea2979"></script>
 </body>
 </html>

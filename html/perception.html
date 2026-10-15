@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/style.css?v=38fb971" />
+  <link rel="stylesheet" href="../assets/style.css?v=2cea2979" />
 </head>
 <body>
 
@@ -94,60 +94,52 @@
 
         <!-- Animation: full-width bottom row -->
         <div class="payload-scene-wrap" style="grid-column:1 / 3; grid-row:3; margin:0;">
-          <svg class="payload-scene" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+          <svg class="payload-scene diagram--labels" viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Camera view: the detector sweeps the frame and boxes a mannequin, a tent and a car.">
+            <rect x="20" y="20" width="720" height="260" rx="3" class="dg-faint"/>
+            <g class="dg-faint" opacity="0.5"><line x1="260" y1="20" x2="260" y2="280"/><line x1="500" y1="20" x2="500" y2="280"/><line x1="20" y1="107" x2="740" y2="107"/><line x1="20" y1="193" x2="740" y2="193"/></g>
+            <text x="34" y="42" class="dg-text dg-text--dim">Camera · 1920 x 1200 · global shutter</text>
 
-            <!-- Camera frame brackets -->
-            <path d="M 8,22 L 8,8 L 22,8"     fill="none" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
-            <path d="M 478,8 L 492,8 L 492,22" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
-            <path d="M 8,178 L 8,192 L 22,192" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
-            <path d="M 478,192 L 492,192 L 492,178" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
-            <text x="14" y="40" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" opacity="0.35" letter-spacing="2">AR0234 · 1920x1200</text>
-
-            <!-- One pass, 10 s: the detector sweeps the frame and boxes the three SUAS target classes -->
+            <!-- one pass, 10 s -->
             <g>
               <animateTransform attributeName="transform" type="translate" dur="10s" repeatCount="indefinite" calcMode="spline"
-                values="-10,0; 500,0; 500,0; -10,0" keyTimes="0; 0.86; 0.93; 1" keySplines="0.4 0 0.6 1; 0 0 1 1; 0 0 1 1"/>
-              <animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0.6;0.6;0;0" keyTimes="0;0.03;0.86;0.9;1"/>
-              <line x1="0" y1="0" x2="0" y2="200" stroke="#ffffff" stroke-width="1"/>
-              <line x1="0" y1="0" x2="0" y2="200" stroke="#ffffff" stroke-width="14" opacity="0.08"/>
+                values="20,0; 740,0; 740,0; 20,0" keyTimes="0; 0.86; 0.93; 1" keySplines="0.4 0 0.6 1; 0 0 1 1; 0 0 1 1"/>
+              <animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0.7;0.7;0;0" keyTimes="0;0.03;0.86;0.9;1"/>
+              <line x1="0" y1="20" x2="0" y2="280" stroke="#f0c000" stroke-width="1"/>
+              <line x1="0" y1="20" x2="0" y2="280" stroke="#f0c000" stroke-width="16" opacity="0.08"/>
             </g>
 
-            <!-- MANNEQUIN · 0.94: scan reaches it at 0.19, box draws by 0.27, label at 0.30 -->
-            <path d="M 108,98 v 26 M 100,106 h 16 M 102,124 h 12" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.35"/><circle cx="108" cy="93" r="4" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.35"/>
-            <rect x="85" y="80" width="46" height="46" rx="2" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85" stroke-dasharray="184" stroke-dashoffset="184">
-              <animate attributeName="stroke-dashoffset" dur="10s" repeatCount="indefinite" calcMode="spline" values="184;184;0;0;184" keyTimes="0;0.19;0.27;0.93;1" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1;0 0 1 1"/>
+            <g class="dg-line"><circle cx="190" cy="150" r="9"/><path d="M190,159 v34 M172,172 h36 M190,193 l-12,26 M190,193 l12,26"/></g>
+            <rect x="142" y="124" width="96" height="96" rx="3" fill="none" class="dg-line dg-accent" stroke-dasharray="384" stroke-dashoffset="384">
+              <animate attributeName="stroke-dashoffset" dur="10s" repeatCount="indefinite" calcMode="spline" values="384;384;0;0;384" keyTimes="0;0.17;0.25;0.93;1" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1;0 0 1 1"/>
             </rect>
             <g opacity="0">
-              <animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.27;0.30;0.92;0.94;1"/>
-              <rect x="85" y="64" width="86" height="14" rx="2" fill="#0c0c0c" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.45"/>
-              <text x="128" y="75" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#ffffff" letter-spacing="0.5" opacity="0.85">MANNEQUIN · 0.94</text>
+              <animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.25;0.28;0.92;0.94;1"/>
+              <rect x="142" y="94" width="150" height="22" rx="3" class="dg-fill-accent"/>
+              <text x="217" y="109" text-anchor="middle" class="dg-text" style="fill:#000">Mannequin · 0.94</text>
             </g>
-            <!-- TENT · 0.91: scan reaches it at 0.48, box draws by 0.56, label at 0.59 -->
-            <polygon points="250,86 272,118 228,118" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.35"/>
-            <rect x="227" y="78" width="46" height="46" rx="2" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85" stroke-dasharray="184" stroke-dashoffset="184">
-              <animate attributeName="stroke-dashoffset" dur="10s" repeatCount="indefinite" calcMode="spline" values="184;184;0;0;184" keyTimes="0;0.48;0.56;0.93;1" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1;0 0 1 1"/>
+            <g class="dg-line"><path d="M380,142 l40,66 h-80 z M380,142 v66"/></g>
+            <rect x="332" y="124" width="96" height="96" rx="3" fill="none" class="dg-line dg-accent" stroke-dasharray="384" stroke-dashoffset="384">
+              <animate attributeName="stroke-dashoffset" dur="10s" repeatCount="indefinite" calcMode="spline" values="384;384;0;0;384" keyTimes="0;0.43;0.51;0.93;1" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1;0 0 1 1"/>
             </rect>
             <g opacity="0">
-              <animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.56;0.59;0.92;0.94;1"/>
-              <rect x="227" y="62" width="86" height="14" rx="2" fill="#0c0c0c" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.45"/>
-              <text x="270" y="73" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#ffffff" letter-spacing="0.5" opacity="0.85">TENT · 0.91</text>
+              <animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.51;0.54;0.92;0.94;1"/>
+              <rect x="332" y="94" width="150" height="22" rx="3" class="dg-fill-accent"/>
+              <text x="407" y="109" text-anchor="middle" class="dg-text" style="fill:#000">Tent · 0.91</text>
             </g>
-            <!-- CAR · 0.88: scan reaches it at 0.75, box draws by 0.83, label at 0.86 -->
-            <rect x="382" y="102" width="40" height="16" rx="3" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.35"/><circle cx="391" cy="120" r="3" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.35"/><circle cx="413" cy="120" r="3" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.35"/>
-            <rect x="379" y="87" width="46" height="46" rx="2" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.85" stroke-dasharray="184" stroke-dashoffset="184">
-              <animate attributeName="stroke-dashoffset" dur="10s" repeatCount="indefinite" calcMode="spline" values="184;184;0;0;184" keyTimes="0;0.75;0.83;0.93;1" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1;0 0 1 1"/>
+            <g class="dg-line"><path d="M538,186 l10,-20 h44 l10,20 h8 v16 h-80 v-16 z"/><circle cx="556" cy="204" r="6"/><circle cx="604" cy="204" r="6"/></g>
+            <rect x="522" y="124" width="96" height="96" rx="3" fill="none" class="dg-line dg-accent" stroke-dasharray="384" stroke-dashoffset="384">
+              <animate attributeName="stroke-dashoffset" dur="10s" repeatCount="indefinite" calcMode="spline" values="384;384;0;0;384" keyTimes="0;0.69;0.77;0.93;1" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1;0 0 1 1"/>
             </rect>
             <g opacity="0">
-              <animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.83;0.86;0.92;0.94;1"/>
-              <rect x="379" y="71" width="86" height="14" rx="2" fill="#0c0c0c" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.45"/>
-              <text x="422" y="82" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#ffffff" letter-spacing="0.5" opacity="0.85">CAR · 0.88</text>
+              <animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.77;0.80;0.92;0.94;1"/>
+              <rect x="522" y="94" width="150" height="22" rx="3" class="dg-fill-accent"/>
+              <text x="597" y="109" text-anchor="middle" class="dg-text" style="fill:#000">Car · 0.88</text>
             </g>
 
-            <text x="250" y="188" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" letter-spacing="3" opacity="0">
-              <animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0;0.7;0.7;0;0" keyTimes="0;0.86;0.88;0.92;0.94;1"/>
-              3 TARGETS LOCATED
+            <text x="380" y="266" text-anchor="middle" class="dg-text dg-text--accent" opacity="0">
+              <animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.84;0.86;0.92;0.94;1"/>
+              3 targets located
             </text>
-
           </svg>
         </div>
 
@@ -194,6 +186,6 @@
     </div>
   </footer>
 
-  <script src="../assets/script.js?v=38fb971"></script>
+  <script src="../assets/script.js?v=2cea2979"></script>
 </body>
 </html>
