@@ -1,5 +1,7 @@
 .DS_Store
 *.csv
 *.zip
-.claude/worktrees/
+.claude/
+CLAUDE.md
 field_photos/
+Photos-1-001*/
