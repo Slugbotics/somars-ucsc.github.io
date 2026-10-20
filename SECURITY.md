@@ -1,34 +1,17 @@
-# Security Policy
+# Reporting Security Vulnerabilities
 
-## Supported Versions
+If you believe you have found a security issue on this website, please report the following details to us in a private email directed to [slugbots@ucsc.edu](mailto:slugbots@ucsc.edu), and we will address it as soon as possible:
 
-We actively maintain and support the current production version deployed to GitHub Pages and active development branches.
+* Type of issue (e.g., buffer overflow, SQL injection, cross-site scripting)
+* Full paths to the source file(s) affected by the issue
+* The repository of the affected source code (tag/branch/commit or direct URL)
+* Any special system configuration required to reproduce the issue
+* Step-by-step instructions to reproduce the issue
+* Proof-of-concept or exploit code (if possible)
+* Impact of the issue, including how it might be exploited by an attacker
 
-| Version / Branch | Supported          |
-| ---------------- | ------------------ |
-| `main`           | :white_check_mark: |
-| Active development branches | :white_check_mark: |
-| Older releases   | :x:                |
+**Guidelines:**
+* Please do not publicly disclose the vulnerability until we have had time to resolve it.
+* Please do not perform destructive testing or denial-of-service (DDoS) attacks against our systems.
 
-## Reporting a Vulnerability
-
-The SOMARS (Slugbotics) team takes website and repository security seriously. If you discover a potential vulnerability, sensitive information exposure, or security concern, please disclose it responsibly.
-
-### How to Report
-- **Open a GitHub Issue:** If you find a security issue or vulnerability, please [open an issue](https://github.com/Slugbotics/somars-ucsc.github.io/issues/new) on this repository so our team can triage and resolve it.
-- **Email:** You may also email us directly at [slugbotics@ucsc.edu](mailto:slugbotics@ucsc.edu).
-
-### What to Include
-Please provide:
-- A description of the vulnerability and its potential impact.
-- Step-by-step instructions or proof of concept to reproduce the issue.
-- Any affected URLs, assets, or endpoints.
-
-### Response Timeline
-- **Initial Acknowledgement:** Within 48 hours.
-- **Triage & Remediation:** We will assess the severity, deploy a fix to the live site, and update the repository history if necessary.
-- We ask that you practice responsible disclosure and refrain from public disclosure until a fix is released.
-
-## RFC 9116 Notice
-Our machine-readable vulnerability disclosure policy is maintained at:
-`https://somars-ucsc.com/.well-known/security.txt`
+Any information provided is greatly appreciated and will help us run our operations more smoothly. Thank you!
