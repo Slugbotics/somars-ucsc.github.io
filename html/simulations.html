@@ -31,7 +31,12 @@
       <nav class="nav-links" id="navLinks">
         <a href="../index.html">Home</a>
         <div class="nav-item has-dropdown">
-          <a href="team.html" class="nav-link-with-dropdown active">Team</a>
+          <div class="nav-dropdown-trigger">
+            <a href="team.html" class="nav-link-with-dropdown active">Team</a>
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="Toggle subteams submenu">
+              <svg viewBox="0 0 10 6" class="dropdown-chevron" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
           <div class="dropdown">
             <a href="mechanical.html">Mechanical</a>
             <a href="embedded.html">Embedded Systems</a>
@@ -160,7 +165,7 @@
           <h4>General Meetings</h4>
           <p>Tuesdays 5:00 to 6:00 PM</p>
           <p>Thursdays 6:00 to 7:00 PM</p>
-          <p class="meeting-loc">SlugWorks BE-49</p>
+          <p class="meeting-loc">Slugworks BE-49</p>
         </div>
       </div>
       <p class="meeting-note">Some Linux helps, but we will get you set up.</p>

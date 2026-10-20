@@ -6,16 +6,33 @@ if (navToggle && navLinks) {
   navToggle.setAttribute('aria-expanded', 'false');
   navToggle.addEventListener('click', () => {
     const open = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', open);
     navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 }
 
-// Close nav when a link is clicked (mobile)
+// Mobile dropdown toggle
+document.querySelectorAll('.has-dropdown').forEach(dropdownItem => {
+  const toggleBtn = dropdownItem.querySelector('.dropdown-toggle');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpen = dropdownItem.classList.toggle('dropdown-open');
+      toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+});
+
+// Close nav when a leaf link is clicked (mobile)
 if (navLinks) {
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('open');
-      if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+      if (navToggle) {
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
     });
   });
 }
