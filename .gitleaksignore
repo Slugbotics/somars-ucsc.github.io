@@ -1,0 +1,7 @@
+# Historic false positives from deleted Adobe Express web-scraping assets in commit 342a3d7 (Feb 2026)
+342a3d797c5943ffb5c767a73823d34aa6f7a670:mate/img/teamlogo_files/7a74493ac463cfbf.min.js:generic-api-key:1
+342a3d797c5943ffb5c767a73823d34aa6f7a670:mate/img/teamlogo_files/7a74493ac463cfbf.min.js:generic-api-key:2
+342a3d797c5943ffb5c767a73823d34aa6f7a670:mate/img/teamlogo_files/7a74493ac463cfbf.min.js:generic-api-key:3
+342a3d797c5943ffb5c767a73823d34aa6f7a670:mate/img/teamlogo_files/CCEverywhere.js:linkedin-client-secret:2
+342a3d797c5943ffb5c767a73823d34aa6f7a670:mate/img/teamlogo_files/index.4b806647e24c939c.js:generic-api-key:6
+342a3d797c5943ffb5c767a73823d34aa6f7a670:mate/img/teamlogo_files/index.4b806647e24c939c.js:linkedin-client-secret:3
