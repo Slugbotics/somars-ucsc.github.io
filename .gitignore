@@ -1,1 +1,11 @@
 .DS_Store
+*.csv
+*.zip
+*.tar.gz
+.claude/
+CLAUDE.md
+field_photos/
+Photos-1-001*/
+site-progress-review.html
+*-review.html
+*.tmp

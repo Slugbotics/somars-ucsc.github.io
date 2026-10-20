@@ -4,32 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#000000" />
-  <title>SOMARS — Team</title>
-  <meta name="description" content="Meet the SOMARS team at UC Santa Cruz — four specialized subteams building a fully autonomous competition drone. All majors and experience levels welcome." />
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <title>Team | SOMARS</title>
+  <meta name="description" content="SOMARS is the autonomous drone team under Slugbotics at UC Santa Cruz. Four subteams, all majors, no experience needed. Here is how to join." />
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SOMARS" />
-  <meta property="og:title" content="SOMARS — Team" />
-  <meta property="og:description" content="Four specialized subteams building UC Santa Cruz's fully autonomous competition drone. All majors and experience levels welcome." />
-  <meta property="og:image" content="https://somars-ucsc.com/photos/team-hero.jpg" />
+  <meta property="og:title" content="Team | SOMARS" />
+  <meta property="og:description" content="Four subteams building the autonomous competition drone at UC Santa Cruz. All majors, no experience needed." />
+  <meta property="og:image" content="https://somars-ucsc.com/photos/team-working-drone.jpg" />
   <meta property="og:url" content="https://somars-ucsc.com/html/team.html" />
+  <link rel="canonical" href="https://somars-ucsc.com/html/team.html" />
+  <link rel="preload" as="image" href="../photos/team-working-drone.jpg" fetchpriority="high" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/style.css" />
+  <link rel="stylesheet" href="../assets/style.css?v=8253b554" />
 </head>
 <body>
 
   <header class="navbar">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">SOMARS</a>
+      <a href="../index.html" class="nav-logo"><img src="../assets/wordmark-white.png" srcset="../assets/wordmark-white@2x.png 2x" alt="SOMARS" width="96" height="26" /></a>
       <nav class="nav-links" id="navLinks">
         <a href="../index.html">Home</a>
         <div class="nav-item has-dropdown">
-          <a href="team.html" class="nav-link-with-dropdown active">Team</a>
+          <div class="nav-dropdown-trigger">
+            <a href="team.html" class="nav-link-with-dropdown active">Team</a>
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="Toggle subteams submenu">
+              <svg viewBox="0 0 10 6" class="dropdown-chevron" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
           <div class="dropdown">
             <a href="mechanical.html">Mechanical</a>
             <a href="embedded.html">Embedded Systems</a>
@@ -41,28 +48,27 @@
         <a href="../index.html#contact">Contact</a>
         <a href="team.html#join" class="nav-join">Join Us</a>
       </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="page-hero photo" style="background-image:url('../photos/team-hero.jpg')">
+  <section class="page-hero photo" style="background-image:url('../photos/team-working-drone.jpg'); background-position:center 45%">
     <div class="page-hero-inner">
-      <p class="hero-eyebrow">UC Santa Cruz · Slugbotics</p>
+      <p class="hero-eyebrow">Slugbotics at UC Santa Cruz</p>
       <h1>The Team.</h1>
-      <p class="hero-desc">Meet the people building SOMARS — one subteam at a time.</p>
+      <p class="hero-desc">We want students from any major, experience or not, to build a drone with us.</p>
     </div>
   </section>
 
   <!-- Why subteams -->
-  <section class="full-section">
+  <section class="full-section full-section--photo" style="background-image:url('../photos/team-sunset-drone.jpg'); background-position:center 55%">
     <div class="full-section-inner">
       <p class="section-eyebrow">Structure</p>
       <h2>Why subteams?</h2>
-      <p class="section-body">Autonomous drones span mechanical engineering, electronics, real-time software, computer vision, and simulation. Subteams let members specialize deeply while collaborating across the entire platform.</p>
-      <p class="section-body">Each subteam owns a core layer of the drone stack, working in parallel so progress moves fast across the entire system.</p>
+      <p class="section-body">An autonomous drone needs mechanical, electronics, software, vision and simulation work, so each of us goes deep on one layer and we build the aircraft together.</p>
     </div>
   </section>
 
@@ -76,7 +82,7 @@
           <span class="subteam-num">01</span>
           <div class="subteam-info">
             <h4>Mechanical</h4>
-            <p>Airframe design, carbon fiber fabrication, payload systems, and structural testing.</p>
+            <p>Airframe, carbon fiber, and the payload winch.</p>
           </div>
           <span class="subteam-arrow">→</span>
         </a>
@@ -84,7 +90,7 @@
           <span class="subteam-num">02</span>
           <div class="subteam-info">
             <h4>Embedded Systems</h4>
-            <p>Flight controllers, firmware, companion computers, and autonomous controls.</p>
+            <p>Flight controller, companion computer, radios, and control software.</p>
           </div>
           <span class="subteam-arrow">→</span>
         </a>
@@ -92,7 +98,7 @@
           <span class="subteam-num">03</span>
           <div class="subteam-info">
             <h4>Perception</h4>
-            <p>Computer vision pipelines for target detection and autonomous navigation.</p>
+            <p>Computer vision that finds ground targets.</p>
           </div>
           <span class="subteam-arrow">→</span>
         </a>
@@ -100,7 +106,7 @@
           <span class="subteam-num">04</span>
           <div class="subteam-info">
             <h4>Simulations</h4>
-            <p>Gazebo-based simulation of flight behaviors before real-world testing.</p>
+            <p>Gazebo and PX4 SITL, so missions are tested before flight.</p>
           </div>
           <span class="subteam-arrow">→</span>
         </a>
@@ -116,26 +122,26 @@
       <div class="faq-list">
         <div class="faq-item">
           <h4>Do I have to pick just one subteam?</h4>
-          <p>Not necessarily. Most members focus on one subteam first to build depth, then branch out once they're comfortable.</p>
+          <p>Not for good. Most of us start on one, then branch out.</p>
         </div>
         <div class="faq-item">
           <h4>Can I switch subteams?</h4>
-          <p>Yes — talk with the subteam leads and we'll help you transition. People switch when their interests evolve or they want a new challenge.</p>
+          <p>Yes. Talk with the subteam leads and we will help you move.</p>
         </div>
         <div class="faq-item">
           <h4>How experienced do I need to be?</h4>
-          <p>No prior drone or robotics experience required. Curiosity and consistency matter far more than what you already know.</p>
+          <p>None. Showing up and staying curious matters more than what you know.</p>
         </div>
         <div class="faq-item">
           <h4>What majors are welcome?</h4>
-          <p>All majors. We need mechanical engineers, computer scientists, electrical engineers, and anyone excited about autonomous systems.</p>
+          <p>All of them. Anyone who wants to work on autonomous aircraft.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- How to join -->
-  <section class="full-section full-section-alt" id="join">
+  <section class="full-section full-section--photo" id="join" style="background-image:url('../photos/team-golden-hour.jpg'); background-position:center 6%">
     <div class="full-section-inner">
       <p class="section-eyebrow">Join Us</p>
       <h2>How to get involved.</h2>
@@ -143,22 +149,22 @@
         <div class="step">
           <span class="step-num">01</span>
           <div>
-            <h4>Complete SlugWorks Canvas &amp; join Discord</h4>
-            <p>Most of our work happens in SlugWorks (BE-49). Complete the safety training Canvas module and join our Discord to stay in the loop on meetings and announcements.</p>
+            <h4>Complete Slugworks Canvas &amp; join Discord</h4>
+            <p>We work in Slugworks (BE-49). Complete the <a href="https://canvas.ucsc.edu/courses/77701" target="_blank" rel="noopener">Canvas safety training module</a>, then join our <a href="https://discord.gg/cnuWECSAHn" target="_blank" rel="noopener">Discord</a> for meetings and announcements.</p>
           </div>
         </div>
         <div class="step">
           <span class="step-num">02</span>
           <div>
-            <h4>Visit a few subteam meetings</h4>
-            <p>Check meeting times on each subteam page. If times don't work, reach out — we reschedule at the start of every quarter to fit everyone.</p>
+            <h4>Attend a general meeting</h4>
+            <p>We meet Tuesdays 5:00 to 6:00 PM and Thursdays 6:00 to 7:00 PM in Slugworks (BE-49).</p>
           </div>
         </div>
         <div class="step">
           <span class="step-num">03</span>
           <div>
             <h4>Commit to a subteam</h4>
-            <p>Once you've explored, pick a primary subteam and start taking on tasks — CAD, firmware, vision code, simulation scripts, whatever the group needs.</p>
+            <p>Pick a primary subteam and take on tasks: CAD, firmware, vision code, simulation scripts, whatever the group needs.</p>
           </div>
         </div>
       </div>
@@ -167,11 +173,11 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <span>SOMARS · Slugbotics · UC Santa Cruz</span>
-      <span>System for the Oversight and Management of Autonomous Robotics Systems</span>
+      <span>SOMARS · Slugbotics</span>
+      <span>Slugs for the Oversight and Management of Aerial Robotic Systems at UC Santa Cruz</span>
     </div>
   </footer>
 
-  <script src="../assets/script.js"></script>
+  <script src="../assets/script.js?v=8253b554"></script>
 </body>
 </html>

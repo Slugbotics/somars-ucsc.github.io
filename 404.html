@@ -4,25 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#000000" />
-  <title>SOMARS — Page Not Found</title>
+  <title>Page Not Found | SOMARS</title>
   <meta name="robots" content="noindex" />
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="stylesheet" href="/assets/style.css?v=8253b554" />
 </head>
 <body>
 
   <header class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="/index.html" class="nav-logo">SOMARS</a>
+      <a href="/index.html" class="nav-logo"><img src="/assets/wordmark-white.png" srcset="/assets/wordmark-white@2x.png 2x" alt="SOMARS" width="96" height="26" /></a>
       <nav class="nav-links" id="navLinks">
         <a href="/index.html">Home</a>
         <div class="nav-item has-dropdown">
-          <a href="/html/team.html" class="nav-link-with-dropdown">Team</a>
+          <div class="nav-dropdown-trigger">
+            <a href="/html/team.html" class="nav-link-with-dropdown">Team</a>
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="Toggle subteams submenu">
+              <svg viewBox="0 0 10 6" class="dropdown-chevron" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
           <div class="dropdown">
             <a href="/html/mechanical.html">Mechanical</a>
             <a href="/html/embedded.html">Embedded Systems</a>
@@ -34,18 +39,18 @@
         <a href="/index.html#contact">Contact</a>
         <a href="/html/team.html#join" class="nav-join">Join Us</a>
       </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
   <section class="panel">
-    <div class="panel-media photo" style="background-image:url('/photos/drone-in-flight.jpg')"></div>
+    <div class="panel-media photo" style="background-image:url('/photos/caligula-ii-night-flight.jpg')"></div>
     <div class="panel-content">
       <p class="eyebrow">Error 404</p>
       <h1>Signal Lost</h1>
-      <p class="panel-text">This page has drifted off course. The link may be broken or the page may have moved.</p>
+      <p class="panel-text">This page has drifted off course. The link might be broken, or we may have moved the page. Head back to base and try again.</p>
       <div class="btn-row">
         <a href="/index.html" class="btn btn-fill">Return to Base</a>
         <a href="/html/team.html#join" class="btn btn-outline">Join the Team</a>
@@ -55,11 +60,11 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <span>SOMARS · Slugbotics · UC Santa Cruz</span>
-      <span>Student Organization for Marine and Aerial Robotics Systems</span>
+      <span>SOMARS · Slugbotics</span>
+      <span>Slugs for the Oversight and Management of Aerial Robotic Systems at UC Santa Cruz</span>
     </div>
   </footer>
 
-  <script src="/assets/script.js"></script>
+  <script src="/assets/script.js?v=8253b554"></script>
 </body>
 </html>

@@ -1,0 +1,5 @@
+# Vulnerability disclosure contact for somars-ucsc.com (RFC 9116)
+Contact: mailto:slugbotics@ucsc.edu
+Expires: 2027-10-14T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://somars-ucsc.com/.well-known/security.txt

@@ -6,16 +6,33 @@ if (navToggle && navLinks) {
   navToggle.setAttribute('aria-expanded', 'false');
   navToggle.addEventListener('click', () => {
     const open = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', open);
     navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 }
 
-// Close nav when a link is clicked (mobile)
+// Mobile dropdown toggle
+document.querySelectorAll('.has-dropdown').forEach(dropdownItem => {
+  const toggleBtn = dropdownItem.querySelector('.dropdown-toggle');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpen = dropdownItem.classList.toggle('dropdown-open');
+      toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+});
+
+// Close nav when a leaf link is clicked (mobile)
 if (navLinks) {
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('open');
-      if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+      if (navToggle) {
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
     });
   });
 }
@@ -28,4 +45,31 @@ if (navbar) {
   };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
+}
+
+// Gentle reveal as content blocks scroll into view. Blocks above the fold are
+// shown immediately; everything else fades up once, then stops being observed.
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (reduceMotion) {
+  // CSS cannot stop SMIL, so freeze the diagram animations on their first frame
+  document.querySelectorAll('svg').forEach(svg => { if (svg.pauseAnimations) svg.pauseAnimations(); });
+}
+if ('IntersectionObserver' in window && !reduceMotion) {
+  const blocks = document.querySelectorAll(
+    '.panel-content, .full-section-inner, .work-card, .comp-card, .pillar, .subteam, .meeting-card, .faq-item, .stack-layer'
+  );
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  blocks.forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight) return; // already on screen: no fade-in
+    el.classList.add('reveal');
+    io.observe(el);
+  });
 }

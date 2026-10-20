@@ -4,32 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#000000" />
-  <title>SOMARS — Embedded Systems</title>
-  <meta name="description" content="The SOMARS Embedded Systems subteam at UC Santa Cruz — flight controllers, firmware, companion computers, and autonomous controls for our competition drone." />
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <title>Embedded Systems | SOMARS</title>
+  <meta name="description" content="The SOMARS Embedded Systems subteam at UC Santa Cruz: flight controller, companion computer, sensors, radios, and the autonomy code for our drone." />
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SOMARS" />
-  <meta property="og:title" content="SOMARS — Embedded Systems" />
-  <meta property="og:description" content="Flight controllers, firmware, companion computers, and autonomous controls for UC Santa Cruz's competition drone." />
-  <meta property="og:image" content="https://somars-ucsc.com/photos/embedded-electronics.jpg" />
+  <meta property="og:title" content="Embedded Systems | SOMARS" />
+  <meta property="og:description" content="We build the electronics and flight software for our competition drone at UC Santa Cruz. Come build the brain of the drone with us." />
+  <meta property="og:image" content="https://somars-ucsc.com/photos/flight-controller-arms.jpg" />
   <meta property="og:url" content="https://somars-ucsc.com/html/embedded.html" />
+  <link rel="canonical" href="https://somars-ucsc.com/html/embedded.html" />
+  <link rel="preload" as="image" href="../photos/flight-controller-arms.jpg" fetchpriority="high" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/style.css" />
+  <link rel="stylesheet" href="../assets/style.css?v=8253b554" />
 </head>
 <body>
 
   <header class="navbar">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">SOMARS</a>
+      <a href="../index.html" class="nav-logo"><img src="../assets/wordmark-white.png" srcset="../assets/wordmark-white@2x.png 2x" alt="SOMARS" width="96" height="26" /></a>
       <nav class="nav-links" id="navLinks">
         <a href="../index.html">Home</a>
         <div class="nav-item has-dropdown">
-          <a href="team.html" class="nav-link-with-dropdown active">Team</a>
+          <div class="nav-dropdown-trigger">
+            <a href="team.html" class="nav-link-with-dropdown active">Team</a>
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="Toggle subteams submenu">
+              <svg viewBox="0 0 10 6" class="dropdown-chevron" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
           <div class="dropdown">
             <a href="mechanical.html">Mechanical</a>
             <a href="embedded.html">Embedded Systems</a>
@@ -41,27 +48,26 @@
         <a href="../index.html#contact">Contact</a>
         <a href="team.html#join" class="nav-join">Join Us</a>
       </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <section class="page-hero photo" style="background-image:url('../photos/embedded-jetson.jpg'); background-position:center 62%">
+  <section class="page-hero photo" style="background-image:url('../photos/flight-controller-arms.jpg'); background-position:center 55%">
     <div class="page-hero-inner">
       <p class="hero-eyebrow">Subteam · 02</p>
       <h1>Embedded Systems.</h1>
-      <p class="hero-desc">Hardware, firmware, and autonomous control — the brain and nervous system of the drone.</p>
+      <p class="hero-desc">We build the electronics and flight software that let the drone fly a mission on its own.</p>
     </div>
   </section>
 
   <!-- Who we are -->
-  <section class="full-section full-section--photo" style="background-image:url('../photos/embedded-about.jpg')">
+  <section class="full-section full-section--photo" style="background-image:url('../photos/lab-wiring-airframe.jpg'); background-position:center 40%">
     <div class="full-section-inner">
       <p class="section-eyebrow">About</p>
       <h2>Where hardware<br>meets software.</h2>
-      <p class="section-body">The Embedded Systems subteam sits at the intersection of hardware and software. We design and integrate the electronics that make the drone tick — flight controllers, companion computers, sensors, power systems, and communication links.</p>
-      <p class="section-body">We also develop the autonomous control algorithms that allow the drone to navigate, stabilize, and execute competition missions without a human pilot in the loop.</p>
+      <p class="section-body">We own everything between airframe and mission: flight controller, companion computer, sensor buses, radios, and power, plus the ROS 2 code that ties them together. If any of it fails, the drone stays on the ground.</p>
     </div>
   </section>
 
@@ -75,121 +81,93 @@
         <!-- Left column -->
         <div class="work-card" style="grid-column:1; grid-row:1;">
           <h4>Flight Controller Integration</h4>
-          <p>Configuring and tuning the flight controller (Pixhawk / ArduPilot / PX4) for low-level stabilization, motor mixing, and attitude control.</p>
+          <p>We build PX4 with our own patches and tune it for stabilization, motor mixing, and radio control.</p>
         </div>
         <div class="work-card" style="grid-column:1; grid-row:2;">
           <h4>Sensors, Power &amp; Communication</h4>
-          <p>Integrating GPS, IMU, rangefinders, telemetry radios, and camera interfaces alongside battery selection, power distribution, and ESC wiring.</p>
+          <p>We wire the two DroneCAN buses for ESCs and sensors, plus the radios and the power system.</p>
         </div>
 
         <!-- Right column -->
         <div class="work-card" style="grid-column:2; grid-row:1;">
           <h4>Companion Computer</h4>
-          <p>Integrating an onboard NVIDIA Jetson running high-level autonomy, exchanging control parameters with the Pixhawk over uXRCE-DDS, and interfacing with perception outputs.</p>
+          <p>The Jetson runs our ROS 2 autonomy, talks to PX4, and bridges MAVLink to the ground.</p>
         </div>
         <div class="work-card" style="grid-column:2; grid-row:2;">
           <h4>Autonomous Controls</h4>
-          <p>Control loops, state machines, and mission planners for autonomous waypoint navigation, and mission task execution.</p>
+          <p>We write the state machines and mission planners that fly waypoints, work the winch, and enforce the lost-link rules.</p>
         </div>
 
         <!-- Animation: full-width bottom row -->
         <div class="payload-scene-wrap" style="grid-column:1 / 3; grid-row:3; margin:0;">
-          <svg class="payload-scene" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+          <svg class="payload-scene diagram--labels" viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flight electronics: sensors on a DroneCAN bus feed the Pixhawk flight controller, which exchanges data with the Jetson companion computer over XRCE-DDS; the Jetson reads the camera; the Pixhawk drives four motors and the winch; both link to the ground station.">
+            <defs>
+              <marker id="arr" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="rgba(255,255,255,0.7)"/></marker>
+              <marker id="arrg" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#f0c000"/></marker>
+            </defs>
 
-            <!-- Connection lines -->
-            <line x1="72" y1="62"  x2="105" y2="88"  stroke="#ffffff" stroke-width="0.8" opacity="0.2"/>
-            <line x1="72" y1="138" x2="105" y2="112" stroke="#ffffff" stroke-width="0.8" opacity="0.2"/>
-            <line x1="185" y1="96"  x2="230" y2="96"  stroke="#ffffff" stroke-width="0.8" opacity="0.2"/>
-            <line x1="230" y1="104" x2="185" y2="104" stroke="#ffffff" stroke-width="0.8" opacity="0.2"/>
-            <line x1="185" y1="82"  x2="434" y2="38"  stroke="#ffffff" stroke-width="0.8" opacity="0.15"/>
-            <line x1="185" y1="92"  x2="434" y2="78"  stroke="#ffffff" stroke-width="0.8" opacity="0.15"/>
-            <line x1="185" y1="108" x2="434" y2="122" stroke="#ffffff" stroke-width="0.8" opacity="0.15"/>
-            <line x1="185" y1="118" x2="434" y2="162" stroke="#ffffff" stroke-width="0.8" opacity="0.15"/>
+            <!-- Camera -->
+            <rect x="455" y="16" width="170" height="38" rx="4" class="dg-box"/>
+            <text x="540" y="32" text-anchor="middle" class="dg-text dg-text--big">Camera</text>
+            <text x="540" y="46" text-anchor="middle" class="dg-text dg-text--dim dg-text--desc">AR0234 global shutter</text>
+            <line x1="540" y1="56" x2="540" y2="96" class="dg-line" marker-end="url(#arr)"/>
 
-            <!-- Connection labels -->
-            <text x="207" y="90"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.4" letter-spacing="1">MAVLink</text>
-            <text x="318" y="52"  font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.3" letter-spacing="1">PWM</text>
+            <!-- Sensors on the CAN bus -->
+            <text x="95" y="76" text-anchor="middle" class="dg-text dg-text--dim">Sensors on DroneCAN</text>
+            <rect x="20" y="84" width="150" height="94" rx="4" class="dg-faint"/>
+            <g class="dg-text" text-anchor="middle">
+              <text x="95" y="106">RTK GNSS</text>
+              <text x="95" y="128">Flow + rangefinder</text>
+              <text x="95" y="150">Remote ID</text>
+              <text x="95" y="172">Power module</text>
+            </g>
+            <line x1="172" y1="130" x2="246" y2="130" class="dg-line" marker-end="url(#arr)"/>
 
-            <!-- GPS block -->
-            <rect x="8" y="50" width="64" height="24" rx="4" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
-            <text x="40" y="66" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#ffffff" letter-spacing="1.5" opacity="0.85">GPS</text>
+            <!-- Flight controller and companion computer -->
+            <rect x="250" y="100" width="140" height="60" rx="4" class="dg-box"/>
+            <text x="320" y="126" text-anchor="middle" class="dg-text dg-text--big">Pixhawk 6X</text>
+            <text x="320" y="144" text-anchor="middle" class="dg-text dg-text--dim">PX4 autopilot</text>
+            <rect x="462" y="100" width="156" height="60" rx="4" class="dg-box"/>
+            <text x="540" y="126" text-anchor="middle" class="dg-text dg-text--big">Jetson Orin Nano</text>
+            <text x="540" y="144" text-anchor="middle" class="dg-text dg-text--dim">ROS 2 autonomy</text>
 
-            <!-- IMU block -->
-            <rect x="8" y="126" width="64" height="24" rx="4" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
-            <text x="40" y="142" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#ffffff" letter-spacing="1.5" opacity="0.85">IMU</text>
-
-            <!-- Flight Controller block -->
-            <rect x="105" y="68" width="80" height="64" rx="4" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.85"/>
-            <text x="145" y="93"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" letter-spacing="1" opacity="0.8">FLIGHT</text>
-            <text x="145" y="105" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" letter-spacing="1" opacity="0.8">CONTROLLER</text>
-            <circle cx="145" cy="120" r="3" fill="#ffffff" class="drone-led"/>
-
-            <!-- Companion Computer block -->
-            <rect x="230" y="68" width="90" height="64" rx="4" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.85"/>
-            <text x="275" y="93"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" letter-spacing="1" opacity="0.8">COMPANION</text>
-            <text x="275" y="105" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" letter-spacing="1" opacity="0.8">COMPUTER</text>
-            <circle cx="275" cy="120" r="3" fill="#ffffff" class="drone-led" style="animation-delay:0.7s"/>
+            <!-- The link to look at -->
+            <text x="426" y="112" text-anchor="middle" class="dg-text dg-text--accent">XRCE-DDS</text>
+            <line x1="394" y1="124" x2="456" y2="124" class="dg-line dg-accent" marker-end="url(#arrg)"/>
+            <line x1="458" y1="140" x2="396" y2="140" class="dg-line dg-accent" marker-end="url(#arrg)"/>
+            <circle r="2.6" class="dg-fill-accent" opacity="0">
+              <animateMotion path="M 394,124 L 456,124" dur="6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.1;0.4;1" calcMode="spline" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1"/>
+              <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.1;0.12;0.39;0.41;1"/>
+            </circle>
+            <circle r="2.6" class="dg-fill-accent" opacity="0">
+              <animateMotion path="M 458,140 L 396,140" dur="6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.55;0.85;1" calcMode="spline" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1"/>
+              <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.55;0.57;0.84;0.86;1"/>
+            </circle>
 
             <!-- Motors -->
-            <circle cx="448" cy="38"  r="14" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
-            <circle cx="448" cy="78"  r="14" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
-            <circle cx="448" cy="122" r="14" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
-            <circle cx="448" cy="162" r="14" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.85"/>
-            <text x="448" y="42"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.5">M1</text>
-            <text x="448" y="82"  text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.5">M2</text>
-            <text x="448" y="126" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.5">M3</text>
-            <text x="448" y="166" text-anchor="middle" font-family="Inter,sans-serif" font-size="6.5" fill="#ffffff" opacity="0.5">M4</text>
+            <g class="dg-line">
+              <line x1="268" y1="162" x2="254" y2="220" marker-end="url(#arr)"/>
+              <line x1="302" y1="162" x2="291" y2="220" marker-end="url(#arr)"/>
+              <line x1="338" y1="162" x2="349" y2="220" marker-end="url(#arr)"/>
+              <line x1="372" y1="162" x2="386" y2="220" marker-end="url(#arr)"/>
+            </g>
+            <g class="dg-box"><circle cx="250" cy="236" r="12"/><circle cx="288" cy="236" r="12"/><circle cx="352" cy="236" r="12"/><circle cx="390" cy="236" r="12"/></g>
+            <g class="dg-text dg-text--dim" text-anchor="middle"><text x="250" y="240">M1</text><text x="288" y="240">M2</text><text x="352" y="240">M3</text><text x="390" y="240">M4</text></g>
+            <text x="320" y="272" text-anchor="middle" class="dg-text dg-text--dim">4 × ESC · PWM</text>
 
-            <!-- Motor prop crosses (spinning) -->
-            <g class="emb-spin-cw">
-              <line x1="441" y1="38"  x2="455" y2="38"  stroke="#ffffff" stroke-width="1.5" opacity="0.55"/>
-              <line x1="448" y1="31"  x2="448" y2="45"  stroke="#ffffff" stroke-width="1.5" opacity="0.55"/>
-            </g>
-            <g class="emb-spin-ccw">
-              <line x1="441" y1="78"  x2="455" y2="78"  stroke="#ffffff" stroke-width="1.5" opacity="0.55"/>
-              <line x1="448" y1="71"  x2="448" y2="85"  stroke="#ffffff" stroke-width="1.5" opacity="0.55"/>
-            </g>
-            <g class="emb-spin-cw">
-              <line x1="441" y1="122" x2="455" y2="122" stroke="#ffffff" stroke-width="1.5" opacity="0.55"/>
-              <line x1="448" y1="115" x2="448" y2="129" stroke="#ffffff" stroke-width="1.5" opacity="0.55"/>
-            </g>
-            <g class="emb-spin-ccw">
-              <line x1="441" y1="162" x2="455" y2="162" stroke="#ffffff" stroke-width="1.5" opacity="0.55"/>
-              <line x1="448" y1="155" x2="448" y2="169" stroke="#ffffff" stroke-width="1.5" opacity="0.55"/>
-            </g>
+            <!-- Winch -->
+            <line x1="250" y1="150" x2="180" y2="226" class="dg-line" marker-end="url(#arr)"/>
+            <rect x="50" y="222" width="130" height="30" rx="4" class="dg-box"/>
+            <text x="115" y="241" text-anchor="middle" class="dg-text">Winch · AUX out</text>
 
-            <!-- Data packets -->
-            <circle r="3" fill="#ffffff" opacity="0.9">
-              <animateMotion path="M 72,62 L 105,88" dur="2s" begin="0s" repeatCount="indefinite" calcMode="linear"/>
-            </circle>
-            <circle r="3" fill="#ffffff" opacity="0.9">
-              <animateMotion path="M 72,62 L 105,88" dur="2s" begin="1s" repeatCount="indefinite" calcMode="linear"/>
-            </circle>
-            <circle r="3" fill="#ffffff" opacity="0.9">
-              <animateMotion path="M 72,138 L 105,112" dur="2s" begin="0.5s" repeatCount="indefinite" calcMode="linear"/>
-            </circle>
-            <circle r="3" fill="#ffffff" opacity="0.9">
-              <animateMotion path="M 72,138 L 105,112" dur="2s" begin="1.5s" repeatCount="indefinite" calcMode="linear"/>
-            </circle>
-            <circle r="3" fill="#ffffff" opacity="0.9">
-              <animateMotion path="M 185,96 L 230,96" dur="1.4s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
-            </circle>
-            <circle r="3" fill="#ffffff" opacity="0.65">
-              <animateMotion path="M 230,104 L 185,104" dur="1.4s" begin="1.0s" repeatCount="indefinite" calcMode="linear"/>
-            </circle>
-            <circle r="3" fill="#ffffff" opacity="0.85">
-              <animateMotion path="M 185,82 L 434,38" dur="2.2s" begin="0.2s" repeatCount="indefinite" calcMode="linear"/>
-            </circle>
-            <circle r="3" fill="#ffffff" opacity="0.85">
-              <animateMotion path="M 185,92 L 434,78" dur="2.2s" begin="0.7s" repeatCount="indefinite" calcMode="linear"/>
-            </circle>
-            <circle r="3" fill="#ffffff" opacity="0.85">
-              <animateMotion path="M 185,108 L 434,122" dur="2.2s" begin="1.2s" repeatCount="indefinite" calcMode="linear"/>
-            </circle>
-            <circle r="3" fill="#ffffff" opacity="0.85">
-              <animateMotion path="M 185,118 L 434,162" dur="2.2s" begin="1.7s" repeatCount="indefinite" calcMode="linear"/>
-            </circle>
-
+            <!-- Ground station -->
+            <rect x="460" y="222" width="200" height="44" rx="4" class="dg-box"/>
+            <text x="560" y="241" text-anchor="middle" class="dg-text dg-text--big">Ground station</text>
+            <text x="560" y="257" text-anchor="middle" class="dg-text dg-text--dim dg-text--desc">Our GCS + QGroundControl</text>
+            <line x1="540" y1="162" x2="540" y2="218" class="dg-line" marker-end="url(#arr)"/>
+            <text x="548" y="206" class="dg-text dg-text--dim dg-text--desc">Skydroid video + data</text>
+            <path d="M 390,152 L 440,152 L 440,244 L 456,244" class="dg-line" marker-end="url(#arr)"/>
+            <text x="446" y="186" class="dg-text dg-text--dim dg-text--desc">915 MHz telemetry</text>
           </svg>
         </div>
 
@@ -201,56 +179,42 @@
   <section class="full-section">
     <div class="full-section-inner">
       <p class="section-eyebrow">Software Stack</p>
-      <h2>How it's built.</h2>
-      <p class="section-body">Our autonomy software stack is built on ROS 2 and interfaces with the flight controller via MAVLink / MAVROS.</p>
-      <div class="stack-layers">
-        <div class="stack-layer">
-          <span class="stack-label">Hardware Abstraction</span>
-          <span class="stack-desc">MAVLink / MAVROS bridge between companion computer and flight controller</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">State Estimation</span>
-          <span class="stack-desc">EKF-based pose estimation fusing GPS, IMU, and barometer</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Mission Planning</span>
-          <span class="stack-desc">Waypoint sequencing and dynamic replanning</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Perception Interface</span>
-          <span class="stack-desc">Subscribes to target detections from the Perception subteam</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Ground Control</span>
-          <span class="stack-desc">MAVProxy / QGroundControl for telemetry and monitoring</span>
-        </div>
-      </div>
+      <h2>At a glance.</h2>
+      <dl class="spec-strip">
+        <div class="spec"><dt>Flight controller</dt><dd>Pixhawk 6X running PX4 with our patches</dd></div>
+        <div class="spec"><dt>Companion computer</dt><dd>Jetson Orin Nano Super, ROS 2 Humble</dd></div>
+        <div class="spec"><dt>Autopilot link</dt><dd>uXRCE-DDS with px4_msgs</dd></div>
+        <div class="spec"><dt>Sensors</dt><dd>RTK GNSS, optical flow, rangefinder, Remote ID</dd></div>
+        <div class="spec"><dt>Radios</dt><dd>Skydroid video link, 915 MHz telemetry, ELRS RC</dd></div>
+        <div class="spec"><dt>Lost link</dt><dd>15 s: return home. 90 s: terminate</dd></div>
+      </dl>
     </div>
   </section>
 
   <!-- Meetings -->
-  <section class="full-section full-section--photo" style="background-image:url('../photos/embedded-meeting-bg.jpg')">
+  <section class="full-section full-section--photo" style="background-image:url('../photos/field-ops-antenna.jpg'); background-position:center 44%">
     <div class="full-section-inner">
       <p class="section-eyebrow">Meetings</p>
       <h2>When we meet.</h2>
       <div class="meeting-cards meeting-cards--plain">
         <div class="meeting-card">
-          <h4>Hardware Session</h4>
-          <p>Fridays 4:00–5:00 PM</p>
-          <p class="meeting-loc">SlugWorks BE-49</p>
+          <h4>General Meetings</h4>
+          <p>Tuesdays 5:00 to 6:00 PM</p>
+          <p>Thursdays 6:00 to 7:00 PM</p>
+          <p class="meeting-loc">Slugworks BE-49</p>
         </div>
       </div>
-      <p class="meeting-note">Message on Discord to join — we'll help you set up the dev environment.</p>
+      <p class="meeting-note">Like soldering as much as code? Message us on Discord.</p>
     </div>
   </section>
 
   <footer class="footer">
     <div class="footer-inner">
-      <span>SOMARS · Slugbotics · UC Santa Cruz</span>
-      <span>Student Organization for Marine and Aerial Robotics Systems</span>
+      <span>SOMARS · Slugbotics</span>
+      <span>Slugs for the Oversight and Management of Aerial Robotic Systems at UC Santa Cruz</span>
     </div>
   </footer>
 
-  <script src="../assets/script.js"></script>
+  <script src="../assets/script.js?v=8253b554"></script>
 </body>
 </html>

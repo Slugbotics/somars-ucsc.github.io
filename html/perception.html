@@ -4,32 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#000000" />
-  <title>SOMARS — Perception</title>
-  <meta name="description" content="The SOMARS Perception subteam at UC Santa Cruz — computer vision pipelines for autonomous target detection and navigation on our competition drone." />
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <title>Perception | SOMARS</title>
+  <meta name="description" content="The SOMARS Perception subteam at UC Santa Cruz builds the computer vision that lets our competition drone find targets on its own." />
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SOMARS" />
-  <meta property="og:title" content="SOMARS — Perception" />
-  <meta property="og:description" content="Computer vision pipelines for autonomous target detection and navigation on UC Santa Cruz's competition drone." />
-  <meta property="og:image" content="https://somars-ucsc.com/photos/drone-in-flight.jpg" />
+  <meta property="og:title" content="Perception | SOMARS" />
+  <meta property="og:description" content="We build the computer vision that lets our competition drone find ground targets on its own at UC Santa Cruz." />
+  <meta property="og:image" content="https://somars-ucsc.com/photos/caligula-ii-flight-watch.jpg" />
   <meta property="og:url" content="https://somars-ucsc.com/html/perception.html" />
+  <link rel="canonical" href="https://somars-ucsc.com/html/perception.html" />
+  <link rel="preload" as="image" href="../photos/caligula-ii-flight-watch.jpg" fetchpriority="high" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/style.css" />
+  <link rel="stylesheet" href="../assets/style.css?v=8253b554" />
 </head>
 <body>
 
   <header class="navbar">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">SOMARS</a>
+      <a href="../index.html" class="nav-logo"><img src="../assets/wordmark-white.png" srcset="../assets/wordmark-white@2x.png 2x" alt="SOMARS" width="96" height="26" /></a>
       <nav class="nav-links" id="navLinks">
         <a href="../index.html">Home</a>
         <div class="nav-item has-dropdown">
-          <a href="team.html" class="nav-link-with-dropdown active">Team</a>
+          <div class="nav-dropdown-trigger">
+            <a href="team.html" class="nav-link-with-dropdown active">Team</a>
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="Toggle subteams submenu">
+              <svg viewBox="0 0 10 6" class="dropdown-chevron" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
           <div class="dropdown">
             <a href="mechanical.html">Mechanical</a>
             <a href="embedded.html">Embedded Systems</a>
@@ -41,17 +48,17 @@
         <a href="../index.html#contact">Contact</a>
         <a href="team.html#join" class="nav-join">Join Us</a>
       </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <section class="page-hero photo" style="background-image:url('../photos/fpv.jpg')">
+  <section class="page-hero photo" style="background-image:url('../photos/caligula-ii-flight-watch.jpg'); background-position: center 45%">
     <div class="page-hero-inner">
       <p class="hero-eyebrow">Subteam · 03</p>
       <h1>Perception.</h1>
-      <p class="hero-desc">Computer vision for autonomous navigation and real-time object detection from the air.</p>
+      <p class="hero-desc">We build the computer vision that lets the drone find targets with nobody at the controls.</p>
     </div>
   </section>
 
@@ -60,8 +67,7 @@
     <div class="full-section-inner">
       <p class="section-eyebrow">About</p>
       <h2>Giving the drone<br>its eyes.</h2>
-      <p class="section-body">The Perception subteam develops the computer vision pipelines that let the drone see the world below, identify competition targets, and feed spatial information back to the autonomy stack.</p>
-      <p class="section-body">We work with onboard cameras, train detection models, and implement real-time inference pipelines that run reliably at altitude during fully autonomous flight.</p>
+      <p class="section-body">At competition the drone has to find the targets and map the search area on its own. We build the vision that does it: the camera, the detector, and the data it learns from.</p>
     </div>
   </section>
 
@@ -75,126 +81,72 @@
         <!-- Left column -->
         <div class="work-card" style="grid-column:1; grid-row:1;">
           <h4>Target Detection &amp; Classification</h4>
-          <p>Training and deploying YOLO11n to locate and classify competition targets — shapes, letters, colors — from aerial imagery, running under TensorRT on the onboard Jetson.</p>
+          <p>We train the detector that picks the competition targets out of aerial imagery.</p>
         </div>
         <div class="work-card" style="grid-column:1; grid-row:2;">
-          <h4>Dataset Collection &amp; Training</h4>
-          <p>Building labeled datasets in Roboflow and supplementing them with synthetic aerial imagery rendered from Blender assets and environments.</p>
+          <h4>Dataset Collection &amp; Labeling</h4>
+          <p>Two survey flights gave us 1,253 frames to label by hand. Synthetic scenes fill the gaps.</p>
         </div>
 
         <!-- Right column -->
         <div class="work-card" style="grid-column:2; grid-row:1;">
-          <h4>Geolocation</h4>
-          <p>Computing GPS coordinates of detected targets by combining camera geometry, drone pose (GPS + attitude), and ground-plane projection.</p>
+          <h4>Camera &amp; Calibration</h4>
+          <p>We fitted a new lens, calibrated it on a ChArUco board, and are retraining the detector.</p>
         </div>
 
         <div class="work-card" style="grid-column:2; grid-row:2;">
-          <h4>Model Training Pipeline</h4>
-          <p>Labeling aerial imagery, augmenting datasets, and training YOLO11n to detect and classify competition targets with high accuracy under real flight conditions, then exporting to TensorRT for deployment.</p>
+          <h4>Survey Mapping</h4>
+          <p>We stitch the map on the ground from photos the drone streams down as it flies.</p>
         </div>
 
         <!-- Animation: full-width bottom row -->
         <div class="payload-scene-wrap" style="grid-column:1 / 3; grid-row:3; margin:0;">
-          <svg class="payload-scene" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+          <svg class="payload-scene diagram--labels" viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Camera view: the detector sweeps the frame and boxes a mannequin, a tent and a car.">
+            <rect x="20" y="20" width="720" height="260" rx="3" class="dg-faint"/>
+            <g class="dg-faint" opacity="0.5"><line x1="260" y1="20" x2="260" y2="280"/><line x1="500" y1="20" x2="500" y2="280"/><line x1="20" y1="107" x2="740" y2="107"/><line x1="20" y1="193" x2="740" y2="193"/></g>
+            <text x="34" y="42" class="dg-text dg-text--dim">Camera · 1920 x 1200 · global shutter</text>
 
-            <!-- Camera frame brackets -->
-            <path d="M 8,22 L 8,8 L 22,8"     fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.3"/>
-            <path d="M 478,8 L 492,8 L 492,22" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.3"/>
-            <path d="M 8,178 L 8,192 L 22,192" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.3"/>
-            <path d="M 478,192 L 492,192 L 492,178" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.3"/>
-            <text x="14" y="40" font-family="Inter,sans-serif" font-size="7" fill="#ffffff" opacity="0.35" letter-spacing="2">CAM-01</text>
-
-            <!-- Ground targets -->
-            <circle cx="95"  cy="115" r="7"  fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.3"/>
-            <polygon points="200,88 213,100 200,112 187,100" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.3"/>
-            <circle cx="320" cy="125" r="6"  fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.3"/>
-            <polygon points="415,82 427,98 403,98" fill="#0c0c0c" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.3"/>
-
-            <!-- Scan line -->
+            <!-- one pass, 10 s -->
             <g>
-              <animateTransform attributeName="transform" type="translate"
-                values="-10,0; 95,0; 95,0; 200,0; 200,0; 320,0; 320,0; 415,0; 415,0; 510,0; -10,0; -10,0"
-                keyTimes="0; 0.127; 0.207; 0.334; 0.414; 0.559; 0.639; 0.754; 0.834; 0.949; 0.959; 1"
-                calcMode="linear" dur="6s" repeatCount="indefinite"/>
-              <animate attributeName="opacity"
-                values="1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 0; 0"
-                keyTimes="0; 0.127; 0.207; 0.334; 0.414; 0.559; 0.639; 0.754; 0.834; 0.949; 0.959; 1"
-                dur="6s" repeatCount="indefinite"/>
-              <line x1="0" y1="0" x2="0" y2="200" stroke="#ffffff" stroke-width="1.2" opacity="0.5"/>
-              <line x1="0" y1="0" x2="0" y2="200" stroke="#ffffff" stroke-width="10" opacity="0.06"/>
+              <animateTransform attributeName="transform" type="translate" dur="10s" repeatCount="indefinite" calcMode="spline"
+                values="20,0; 740,0; 740,0; 20,0" keyTimes="0; 0.86; 0.93; 1" keySplines="0.4 0 0.6 1; 0 0 1 1; 0 0 1 1"/>
+              <animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0.7;0.7;0;0" keyTimes="0;0.03;0.86;0.9;1"/>
+              <line x1="0" y1="20" x2="0" y2="280" stroke="#f0c000" stroke-width="1"/>
+              <line x1="0" y1="20" x2="0" y2="280" stroke="#f0c000" stroke-width="16" opacity="0.08"/>
             </g>
 
-            <!-- Bounding box 1 — triggers when scan hits x=95 (keyTime 0.127) -->
-            <rect x="72" y="92" width="46" height="46" rx="2"
-              fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.85" stroke-dasharray="184" stroke-dashoffset="184">
-              <animate attributeName="stroke-dashoffset" calcMode="linear" dur="6s" repeatCount="indefinite"
-                values="184;184;0;0;184" keyTimes="0;0.127;0.207;0.949;1"/>
+            <g class="dg-line"><circle cx="190" cy="150" r="9"/><path d="M190,159 v34 M172,172 h36 M190,193 l-12,26 M190,193 l12,26"/></g>
+            <rect x="142" y="124" width="96" height="96" rx="3" fill="none" class="dg-line dg-accent" stroke-dasharray="384" stroke-dashoffset="384">
+              <animate attributeName="stroke-dashoffset" dur="10s" repeatCount="indefinite" calcMode="spline" values="384;384;0;0;384" keyTimes="0;0.17;0.25;0.93;1" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1;0 0 1 1"/>
             </rect>
-            <circle cx="72"  cy="92"  r="2.5" fill="#ffffff" opacity="0"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.126;0.127;0.949;1"/></circle>
-            <circle cx="118" cy="92"  r="2.5" fill="#ffffff" opacity="0"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.126;0.127;0.949;1"/></circle>
-            <circle cx="72"  cy="138" r="2.5" fill="#ffffff" opacity="0"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.126;0.127;0.949;1"/></circle>
-            <circle cx="118" cy="138" r="2.5" fill="#ffffff" opacity="0"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.126;0.127;0.949;1"/></circle>
             <g opacity="0">
-              <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.206;0.207;0.949;1"/>
-              <rect x="72" y="76" width="80" height="14" rx="2" fill="#0c0c0c" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.45"/>
-              <text x="112" y="87" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#ffffff" letter-spacing="0.5" opacity="0.85">TARGET · 94.2%</text>
+              <animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.25;0.28;0.92;0.94;1"/>
+              <rect x="142" y="94" width="150" height="22" rx="3" class="dg-fill-accent"/>
+              <text x="217" y="109" text-anchor="middle" class="dg-text" style="fill:#000">Mannequin · 0.94</text>
             </g>
-
-            <!-- Bounding box 2 — triggers when scan hits x=200 (keyTime 0.334) -->
-            <rect x="177" y="77" width="46" height="46" rx="2"
-              fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.85" stroke-dasharray="184" stroke-dashoffset="184">
-              <animate attributeName="stroke-dashoffset" calcMode="linear" dur="6s" repeatCount="indefinite"
-                values="184;184;0;0;184" keyTimes="0;0.334;0.414;0.949;1"/>
+            <g class="dg-line"><path d="M380,142 l40,66 h-80 z M380,142 v66"/></g>
+            <rect x="332" y="124" width="96" height="96" rx="3" fill="none" class="dg-line dg-accent" stroke-dasharray="384" stroke-dashoffset="384">
+              <animate attributeName="stroke-dashoffset" dur="10s" repeatCount="indefinite" calcMode="spline" values="384;384;0;0;384" keyTimes="0;0.43;0.51;0.93;1" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1;0 0 1 1"/>
             </rect>
-            <circle cx="177" cy="77"  r="2.5" fill="#ffffff" opacity="0"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.333;0.334;0.949;1"/></circle>
-            <circle cx="223" cy="77"  r="2.5" fill="#ffffff" opacity="0"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.333;0.334;0.949;1"/></circle>
-            <circle cx="177" cy="123" r="2.5" fill="#ffffff" opacity="0"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.333;0.334;0.949;1"/></circle>
-            <circle cx="223" cy="123" r="2.5" fill="#ffffff" opacity="0"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.333;0.334;0.949;1"/></circle>
             <g opacity="0">
-              <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.413;0.414;0.949;1"/>
-              <rect x="177" y="61" width="80" height="14" rx="2" fill="#0c0c0c" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.45"/>
-              <text x="217" y="72" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#ffffff" letter-spacing="0.5" opacity="0.85">TARGET · 91.5%</text>
+              <animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.51;0.54;0.92;0.94;1"/>
+              <rect x="332" y="94" width="150" height="22" rx="3" class="dg-fill-accent"/>
+              <text x="407" y="109" text-anchor="middle" class="dg-text" style="fill:#000">Tent · 0.91</text>
             </g>
-
-            <!-- Bounding box 3 — triggers when scan hits x=320 (keyTime 0.559) -->
-            <rect x="297" y="102" width="46" height="46" rx="2"
-              fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.85" stroke-dasharray="184" stroke-dashoffset="184">
-              <animate attributeName="stroke-dashoffset" calcMode="linear" dur="6s" repeatCount="indefinite"
-                values="184;184;0;0;184" keyTimes="0;0.559;0.639;0.949;1"/>
+            <g class="dg-line"><path d="M538,186 l10,-20 h44 l10,20 h8 v16 h-80 v-16 z"/><circle cx="556" cy="204" r="6"/><circle cx="604" cy="204" r="6"/></g>
+            <rect x="522" y="124" width="96" height="96" rx="3" fill="none" class="dg-line dg-accent" stroke-dasharray="384" stroke-dashoffset="384">
+              <animate attributeName="stroke-dashoffset" dur="10s" repeatCount="indefinite" calcMode="spline" values="384;384;0;0;384" keyTimes="0;0.69;0.77;0.93;1" keySplines="0 0 1 1;0.4 0 0.2 1;0 0 1 1;0 0 1 1"/>
             </rect>
-            <circle cx="297" cy="102" r="2.5" fill="#ffffff" opacity="0"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.558;0.559;0.949;1"/></circle>
-            <circle cx="343" cy="102" r="2.5" fill="#ffffff" opacity="0"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.558;0.559;0.949;1"/></circle>
-            <circle cx="297" cy="148" r="2.5" fill="#ffffff" opacity="0"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.558;0.559;0.949;1"/></circle>
-            <circle cx="343" cy="148" r="2.5" fill="#ffffff" opacity="0"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.558;0.559;0.949;1"/></circle>
             <g opacity="0">
-              <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.638;0.639;0.949;1"/>
-              <rect x="297" y="86" width="80" height="14" rx="2" fill="#0c0c0c" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.45"/>
-              <text x="337" y="97" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#ffffff" letter-spacing="0.5" opacity="0.85">TARGET · 88.3%</text>
+              <animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.77;0.80;0.92;0.94;1"/>
+              <rect x="522" y="94" width="150" height="22" rx="3" class="dg-fill-accent"/>
+              <text x="597" y="109" text-anchor="middle" class="dg-text" style="fill:#000">Car · 0.88</text>
             </g>
 
-            <!-- Bounding box 4 — triggers when scan hits x=415 (keyTime 0.754) -->
-            <rect x="392" y="67" width="46" height="46" rx="2"
-              fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.85" stroke-dasharray="184" stroke-dashoffset="184">
-              <animate attributeName="stroke-dashoffset" calcMode="linear" dur="6s" repeatCount="indefinite"
-                values="184;184;0;0;184" keyTimes="0;0.754;0.834;0.949;1"/>
-            </rect>
-            <circle cx="392" cy="67"  r="2.5" fill="#ffffff" opacity="0"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.753;0.754;0.949;1"/></circle>
-            <circle cx="438" cy="67"  r="2.5" fill="#ffffff" opacity="0"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.753;0.754;0.949;1"/></circle>
-            <circle cx="392" cy="113" r="2.5" fill="#ffffff" opacity="0"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.753;0.754;0.949;1"/></circle>
-            <circle cx="438" cy="113" r="2.5" fill="#ffffff" opacity="0"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.753;0.754;0.949;1"/></circle>
-            <g opacity="0">
-              <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.833;0.834;0.949;1"/>
-              <rect x="392" y="51" width="80" height="14" rx="2" fill="#0c0c0c" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.45"/>
-              <text x="432" y="62" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#ffffff" letter-spacing="0.5" opacity="0.85">TARGET · 96.7%</text>
-            </g>
-
-            <!-- All targets confirmation -->
-            <text x="250" y="188" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5"
-              fill="#ffffff" letter-spacing="3" opacity="0">
-              <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;0.85;0.85;0" keyTimes="0;0.833;0.834;0.949;1"/>
-              ALL TARGETS ACQUIRED
+            <text x="380" y="266" text-anchor="middle" class="dg-text dg-text--accent" opacity="0">
+              <animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.84;0.86;0.92;0.94;1"/>
+              3 targets located
             </text>
-
           </svg>
         </div>
 
@@ -206,55 +158,42 @@
   <section class="full-section">
     <div class="full-section-inner">
       <p class="section-eyebrow">Technology</p>
-      <h2>Our stack.</h2>
-      <div class="stack-layers">
-        <div class="stack-layer">
-          <span class="stack-label">Framework</span>
-          <span class="stack-desc">Python and PyTorch for training, TensorRT for optimized inference on NVIDIA Jetson</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Detection Model</span>
-          <span class="stack-desc">YOLO11n</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Camera</span>
-          <span class="stack-desc">Arducam AR0234, 2.3 MP global shutter — 1920×1200 @ 30 fps</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">ROS 2 Integration</span>
-          <span class="stack-desc">Control parameters are mediated over uXRCE-DDS (Micro XRCE-DDS) between the Jetson and the Pixhawk</span>
-        </div>
-        <div class="stack-layer">
-          <span class="stack-label">Ground Truth Validation</span>
-          <span class="stack-desc">Roboflow datasets paired with simulated assets and environments generated in Blender</span>
-        </div>
-      </div>
+      <h2>At a glance.</h2>
+      <dl class="spec-strip">
+        <div class="spec"><dt>Detector</dt><dd>YOLO11n, trained on Kaggle</dd></div>
+        <div class="spec"><dt>On the aircraft</dt><dd>TensorRT FP16 on the Jetson Orin Nano Super</dd></div>
+        <div class="spec"><dt>Camera</dt><dd>Arducam Jetvariety AR0234, global shutter, 6 mm lens</dd></div>
+        <div class="spec"><dt>Targets</dt><dd>Mannequin, tent, car (SUAS 2026 classes)</dd></div>
+        <div class="spec"><dt>Training data</dt><dd>Real flight frames in Label Studio plus Blender scenes</dd></div>
+        <div class="spec"><dt>Mapping</dt><dd>Survey photos stitched on the ground</dd></div>
+      </dl>
     </div>
   </section>
 
   <!-- Meetings -->
-  <section id="meetings" class="full-section full-section--photo" style="background-image:url('../photos/yolo-val-predictions.jpg')">
+  <section id="meetings" class="full-section full-section--photo" style="background-image:url('../photos/competition-tent.jpg'); background-position:center 40%">
     <div class="full-section-inner">
       <p class="section-eyebrow">Meetings</p>
       <h2>When we meet.</h2>
       <div class="meeting-cards meeting-cards--plain">
         <div class="meeting-card">
-          <h4>Vision Dev Session</h4>
-          <p>Mondays 2:00–3:00 PM</p>
-          <p class="meeting-loc">SlugWorks / Remote</p>
+          <h4>General Meetings</h4>
+          <p>Tuesdays 5:00 to 6:00 PM</p>
+          <p>Thursdays 6:00 to 7:00 PM</p>
+          <p class="meeting-loc">Slugworks BE-49</p>
         </div>
       </div>
-      <p class="meeting-note">No prior CV experience needed — we'll get you up to speed.</p>
+      <p class="meeting-note">No experience needed. Come by and we will get you started.</p>
     </div>
   </section>
 
   <footer class="footer">
     <div class="footer-inner">
-      <span>SOMARS · Slugbotics · UC Santa Cruz</span>
-      <span>Student Organization for Marine and Aerial Robotics Systems</span>
+      <span>SOMARS · Slugbotics</span>
+      <span>Slugs for the Oversight and Management of Aerial Robotic Systems at UC Santa Cruz</span>
     </div>
   </footer>
 
-  <script src="../assets/script.js"></script>
+  <script src="../assets/script.js?v=8253b554"></script>
 </body>
 </html>
